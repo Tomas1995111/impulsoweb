@@ -1,0 +1,39 @@
+/* AdminDashboard.css */
+.admin-dashboard {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .stats-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .stats-card {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    flex: 1;
+    min-width: 250px; /* Ajustamos el tamaño de las tarjetas */
+  }
+  
+  .stats-card h3 {
+    color: #246C3C;
+  }
+  
+  .stats-card p {
+    color: #5EBC78;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .stats-cards {
+      flex-direction: column;
+    }
+  }
+  

@@ -1,7 +1,7 @@
 // Dashboard.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import './styles/Dashboard.css';
 const Dashboard = () => {
   const [protectedData, setProtectedData] = useState(null);  // Para almacenar los datos protegidos
   const [error, setError] = useState(null);  // Para manejar errores
@@ -9,7 +9,8 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchProtectedData = async () => {
       const token = localStorage.getItem('token');  // Obtener el token del localStorage
-      console.log('Token:', token);  // Asegúrate de que el token se obtiene correctamente
+      console.log(localStorage.getItem('token'));
+  // Asegúrate de que el token se obtiene correctamente
 
       if (!token) {
         setError('No token found');

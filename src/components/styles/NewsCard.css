@@ -1,0 +1,25 @@
+/* NewsCard.css */
+.news-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .news-card h3 {
+    color: #246C3C;
+    font-size: 1.25rem;
+  }
+  
+  .news-card p {
+    color: #333;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .news-card {
+      padding: 15px;
+    }
+  }
+  

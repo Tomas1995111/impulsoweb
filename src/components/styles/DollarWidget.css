@@ -1,0 +1,25 @@
+/* DollarWidget.css */
+.dollar-widget {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dollar-widget h3 {
+    color: #246C3C;
+  }
+  
+  .dollar-widget p {
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .dollar-widget {
+      padding: 15px;
+    }
+  }
+  

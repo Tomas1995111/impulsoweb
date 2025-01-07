@@ -1,0 +1,37 @@
+/* UserProfile.css */
+.user-profile {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-profile h2 {
+    color: #246C3C;
+  }
+  
+  .user-profile p {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .user-profile button {
+    background-color: #5EBC78;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .user-profile button:hover {
+    background-color: #3CA65C;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .user-profile {
+      padding: 15px;
+    }
+  }
+  

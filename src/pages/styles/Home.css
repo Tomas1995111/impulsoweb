@@ -1,0 +1,52 @@
+/* Home.css */
+.home-container {
+    font-family: Arial, sans-serif;
+    padding: 0 20px;
+  }
+  
+  .content-container {
+    margin-top: 80px; /* Ajustamos el margen superior para que no quede tapado por la navbar fija */
+    padding: 20px;
+  }
+  
+  .welcome-title {
+    color: #246C3C;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .dashboard-section {
+    margin-bottom: 40px;
+  }
+  
+  .main-content {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .course-widget,
+  .dollar-widget {
+    flex: 1;
+    min-width: 300px; /* Aseguramos que se ajusten bien en pantallas pequeñas */
+  }
+  
+  .news-section {
+    margin-top: 40px;
+  }
+  
+  .user-profile-section {
+    margin-top: 40px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .welcome-title {
+      font-size: 2rem;
+    }
+  
+    .main-content {
+      flex-direction: column;
+    }
+  }
+  

@@ -1,0 +1,92 @@
+/* Login.css */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    font-family: 'Arial', sans-serif;
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .login-title {
+    font-size: 2.5rem;
+    color: #246C3C;
+    margin-bottom: 30px;
+  }
+  
+  .login-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .input-group label {
+    display: block;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+  }
+  
+  .input-field:focus {
+    border-color: #3CA65C;
+    outline: none;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.875rem;
+    margin-bottom: 20px;
+  }
+  
+  .submit-btn {
+    background-color: #3CA65C;
+    color: white;
+    font-size: 1rem;
+    padding: 12px 24px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #246C3C;
+    transform: scale(1.05);
+  }
+  
+  .submit-btn:focus {
+    outline: none;
+  }
+  
+  @media (max-width: 768px) {
+    .login-container {
+      padding: 20px;
+    }
+  
+    .login-title {
+      font-size: 2rem;
+    }
+  }
+  

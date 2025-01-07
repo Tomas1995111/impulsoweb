@@ -1,13 +1,17 @@
 // ProtectedRoute.js
-
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 
-const ProtectedRoute = ({ element: Component, ...rest }) => {
+const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem('token');
 
-  // Si no hay token, redirige a login, sino renderiza el componente
-  return token ? Component : <Navigate to="/login" />;
+  // Si no hay token, redirige a login
+  if (!token) {
+    return <Navigate to="/login" />;
+  }
+
+  // Si hay token, renderiza los "children"
+  return children;
 };
 
 export default ProtectedRoute;
