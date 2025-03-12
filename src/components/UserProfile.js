@@ -1,47 +1,46 @@
+// UserProfile.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const UserProfile = () => {
-  const [userData, setUserData] = useState(null);
-  const [error, setError] = useState(null);
+  const [profile, setProfile] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchUserData = async () => {
-      const token = localStorage.getItem('token');
-      if (!token) {
-        setError('No estás autenticado');
-        return;
-      }
+    const token = localStorage.getItem('token');
+    if (!token) {
+      navigate('/login');
+      return;
+    }
 
-      try {
-        const response = await axios.get('http://localhost:3000/api/user-profile', {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-        setUserData(response.data);
-      } catch (error) {
-        setError(error.response?.data?.message || 'Error al cargar los datos del perfil');
-      }
-    };
+    const api = axios.create({
+      baseURL: 'http://localhost:3000/api',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+      },
+    });
 
-    fetchUserData();
-  }, []);
-
-  if (error) return <p style={{ color: 'red' }}>{error}</p>;
+    api.get('/user-profile')
+      .then(response => {
+        setProfile(response.data.user);
+      })
+      .catch(error => {
+        console.error('Error al obtener el perfil:', error);
+        navigate('/login');
+      });
+  }, [navigate]);
 
   return (
     <div>
-      <h1>Mi Perfil</h1>
-      {userData ? (
+      {profile ? (
         <div>
-          <p><strong>Nombre:</strong> {userData.name}</p>
-          <p><strong>Email:</strong> {userData.email}</p>
-          <p><strong>Rol:</strong> {userData.role}</p>
-          <p><strong>Fecha de registro:</strong> {new Date(userData.fecha_registro).toLocaleDateString()}</p>
+          <h1>Perfil de {profile.nombre}</h1>
+          <p>Email: {profile.email}</p>
+          <p>Rol: {profile.rol}</p>
         </div>
       ) : (
-        <p>Cargando perfil...</p>
+        <p>Cargando...</p>
       )}
     </div>
   );

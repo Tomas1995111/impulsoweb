@@ -1,62 +1,59 @@
+// Login.js
 import React, { useState } from 'react';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import api from '../api/api'; // Cliente preconfigurado para las llamadas a la API.
-import './styles/Login.css';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail]     = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState(null); // Para manejar errores.
-  const navigate = useNavigate();
+  const [error, setError]       = useState(null);
+  const navigate              = useNavigate();
 
-  // Función para manejar el login
-  const handleSubmit = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-
     try {
-      const { data } = await api.post('/auth/login', { email, password });
+      const response = await axios.post('http://localhost:3000/api/auth/login', { email, password });
+      const { token, role } = response.data;
 
-      // Guardar los tokens en localStorage
-      localStorage.setItem('token', data.accessToken);
-      localStorage.setItem('refreshToken', data.refreshToken);
+      // Guardar token y rol en localStorage
+      localStorage.setItem('token', token);
+      localStorage.setItem('role', role);
 
-      // Redirigir al dashboard
-      navigate('/home');
+      // Redirigir según el rol
+      if (role === 'admin') {
+        navigate('/admin-dashboard');
+      } else {
+        navigate('/user-profile');
+      }
     } catch (error) {
-      setError(error.response?.data?.message || 'Error al iniciar sesión. Por favor, inténtalo de nuevo.');
+      setError(error.response?.data?.message || 'Error al iniciar sesión');
     }
   };
 
   return (
-    <div className="login-container">
-      <h1 className="login-title">Iniciar Sesión</h1>
-      <form onSubmit={handleSubmit} className="login-form">
-        <div className="input-group">
-          <label htmlFor="email">Email:</label>
+    <div>
+      <h1>Login</h1>
+      <form onSubmit={handleLogin}>
+        <div>
+          <label>Email:</label>
           <input
-            id="email"
             type="email"
-            placeholder="Correo electrónico"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="input-field"
           />
         </div>
-        <div className="input-group">
-          <label htmlFor="password">Contraseña:</label>
+        <div>
+          <label>Password:</label>
           <input
-            id="password"
             type="password"
-            placeholder="Contraseña"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            className="input-field"
           />
         </div>
-        {error && <p className="error-message">{error}</p>}
-        <button type="submit" className="submit-btn">Iniciar Sesión</button>
+        {error && <p>{error}</p>}
+        <button type="submit">Login</button>
       </form>
     </div>
   );

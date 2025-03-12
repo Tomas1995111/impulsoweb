@@ -1,8 +1,20 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:3000/api', // Base URL del backend
+  baseURL: 'http://localhost:3000/api', // Verifica la URL de tu API
 });
+
+// Interceptor para agregar token de acceso a las solicitudes
+api.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
 
 // Interceptor para manejar el refresco automático de tokens
 api.interceptors.response.use(
@@ -13,18 +25,22 @@ api.interceptors.response.use(
     if (error.response?.status === 401 && !originalRequest._retry) {
       originalRequest._retry = true;
 
+      const refreshToken = localStorage.getItem('refreshToken');
+      if (!refreshToken) {
+        console.error('No se encontró un refresh token.');
+        logout();
+        return Promise.reject(error);
+      }
+
       try {
-        const { data } = await axios.post('/refresh-token', {
-          refreshToken: localStorage.getItem('refreshToken'), // Token de refresco guardado
-        });
-
-        localStorage.setItem('token', data.accessToken); // Guardar nuevo token
+        const { data } = await api.post('/refresh-token', { refreshToken });
+        localStorage.setItem('token', data.accessToken);
         originalRequest.headers.Authorization = `Bearer ${data.accessToken}`;
-
-        return api(originalRequest); // Reintentar la solicitud original
+        return api(originalRequest);
       } catch (refreshError) {
         console.error('Error al refrescar el token:', refreshError);
-        logout(); // Forzar logout si no funciona
+        logout();
+        return Promise.reject(refreshError);
       }
     }
 
@@ -32,11 +48,10 @@ api.interceptors.response.use(
   }
 );
 
-// Función de logout
 export const logout = () => {
   localStorage.removeItem('token');
   localStorage.removeItem('refreshToken');
-  window.location.href = '/login'; // Redirige al login
+  window.location.href = '/login';
 };
 
 export default api;

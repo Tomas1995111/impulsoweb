@@ -9,6 +9,7 @@ import UserProfile from '../components/UserProfile';
 
 const Home = () => {
   const user = JSON.parse(localStorage.getItem('user')); // Obtener el usuario desde localStorage
+  const role = localStorage.getItem('role'); // Obtener el rol del usuario
 
   return (
     <div className="home-container">
@@ -16,9 +17,12 @@ const Home = () => {
       <div className="content-container">
         <h1 className="welcome-title">Bienvenido a tu Plataforma de Asesoría Financiera</h1>
 
-        <div className="dashboard-section">
-          <AdminDashboard />
-        </div>
+        {/* Solo mostrar AdminDashboard si el usuario es admin */}
+        {role === 'admin' && (
+          <div className="dashboard-section">
+            <AdminDashboard />
+          </div>
+        )}
 
         <div className="main-content">
           <div className="course-widget">

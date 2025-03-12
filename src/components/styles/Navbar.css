@@ -37,7 +37,53 @@
   .navbar ul li a:hover {
     color: #5EBC78;
   }
+  /* Dropdown styles */
+.dropdown {
+    cursor: pointer;
+  }
   
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #3333;
+    list-style: none;
+    padding: 10px 0;
+    border-radius: 4px;
+  }
+  
+  .dropdown-menu li {
+    padding: 10px 20px;
+  }
+  
+  .dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .dropdown-menu li a:hover {
+    color: #5EBC78;
+  }
+  
+  /* Button for "Registrarse" */
+  .register-button {
+    background-color: #3CA65C;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .register-button:hover {
+    background-color: #5EBC78;
+  }
   /* Responsive */
   @media (max-width: 768px) {
     .navbar ul {

@@ -1,62 +1,48 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const AdminDashboard = () => {
   const [users, setUsers] = useState([]);
-  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+  const role = localStorage.getItem('role');
 
   useEffect(() => {
-    const fetchUsers = async () => {
-      const token = localStorage.getItem('token');
-      if (!token) {
-        setError('No estás autenticado');
-        return;
-      }
+    // Si el usuario no es admin, redirige o no muestra nada
+    if (role !== 'admin') {
+      navigate('/'); // o puedes mostrar un mensaje "No autorizado"
+      return;
+    }
 
-      try {
-        const response = await axios.get('http://localhost:3000/api/admin/users', {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-        setUsers(response.data);
-      } catch (error) {
-        setError(error.response?.data?.message || 'Error al cargar la lista de usuarios');
-      }
-    };
+    const token = localStorage.getItem('token');
+    const api = axios.create({
+      baseURL: 'http://localhost:3000/api/admin',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+      },
+    });
 
-    fetchUsers();
-  }, []);
+    api.get('/users')
+      .then(response => {
+        setUsers(response.data.users);
+      })
+      .catch(error => {
+        console.error('Error al obtener los usuarios:', error);
+      });
+  }, [role, navigate]);
 
-  if (error) return <p style={{ color: 'red' }}>{error}</p>;
+  // Opcional: Mostrar mensaje si no es admin
+  if (role !== 'admin') return <p>No autorizado</p>;
 
   return (
     <div>
-      <h1>Panel de Administración</h1>
-      {users.length > 0 ? (
-        <table>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Nombre</th>
-              <th>Email</th>
-              <th>Rol</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.map((user) => (
-              <tr key={user.id}>
-                <td>{user.id}</td>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.role}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      ) : (
-        <p>No hay usuarios registrados</p>
-      )}
+      <h1>Panel de Administrador</h1>
+      <h2>Lista de Usuarios</h2>
+      <ul>
+        {users.map(user => (
+          <li key={user.id}>{user.nombre}</li>
+        ))}
+      </ul>
     </div>
   );
 };

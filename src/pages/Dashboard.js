@@ -1,49 +1,44 @@
-// Dashboard.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './styles/Dashboard.css';
+
 const Dashboard = () => {
-  const [protectedData, setProtectedData] = useState(null);  // Para almacenar los datos protegidos
-  const [error, setError] = useState(null);  // Para manejar errores
+  const [userData, setUserData] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchProtectedData = async () => {
-      const token = localStorage.getItem('token');  // Obtener el token del localStorage
-      console.log(localStorage.getItem('token'));
-  // Asegúrate de que el token se obtiene correctamente
+    const token = localStorage.getItem('token');
+    if (!token) {
+      setError('No se encontró el token de autenticación.');
+      return;
+    }
 
-      if (!token) {
-        setError('No token found');
-        return;
-      }
+    const api = axios.create({
+      baseURL: 'http://localhost:3000/api',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+      },
+    });
 
-      try {
-        const response = await axios.get('http://localhost:3000/api/protected-route', {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-
-        setProtectedData(response.data);  // Almacena los datos protegidos
-      } catch (error) {
-        setError(error.response?.data?.message || 'Error al acceder a la ruta protegida');
-      }
-    };
-
-    fetchProtectedData();
-  }, []);  // El useEffect se ejecuta solo una vez cuando el componente se monta
+    api.get('/protected-route')
+      .then(response => {
+        setUserData(response.data);
+      })
+      .catch(err => {
+        console.error('Error al obtener los datos:', err);
+        setError('No autorizado o error en la solicitud.');
+      });
+  }, []);
 
   return (
     <div>
-      <h1>Dashboard</h1>
-      {error && <p>{error}</p>}  {/* Muestra el error si lo hay */}
-      {protectedData ? (
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {userData ? (
         <div>
-          <h2>Datos protegidos</h2>
-          <pre>{JSON.stringify(protectedData, null, 2)}</pre>
+          <h1>Bienvenido {userData.name}</h1>
+          {/* Mostrar más datos del usuario aquí */}
         </div>
       ) : (
-        <p>Cargando datos...</p>
+        <p>Cargando...</p>
       )}
     </div>
   );
