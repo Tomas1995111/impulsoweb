@@ -1,97 +1,227 @@
-/* Navbar.css */
+/* Reseteo de estilos globales */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #fff;
+  color: #333;
+  padding-top: 70px; /* Ajuste para la navbar fija */
+  height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar moderna y fija */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 95%;
-    background-color: #ffffff;
-    color: #3CA65C;
-    padding: 10px 20px;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .navbar .logo img {
-    height: 60px;
-    
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 12px 30px;
+  z-index: 1000;
+  justify-content: space-between; /* Distribuye los elementos */
+}
+/* Contenedor para los elementos de navegación */
+.navbar .nav-links {
+  display: flex;
+  gap: 25px;
+  justify-content: center; /* Centra los elementos en el menú */
+  flex-grow: 1; /* Asegura que los elementos se distribuyan correctamente */
+}
+/* Logo */
+.navbar .logo img {
+  height: 45px;
+  transition: transform 0.3s ease;
+}
+
+.navbar .logo img:hover {
+  transform: scale(1.05);
+}
+
+/* Menú de navegación */
+.navbar ul {
+  display: flex;
+  gap: 25px;
+  justify-content: center; /* Centra los elementos en el menú */
+  flex-grow: 1; /* Asegura que los elementos se distribuyan correctamente */
+}
+
+.navbar ul li {
+  list-style: none;
+}
+
+.navbar a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Subrayado animado */
+.navbar a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #3CA65C;
+  transition: width 0.3s ease-in-out;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #3CA65C;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+  width: 100%;
+}
+
+/* Menú responsivo */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
   .navbar ul {
-    list-style: none;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 15px;
+    width: auto; /* Ajustamos el ancho del menú */
+  }
+
+  .navbar ul.active {
     display: flex;
-    gap: 20px;
   }
-  
-  .navbar ul li {
-    margin-left: 20px;
-  }
-  
-  .navbar ul li a {
-    color: #3CA65C;
-    text-decoration: none;
-    font-size: 1rem;
-  }
-  
-  .navbar ul li a:hover {
-    color: #5EBC78;
-  }
-  /* Dropdown styles */
-.dropdown {
-    cursor: pointer;
-  }
-  
-  .dropdown:hover .dropdown-menu {
+
+  .menu-toggle {
     display: block;
   }
-  
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #3333;
-    list-style: none;
-    padding: 10px 0;
-    border-radius: 4px;
+}
+
+/* Ajuste para el contenido principal */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Sección de tarjetas */
+.main-content .card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 350px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.main-content .card:hover {
+  transform: translateY(-5px);
+}
+
+/* Estilo para el enlace de Mi Perfil */
+.navbar ul li.profile-link {
+  position: relative;
+}
+
+/* Estilo del dropdown (Cerrar sesión) */
+.navbar ul li .dropdown-menu {
+  position: absolute;
+  top: 100%; /* Aparece justo debajo del enlace */
+  left: 50%; /* Centra el dropdown debajo del enlace */
+  transform: translateX(-50%); /* Asegura que se quede centrado */
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 10px;
+  width: max-content;
+  display: none; /* Oculto por defecto */
+  transition: opacity 0.3s ease-in-out;
+  min-width: 150px;
+}
+
+.navbar ul li:hover .dropdown-menu {
+  display: block; /* Aparece al hacer hover */
+}
+
+/* Estilo del enlace de Cerrar sesión */
+.logout-link {
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 8px; /* Bordes redondeados */
+  transition: all 0.3s ease;
+  background: transparent; /* Fondo transparente */
+  display: inline-block;
+  width: 100%; /* Ajusta el tamaño al 100% */
+  border: none; /* Elimina el borde */
+}
+
+.logout-link:hover {
+  background-color: #f0f0f0;
+  color: #3CA65C;
+  /* No se necesita border-color ya que lo eliminamos */
+  transform: translateY(-2px);
+}
+
+.logout-link:focus {
+  outline: none;
+}
+
+.logout-link:active {
+  transform: translateY(1px);
+}
+
+
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+    gap: 15px;
   }
-  
-  .dropdown-menu li {
-    padding: 10px 20px;
+
+  .main-content .card {
+    max-width: 100%;
   }
-  
-  .dropdown-menu li a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .dropdown-menu li a:hover {
-    color: #5EBC78;
-  }
-  
-  /* Button for "Registrarse" */
-  .register-button {
-    background-color: #3CA65C;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s;
-  }
-  
-  .register-button:hover {
-    background-color: #5EBC78;
-  }
-  /* Responsive */
-  @media (max-width: 768px) {
-    .navbar ul {
-      flex-direction: column;
-      align-items: center;
-    }
-    .navbar ul li {
-      margin: 10px 0;
-    }
-  }
-  
+}
+.navbar .profile-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Alinea a la derecha */
+  gap: 25px;
+}

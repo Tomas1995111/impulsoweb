@@ -1,52 +1,71 @@
-/* Home.css */
+/* Ajustes generales para la página */
 .home-container {
-    font-family: Arial, sans-serif;
-    padding: 0 20px;
-  }
-  
-  .content-container {
-    margin-top: 80px; /* Ajustamos el margen superior para que no quede tapado por la navbar fija */
-    padding: 20px;
-  }
-  
+  font-family: Arial, sans-serif;
+  padding: 0 20px;
+  margin-top: 80px; /* Aseguramos que haya espacio debajo de la navbar fija */
+  box-sizing: border-box; /* Para asegurarnos de que los paddings no afecten el ancho */
+}
+
+/* Ajuste del contenedor de contenido */
+.content-container {
+  margin-top: 20px; /* Ajustamos el margen para que todo esté dentro del área visible */
+  padding: 20px;
+  box-sizing: border-box; /* Incluye padding en el cálculo del ancho total */
+}
+
+/* Título de bienvenida */
+.welcome-title {
+  color: #246C3C;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center; /* Centra el título */
+}
+
+/* Sección de Dashboard */
+.dashboard-section {
+  margin-bottom: 40px;
+}
+
+/* Sección principal para los widgets */
+.main-content {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+/* Aseguramos que los widgets se ajusten bien */
+.course-widget,
+.dollar-widget {
+  flex: 1;
+  min-width: 300px; /* Ajuste para pantallas pequeñas */
+  padding: 15px;
+  box-sizing: border-box; /* Para que el padding no afecte el tamaño total */
+}
+
+/* Sección de noticias */
+.news-section {
+  margin-top: 40px;
+}
+
+/* Perfil del usuario */
+.user-profile-section {
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
   .welcome-title {
-    color: #246C3C;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 2rem;
   }
-  
-  .dashboard-section {
-    margin-bottom: 40px;
-  }
-  
+
   .main-content {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
+    flex-direction: column;
   }
-  
-  .course-widget,
-  .dollar-widget {
-    flex: 1;
-    min-width: 300px; /* Aseguramos que se ajusten bien en pantallas pequeñas */
+
+  /* Para mejorar la visibilidad en pantallas pequeñas */
+  .courses-container {
+    margin-top: 20px; /* Aseguramos que las tarjetas de curso no queden muy arriba */
   }
-  
-  .news-section {
-    margin-top: 40px;
-  }
-  
-  .user-profile-section {
-    margin-top: 40px;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .welcome-title {
-      font-size: 2rem;
-    }
-  
-    .main-content {
-      flex-direction: column;
-    }
-  }
-  
+}

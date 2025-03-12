@@ -1,13 +1,12 @@
-// Login.js
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const [email, setEmail]     = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError]       = useState(null);
-  const navigate              = useNavigate();
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -15,16 +14,12 @@ const Login = () => {
       const response = await axios.post('http://localhost:3000/api/auth/login', { email, password });
       const { token, role } = response.data;
 
-      // Guardar token y rol en localStorage
+      // Guardar el token y el rol en localStorage
       localStorage.setItem('token', token);
       localStorage.setItem('role', role);
 
-      // Redirigir según el rol
-      if (role === 'admin') {
-        navigate('/admin-dashboard');
-      } else {
-        navigate('/user-profile');
-      }
+      // Redirigir a la página de inicio (Home)
+      navigate('/home');
     } catch (error) {
       setError(error.response?.data?.message || 'Error al iniciar sesión');
     }
