@@ -15,18 +15,18 @@ const Courses = () => {
       </h2>
       <div className="courses-list">
         <CourseCard
-          title="Curso de Finanzas Personales"
-          description="Aprende a gestionar tu dinero y alcanzar la libertad financiera."
+          title="Análisis técnico"
+          description="Aprende a interpretar gráficos, identificar tendencias y gestionar riesgos de manera efectiva. Este curso intensivo te brinda técnicas prácticas de análisis técnico para tomar decisiones de inversión informadas, ideal para principiantes y profesionales."
           image={AnalisisImg}
         />
         <CourseCard
-          title="Curso de Desarrollo Web"
-          description="Conviértete en un experto en desarrollo web desde cero."
+          title="Criptomonedas & Blockchain"
+          description="Adéntrate en el futuro financiero: descubre cómo funcionan las criptomonedas y la tecnología blockchain. Aprende a identificar oportunidades, gestionar riesgos y transformar tu estrategia en el mundo digital. "
           image={CriptomonedasImg}
         />
         <CourseCard
-          title="Curso de Psicología Aplicada"
-          description="Entiende los principios psicológicos y cómo aplicarlos en la vida real."
+          title="Money managament"
+          description="Optimiza tu estrategia financiera: domina técnicas prácticas para gestionar riesgos, maximizar rendimientos y tomar decisiones de inversión inteligentes. Eleva tus habilidades y controla tu camino hacia el éxito financiero. "
           image={MoneyImg}
         />
       </div>

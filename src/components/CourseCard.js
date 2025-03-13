@@ -8,7 +8,7 @@ const CourseCard = ({ title, description, image }) => {
       <div className="course-info">
         <h3 className="course-title">{title}</h3>
         <p className="course-description">{description}</p>
-        <button className="view-course-btn">Ver Curso</button>
+        <button className="view-course-btn">Comprar</button>
       </div>
     </div>
   );

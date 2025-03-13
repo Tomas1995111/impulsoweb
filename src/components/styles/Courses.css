@@ -1,6 +1,6 @@
 /* Courses.css */
 
-/* Contenedor de los cursos */
+/* Contenedor principal de cursos */
 .courses-container {
     padding: 50px 20px;
     text-align: center;
@@ -14,14 +14,15 @@
     line-height: 1.5;
   }
   
-  /* Contenedor de las tarjetas de cursos */
+  /* Contenedor de las tarjetas de cursos (usando grid) */
   .courses-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 40px; /* Aumenta el espacio entre tarjetas */
     margin-top: 20px;
     max-width: 1200px;
-    margin: 0 auto; /* centra el grid */
+    margin-left: auto;
+    margin-right: auto;
   }
   
   /* Tarjeta de curso */
@@ -30,56 +31,66 @@
     flex-direction: column;
     align-items: center;
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* El ancho se controla con el grid */
   }
   
   .course-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   }
   
   .course-image {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    background-color: #f0f0f0; /* color de fondo si no carga la imagen */
-    border-bottom: 2px solid #ddd;
+    height: 220px; /* Mantén la altura fija si lo deseas */
+    object-fit: contain; /* La imagen se ajusta sin recortarse, pero puede dejar espacios vacíos */
+    object-position: center;
+    background-color: #f7f7f7;
   }
-  
+  /* Contenedor de información */
   .course-info {
-    padding: 20px;
+    padding: 24px;
     text-align: center;
+    font-family: "Poppins", sans-serif;
   }
   
+  /* Título del curso */
   .course-title {
-    font-size: 1.6rem;
-    color: #246C3C;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    color: #1E5128;
+    margin-bottom: 12px;
+    font-weight: 600;
   }
   
+  /* Descripción */
   .course-description {
     font-size: 1rem;
-    color: #555;
+    color: #444;
     margin-bottom: 20px;
-    line-height: 1.5;
+    line-height: 1.6;
   }
   
+  /* Botón de ver curso */
   .view-course-btn {
-    background-color: #3CA65C;
+    background: linear-gradient(135deg, #3CA65C, #246C3C);
     color: white;
     font-size: 1rem;
-    padding: 12px 24px;
+    font-weight: 600;
+    padding: 12px 28px;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   .view-course-btn:hover {
-    background-color: #246C3C;
-    transform: scale(1.05);
+    background: linear-gradient(135deg, #246C3C, #1A4D2E);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   }
   
   .view-course-btn:focus {
