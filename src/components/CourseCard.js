@@ -1,12 +1,15 @@
+// CourseCard.js (ya sin importar ningún CSS)
 import React from 'react';
-import './styles/CourseCard.css';
 
-const CourseCard = () => {
+const CourseCard = ({ title, description, image }) => {
   return (
     <div className="course-card">
-      <h3>Curso de Finanzas Personales</h3>
-      <p>Aprende a gestionar tu dinero y alcanzar la libertad financiera.</p>
-      <button>Ver Curso</button>
+      <img src={image} alt={title} className="course-image" />
+      <div className="course-info">
+        <h3 className="course-title">{title}</h3>
+        <p className="course-description">{description}</p>
+        <button className="view-course-btn">Ver Curso</button>
+      </div>
     </div>
   );
 };

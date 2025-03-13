@@ -1,0 +1,98 @@
+/* Courses.css */
+
+/* Contenedor de los cursos */
+.courses-container {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  /* Título de los cursos */
+  .courses-title {
+    font-size: 1.8rem;
+    color: #246C3C;
+    margin-bottom: 30px;
+    line-height: 1.5;
+  }
+  
+  /* Contenedor de las tarjetas de cursos */
+  .courses-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* centra el grid */
+  }
+  
+  /* Tarjeta de curso */
+  .course-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .course-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .course-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: #f0f0f0; /* color de fondo si no carga la imagen */
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .course-info {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .course-title {
+    font-size: 1.6rem;
+    color: #246C3C;
+    margin-bottom: 10px;
+  }
+  
+  .course-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  
+  .view-course-btn {
+    background-color: #3CA65C;
+    color: white;
+    font-size: 1rem;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .view-course-btn:hover {
+    background-color: #246C3C;
+    transform: scale(1.05);
+  }
+  
+  .view-course-btn:focus {
+    outline: none;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .courses-title {
+      font-size: 1.5rem;
+    }
+    .courses-list {
+      grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
+    }
+  }
+  
