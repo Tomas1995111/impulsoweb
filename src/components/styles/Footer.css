@@ -1,0 +1,27 @@
+.footer {
+    background-color: #1E5128;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    position: relative;
+    bottom: 0;
+    width: 100vw; /* Asegura que ocupe todo el ancho de la pantalla */
+    left: 50%; /* Centra el footer */
+    transform: translateX(-50%); /* Corrige la posición para que cubra toda la pantalla */
+}
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    color: #8DF224; /* Color verde neón */
+}

@@ -6,6 +6,8 @@ import AdminDashboard from '../components/AdminDashboard';
 import DollarWidget from '../components/DollarWidget';
 import NewsCard from '../components/NewsCard';
 import UserProfile from '../components/UserProfile';
+import Footer from '../components/Footer'; // Importa el Footer
+
 
 import AnalisisImg from '../assets/imagesCourses/Analisis-tecnico.jpeg';
 import CriptomonedasImg from '../assets/imagesCourses/Criptomonedas-y-Blockchain.jpeg';
@@ -93,6 +95,7 @@ const Home = () => {
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 };
