@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar'; // Componente de navegación
+import Navbar from './components/Navbar';
+import WhatsAppButton from './components/WhatsAppButton';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
@@ -68,6 +69,7 @@ const App = () => {
         <Route path="/noticias" element={<News />} />
         <Route path="/asesores-financieros" element={<FinancialAdvisors />} />
       </Routes>
+      <WhatsAppButton />
     </Router>
   );
 };

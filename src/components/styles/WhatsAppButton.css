@@ -1,0 +1,41 @@
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  
+  @keyframes pulse {
+    0% { box-shadow: 0 0 10px rgba(37, 211, 102, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(37, 211, 102, 0.7); }
+    100% { box-shadow: 0 0 10px rgba(37, 211, 102, 0.5); }
+  }
+  
+  .whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    font-size: 24px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Animación de rebote cada 3 segundos */
+    animation: bounce 1.5s infinite ease-in-out;
+  }
+  
+  .whatsapp-button:hover {
+    transform: scale(1.1);
+    animation: pulse 1s infinite ease-in-out;
+  }
+  
+  .whatsapp-button i {
+    font-size: 30px;
+  }
+  
