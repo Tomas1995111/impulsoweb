@@ -1,25 +1,43 @@
-/* DollarWidget.css */
 .dollar-widget {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .dollar-widget h3 {
-    color: #246C3C;
-  }
-  
-  .dollar-widget p {
-    color: #333;
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .dollar-widget {
-      padding: 15px;
-    }
-  }
-  
+  background-color: #fff; /* Fondo blanco para contraste */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(60, 166, 92, 0.15); /* Sombra suave con matiz verde */
+  text-align: center;
+  max-width: 400px;
+  margin: 20px auto;
+  border: 1px solid #e6e6e6; /* Borde sutil */
+}
+
+.dollar-widget h3 {
+  font-size: 1.5rem;
+  color: #3CA65C; /* Tono verde principal */
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.error-message {
+  color: #e74c3c; /* Rojo suave para errores */
+  font-weight: bold;
+}
+
+.rates-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rate-item {
+  background-color: #f9f9f9; /* Fondo muy claro para cada ítem */
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(60, 166, 92, 0.1); /* Sombra sutil con matiz verde */
+  transition: transform 0.2s ease;
+  cursor: default;
+}
+
+.rate-item:hover {
+  transform: translateY(-2px); /* Efecto sutil al pasar el mouse */
+}
