@@ -105,6 +105,39 @@
 .course-carousel-image:hover {
   filter: brightness(1.1);
 }
+.news-section {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.news-section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333; /* Color gris oscuro para el título */
+}
+
+.view-more-button {
+  margin-top: 20px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  background-color: transparent;
+  color: #3CA65C; /* Color verde que mencionaste */
+  border: 2px solid #3CA65C; /* Borde verde */
+  border-radius: 25px; /* Bordes redondeados para un estilo minimalista */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none; /* Quitar el borde de enfoque */
+}
+
+.view-more-button:hover {
+  background-color: #3CA65C; /* Fondo verde al pasar el mouse */
+  color: white; /* El texto se pone blanco */
+}
+
+.view-more-button:focus {
+  border-color: #3CA65C; /* Mantener el borde verde cuando esté enfocado */
+}
 /* Responsive */
 @media (max-width: 768px) {
   .welcome-title {

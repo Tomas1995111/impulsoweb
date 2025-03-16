@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Importar useNavigate para la redirección
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate para la redirección
 import './styles/Home.css';
 import Navbar from '../components/Navbar';
 import AdminDashboard from '../components/AdminDashboard';
 import DollarWidget from '../components/DollarWidget';
-import NewsCard from '../components/NewsCard';
+import NewsCard from '../components/NewsCard'; 
 import UserProfile from '../components/UserProfile';
-import Footer from '../components/Footer'; // Importa el Footer
-
+import Footer from '../components/Footer';
 
 import AnalisisImg from '../assets/imagesCourses/Analisis-tecnico.jpeg';
 import CriptomonedasImg from '../assets/imagesCourses/Criptomonedas-y-Blockchain.jpeg';
@@ -31,7 +30,7 @@ const Home = () => {
     }, 3000); // Cambia cada 3 segundos
 
     return () => clearInterval(interval); // Limpiar el intervalo cuando el componente se desmonte
-  }, []);
+  }, []);  
 
   // Función para cambiar la imagen manualmente
   const handleIndicatorClick = (index) => {
@@ -85,9 +84,17 @@ const Home = () => {
           </div>
         </div>
 
+        {/* Aquí se integran las noticias */}
         <div className="news-section">
-          <NewsCard />
-        </div>
+  <h2 className="news-section-title">Noticias</h2> {/* Título de la sección */}
+  <NewsCard limit={2} /> {/* Limitar el número de noticias */}
+  <button 
+    className="view-more-button" 
+    onClick={() => navigate('/noticias')} // Redirigir a la página /noticias
+  >
+    Ver más
+  </button>
+</div>
 
         {user && (
           <div className="user-profile-section">
