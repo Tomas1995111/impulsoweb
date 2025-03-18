@@ -27,16 +27,28 @@ const DollarWidget = () => {
     <div className="dollar-widget">
       <h3>Valores del Dólar</h3>
       {error ? (
-        <p className="error-message">Error: {error}</p>
+        <p className="error-message">{`Error: ${error}`}</p>
       ) : !rates ? (
-        <p>Cargando...</p>
+        <div className="loading-spinner">Cargando...</div>
       ) : (
         <div className="rates-container">
           <div className="rate-item">
-            <strong>Oficial:</strong> Promedio {rates.oficial.value_avg} | Compra {rates.oficial.value_buy} | Venta {rates.oficial.value_sell}
+            <strong>Oficial:</strong> <span className="rate-value">${rates.oficial.value_avg.toFixed(2)}</span>
           </div>
           <div className="rate-item">
-            <strong>Blue:</strong> Promedio {rates.blue.value_avg} | Compra {rates.blue.value_buy} | Venta {rates.blue.value_sell}
+            <strong>Compra:</strong> <span className="rate-value">${rates.oficial.value_buy.toFixed(2)}</span>
+          </div>
+          <div className="rate-item">
+            <strong>Venta:</strong> <span className="rate-value">${rates.oficial.value_sell.toFixed(2)}</span>
+          </div>
+          <div className="rate-item">
+            <strong>Blue:</strong> <span className="rate-value">${rates.blue.value_avg.toFixed(2)}</span>
+          </div>
+          <div className="rate-item">
+            <strong>Compra:</strong> <span className="rate-value">${rates.blue.value_buy.toFixed(2)}</span>
+          </div>
+          <div className="rate-item">
+            <strong>Venta:</strong> <span className="rate-value">${rates.blue.value_sell.toFixed(2)}</span>
           </div>
         </div>
       )}

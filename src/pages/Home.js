@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Importa useNavigate para la redirección
+import { useNavigate } from 'react-router-dom';
 import './styles/Home.css';
 import Navbar from '../components/Navbar';
 import AdminDashboard from '../components/AdminDashboard';
@@ -11,33 +11,28 @@ import Footer from '../components/Footer';
 import AnalisisImg from '../assets/imagesCourses/Analisis-tecnico.jpeg';
 import CriptomonedasImg from '../assets/imagesCourses/Criptomonedas-y-Blockchain.jpeg';
 import MoneyImg from '../assets/imagesCourses/Money-Management.jpeg';
+import WelcomeBannerImg from '../assets/diplomado-inversiones-financieras-min-1.jpg'; // Importa la imagen
 
 const Home = () => {
-  const user = JSON.parse(localStorage.getItem('user')); // Obtener el usuario desde localStorage
-  const role = localStorage.getItem('role'); // Obtener el rol del usuario
-  const navigate = useNavigate(); // Para la redirección
+  const user = JSON.parse(localStorage.getItem('user'));
+  const role = localStorage.getItem('role');
+  const navigate = useNavigate();
 
-  // Array de cursos (solo imágenes)
   const courseImages = [AnalisisImg, CriptomonedasImg, MoneyImg];
 
-  // Estado para el índice de la imagen activa
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
-  // Cambiar la imagen activa automáticamente
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveImageIndex(prevIndex => (prevIndex + 1) % courseImages.length); // Ciclar entre las imágenes
-    }, 3000); // Cambia cada 3 segundos
-
-    return () => clearInterval(interval); // Limpiar el intervalo cuando el componente se desmonte
+      setActiveImageIndex(prevIndex => (prevIndex + 1) % courseImages.length);
+    }, 3000);
+    return () => clearInterval(interval);
   }, []);  
 
-  // Función para cambiar la imagen manualmente
   const handleIndicatorClick = (index) => {
     setActiveImageIndex(index);
   };
 
-  // Redirigir a /cursos cuando se hace clic en la imagen
   const handleImageClick = () => {
     navigate('/cursos');
   };
@@ -45,56 +40,66 @@ const Home = () => {
   return (
     <div className="home-container">
       <Navbar />
+      <div className="welcome-banner" style={{ backgroundImage: `url(${WelcomeBannerImg})` }}>
+        <div className="banner-overlay">
+          <h1 className="welcome-title">
+            <span className="gradient-text">Bienvenido</span> a Impulso Merval
+          </h1>
+          <p className="welcome-subtitle">
+            Alcanza tu potencial financiero 
+          </p>
+          <button className="hero-cta" onClick={() => navigate('/register')}>
+            Abrí tu cuenta
+          </button>
+        </div>
+      </div>
       <div className="content-container">
-        <h1 className="welcome-title">Bienvenido a tu Plataforma de Asesoría Financiera</h1>
+      
 
-        {/* Solo mostrar AdminDashboard si el usuario es admin */}
         {role === 'admin' && (
           <div className="dashboard-section">
             <AdminDashboard />
           </div>
         )}
 
-        <div className="main-content">
-          {/* Sección de carrusel de imágenes de cursos */}
-          <div className="course-section">
-            <h2 className="course-section-title"></h2>
-            <div className="course-carousel">
-              <img
-                src={courseImages[activeImageIndex]}
-                alt="Curso"
-                className="course-carousel-image"
-                onClick={handleImageClick} // Redirige a /cursos al hacer clic
-              />
-              {/* Círculos de navegación */}
-              <div className="carousel-indicators">
-                {courseImages.map((_, index) => (
-                  <div
-                    key={index}
-                    className={`carousel-indicator ${activeImageIndex === index ? 'active' : ''}`}
-                    onClick={() => handleIndicatorClick(index)}
-                  />
-                ))}
-              </div>
-            </div>
+        <div className="courses-carousel-container">
+          <div className="course-info">
+            <h2 className="course-section-title">Aprendé a invertir </h2>
           </div>
 
-          <div className="dollar-widget">
-            <DollarWidget />
+          <div className="course-carousel">
+            <img
+              src={courseImages[activeImageIndex]}
+              alt="Curso"o
+              className="course-carousel-image"
+              onClick={handleImageClick}
+            />
+            <div className="carousel-indicators">
+              {courseImages.map((_, index) => (
+                <div
+                  key={index}
+                  className={`carousel-indicator ${activeImageIndex === index ? 'active' : ''}`}
+                  onClick={() => handleIndicatorClick(index)}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Aquí se integran las noticias */}
+        <div className="dollar-widget">
+          <DollarWidget />
+        </div>
+
         <div className="news-section">
-  <h2 className="news-section-title">Noticias</h2> {/* Título de la sección */}
-  <NewsCard limit={2} /> {/* Limitar el número de noticias */}
-  <button 
-    className="view-more-button" 
-    onClick={() => navigate('/noticias')} // Redirigir a la página /noticias
-  >
-    Ver más
-  </button>
-</div>
+          <h2 className="news-section-title">Noticias</h2>
+          <NewsCard limit={2} />
+          <button 
+            className="view-more-button" 
+            onClick={() => navigate('/noticias')}
+          >
+            Ver más
+          </button>
+        </div>
 
         {user && (
           <div className="user-profile-section">
@@ -102,6 +107,7 @@ const Home = () => {
           </div>
         )}
       </div>
+      
       <Footer />
     </div>
   );

@@ -1,43 +1,104 @@
+/* ---- Estilo del Widget de Dólar ---- */
 .dollar-widget {
-  background-color: #fff; /* Fondo blanco para contraste */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(60, 166, 92, 0.15); /* Sombra suave con matiz verde */
-  text-align: center;
+  background: #F5F5F5; /* Fondo suave y neutro */
+  padding: 20px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   max-width: 400px;
   margin: 20px auto;
-  border: 1px solid #e6e6e6; /* Borde sutil */
-}
-
-.dollar-widget h3 {
-  font-size: 1.5rem;
-  color: #3CA65C; /* Tono verde principal */
-  margin-bottom: 15px;
-  font-weight: 600;
-}
-
-.error-message {
-  color: #e74c3c; /* Rojo suave para errores */
-  font-weight: bold;
-}
-
-.rates-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.rate-item {
-  background-color: #f9f9f9; /* Fondo muy claro para cada ítem */
-  padding: 12px 15px;
-  border-radius: 8px;
-  font-size: 1rem;
+  font-family: 'Segoe UI', Arial, sans-serif;
   color: #333;
-  box-shadow: 0 2px 4px rgba(60, 166, 92, 0.1); /* Sombra sutil con matiz verde */
-  transition: transform 0.2s ease;
-  cursor: default;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* ---- Efecto Hover más suave ---- */
+.dollar-widget:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* ---- Título del Widget ---- */
+.dollar-widget h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #4A4A4A; /* Gris oscuro para más elegancia */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ---- Mensaje de Error ---- */
+.error-message {
+  color: #D9534F; /* Rojo suave para errores */
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 12px;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: rgba(217, 83, 79, 0.1);
+}
+
+/* ---- Contenedor de Tasas ---- */
+.rates-container {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #555; /* Gris más claro para contraste sutil */
+}
+
+/* ---- Elementos de Tasa ---- */
+.rate-item {
+  margin-bottom: 10px;
+  padding: 12px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* ---- Hover más suave en tasas ---- */
 .rate-item:hover {
-  transform: translateY(-2px); /* Efecto sutil al pasar el mouse */
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+/* ---- Valor de la Tasa ---- */
+.rate-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-left: 10px;
+  color: #007B5E; /* Verde más suave y profesional */
+}
+
+/* ---- Cargando ---- */
+.loading-spinner {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 20px;
+  color: #777;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* ---- Animación de Carga ---- */
+@keyframes pulse {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .dollar-widget {
+    padding: 15px;
+    width: 90%;
+  }
+
+  .rates-container {
+    font-size: 1rem;
+  }
 }

@@ -1,101 +1,178 @@
-/* Ajustes generales para la página */
-.home-container {
-  font-family: Arial, sans-serif;
-  padding: 0 20px;
-  margin-top: 80px; /* Espacio debajo de la navbar fija */
-  box-sizing: border-box;
+/* ---- Banner de Bienvenida ---- */
+.welcome-banner {
+  position: relative;
+  width: 100vw; /* 100% del viewport */
+  height: 100vh; /* O 70vh, según prefieras */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
 }
 
-/* Contenedor de contenido */
+/* Capa oscura para resaltar el texto */
+.welcome-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* Contenedor del contenido dentro del banner */
+.banner-overlay {
+  position: relative;
+  z-index: 2; /* Para que quede por encima del overlay oscuro */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Animación FadeInUp */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Título principal */
+.welcome-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  color: #fff;
+  line-height: 1.2;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.2s;
+}
+
+/* Texto con degradado parcial en "Inversiones" */
+.gradient-text {
+  display: inline-block;
+  background: linear-gradient(90deg, #ffffff 0%, #b2edc3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtítulo */
+.welcome-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #e0e0e0;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.4s;
+}
+
+/* Botón CTA */
+.hero-cta {
+  background-color: #fff;
+  color: #333;
+  border: none;
+  font-size: 1rem;
+  padding: 0.8rem 2rem;
+  border-radius: 50px; /* Botón circular */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.hero-cta:hover {
+  background-color: #d6d6d6;
+  transform: translateY(-2px);
+}
+
+/* ---- Contenedor Principal ---- */
 .content-container {
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
   padding: 20px;
   box-sizing: border-box;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-/* Título de bienvenida */
-.welcome-title {
-  color: #246C3C;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-/* Sección de Dashboard */
+/* ---- Sección Dashboard ---- */
 .dashboard-section {
   margin-bottom: 40px;
 }
 
-/* Sección principal para los widgets */
-.main-content {
+/* ---- Contenedor de Cursos y Carrusel ---- */
+.courses-carousel-container {
   display: flex;
-  gap: 30px;
-  flex-wrap: nowrap;
   justify-content: space-between;
-  padding-bottom: 20px;
-}
-
-/* Sección de cursos: Ocupa más espacio */
-.course-section {
-  flex: 2;
-  min-width: 300px;
- 
-}
-
-/* Widget del dólar: Ubicado al lado, ocupando menos espacio */
-.dollar-widget {
-  flex: 1;
-  min-width: 300px;
-  padding: 15px;
-  box-sizing: border-box;
-}
-
-/* Carrusel de imágenes */
-.course-carousel {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  overflow: hidden;
   width: 100%;
-  height: 380px; /* Altura para el carrusel */
-  border-radius: 20px;
-  margin-top: 30px;
+  max-width: 1000px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+/* ---- Sección de Cursos (Izquierda) ---- */
+.course-info {
+  flex: 1;
+  text-align: left;
+}
+
+.course-section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2C8D48;
   position: relative;
-  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  padding-bottom: 4px;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
 }
 
-/* Círculos de navegación */
-.carousel-indicators {
+/* Subrayado animado en el título de cursos */
+.course-section-title::after {
+  content: '';
   position: absolute;
-  bottom: 2px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #2C8D48;
+  animation: underline-animation 3s infinite ease-in-out;
 }
 
-/* Círculos individuales */
-.carousel-indicator {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.4);
-  transition: background-color 0.3s ease;
-  cursor: pointer;
+@keyframes underline-animation {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
 }
 
-/* Cambio de color al seleccionar el círculo */
-.carousel-indicator.active {
-  background-color: #3CA65C;
+/* ---- Carrusel (Derecha) ---- */
+.course-carousel {
+  flex: 2;
+  position: relative;
+  max-width: 600px;
 }
 
-/* Efecto en la imagen */
 .course-carousel-image {
-  max-width: 100%;
-  height: 100%;
+  width: 100%;
   object-fit: cover;
   border-radius: 20px;
   transition: all 0.3s ease-in-out;
@@ -105,7 +182,30 @@
   filter: brightness(1.1);
 }
 
-/* Sección de noticias */
+/* ---- Indicadores del Carrusel ---- */
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.carousel-indicator.active {
+  background-color: #3CA65C;
+}
+
+/* ---- Sección de Noticias ---- */
 .news-section {
   margin-top: 30px;
   text-align: center;
@@ -118,9 +218,10 @@
   color: #333;
 }
 
+/* ---- Botón de Ver Más ---- */
 .view-more-button {
   margin-top: 20px;
-  padding: 8px 16px;
+  padding: 10px 20px;
   font-size: 1rem;
   background-color: transparent;
   color: #3CA65C;
@@ -128,7 +229,6 @@
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.3s ease;
-  outline: none;
 }
 
 .view-more-button:hover {
@@ -136,28 +236,44 @@
   color: white;
 }
 
-.view-more-button:focus {
-  border-color: #3CA65C;
-}
-
-/* Perfil del usuario */
+/* ---- Perfil del Usuario ---- */
 .user-profile-section {
   margin-top: 40px;
 }
 
-/* Responsive */
+/* ---- Responsive ---- */
 @media (max-width: 768px) {
+  .welcome-banner {
+    height: 70vh; /* Reduce altura para pantallas pequeñas */
+  }
+
   .welcome-title {
     font-size: 2rem;
   }
 
- 
+  .welcome-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-cta {
+    font-size: 0.9rem;
+  }
+
+  .courses-carousel-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .course-info {
+    text-align: center;
+    margin-bottom: 15px;
+  }
 
   .course-carousel {
-    height: 200px;
+    max-width: 100%;
   }
 
   .course-carousel-image {
-    object-position: center;
+    max-height: 250px;
   }
 }
