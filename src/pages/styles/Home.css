@@ -33,24 +33,22 @@
 .main-content {
   display: flex;
   gap: 30px;
-  flex-wrap: nowrap; /* Evita que los elementos bajen de línea */
+  flex-wrap: nowrap;
   justify-content: space-between;
-  align-items: flex-start;
   padding-bottom: 20px;
 }
 
 /* Sección de cursos: Ocupa más espacio */
 .course-section {
   flex: 2;
-  min-width: 60%; /* Mantiene más ancho */
-  max-width: 800px;
+  min-width: 300px;
+ 
 }
 
 /* Widget del dólar: Ubicado al lado, ocupando menos espacio */
 .dollar-widget {
   flex: 1;
-  min-width: 35%;
-  max-width: 400px;
+  min-width: 300px;
   padding: 15px;
   box-sizing: border-box;
 }
@@ -153,14 +151,7 @@
     font-size: 2rem;
   }
 
-  .main-content {
-    flex-direction: column; /* Apila elementos en pantallas pequeñas */
-    align-items: center;
-  }
-
-  .course-section, .dollar-widget {
-    min-width: 100%; /* Ocuparán todo el ancho */
-  }
+ 
 
   .course-carousel {
     height: 200px;

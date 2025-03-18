@@ -58,7 +58,7 @@ const Home = () => {
         <div className="main-content">
           {/* Sección de carrusel de imágenes de cursos */}
           <div className="course-section">
-            <h2 className="course-section-title">Los siguientes cursos que lograrán elevar sus capacidades para alcanzar objetivos más desafiantes.</h2>
+            <h2 className="course-section-title"></h2>
             <div className="course-carousel">
               <img
                 src={courseImages[activeImageIndex]}
