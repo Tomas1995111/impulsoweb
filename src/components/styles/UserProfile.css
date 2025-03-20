@@ -1,37 +1,158 @@
-/* UserProfile.css */
-.user-profile {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .user-profile h2 {
-    color: #246C3C;
-  }
-  
-  .user-profile p {
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .user-profile button {
-    background-color: #5EBC78;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .user-profile button:hover {
-    background-color: #3CA65C;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .user-profile {
-      padding: 15px;
-    }
-  }
-  
+/* Contenedor principal */
+.user-container {
+  display: flex;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #3CA65C;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sidebar button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.sidebar button:hover,
+.sidebar .active {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+}
+
+/* Contenido principal */
+.user-content {
+  flex-grow: 1;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Secciones de usuario */
+.user-info,
+.user-courses {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Títulos */
+.user-info h2,
+.user-courses h2 {
+  color: #3CA65C;
+  margin-bottom: 20px;
+}
+
+/* Párrafos */
+.user-info p,
+.user-courses p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Sección de teléfono en modo lectura */
+.phone-readonly {
+  margin: 20px 0;
+}
+
+.phone-readonly p {
+  margin-bottom: 10px;
+}
+
+/* Formulario de edición de teléfono */
+.phone-edit-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  text-align: left;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.phone-edit-form label {
+  align-self: flex-start;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Estilos para PhoneInput */
+.phone-input {
+  width: 100%;
+}
+
+/* Grupo de botones (guardar/cancelar) */
+.btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* Botones */
+.edit-btn,
+.save-btn,
+.cancel-btn {
+  background: #3CA65C;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.edit-btn:hover,
+.save-btn:hover,
+.cancel-btn:hover {
+  background: #2E8B49;
+}
+
+/* Ajuste de color para el botón "Cancelar" si prefieres diferenciarlo */
+.cancel-btn {
+  background: #999;
+}
+
+.cancel-btn:hover {
+  background: #777;
+}
+
+/* Cursos */
+.user-courses ul {
+  list-style: none;
+  padding: 0;
+}
+
+.user-courses li {
+  background: #3CA65C;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Mensaje de carga */
+.loading {
+  font-size: 18px;
+  color: #3CA65C;
+  text-align: center;
+}

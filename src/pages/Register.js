@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import './styles/Register.css'; // Importamos el archivo de estilos para el registro
+import './styles/Register.css';
 
 const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [telefono, setTelefono] = useState('');
+  const [fechaNacimiento, setFechaNacimiento] = useState('');
   const [error, setError] = useState('');
-  const navigate = useNavigate(); // Usar useNavigate para la redirección
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,10 +19,11 @@ const Register = () => {
         name,
         email,
         password,
+        telefono,
+        fechaNacimiento, // Asegúrate que el valor se establece
       });
 
       if (response.data.success) {
-        // Si el registro es exitoso, redirigir al dashboard
         navigate('/dashboard');
       }
     } catch (error) {
@@ -64,6 +67,25 @@ const Register = () => {
             onChange={(e) => setPassword(e.target.value)}
             className="input-field"
             required
+          />
+        </div>
+        <div className="input-group">
+          <label>Teléfono:</label>
+          <input
+            type="text"
+            placeholder="Teléfono"
+            value={telefono}
+            onChange={(e) => setTelefono(e.target.value)}
+            className="input-field"
+          />
+        </div>
+        <div className="input-group">
+          <label>Fecha de Nacimiento:</label>
+          <input
+            type="date"
+            value={fechaNacimiento}
+            onChange={(e) => setFechaNacimiento(e.target.value)}
+            className="input-field"
           />
         </div>
         <button type="submit" className="submit-btn">Registrarse</button>
