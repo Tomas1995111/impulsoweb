@@ -79,12 +79,12 @@ const UserProfile = () => {
       return;
     }
 
-    axios
-      .put(
-        "http://localhost:3000/api/user-profile/phone",
-        { telefono },
-        { headers: { Authorization: `Bearer ${token}` } }
-      )
+    axios.put(
+      "http://localhost:3000/api/auth/user-profile/phone", // Nota el prefijo '/api/auth'
+      { telefono },
+      { headers: { Authorization: `Bearer ${token}` } }
+    )
+    
       .then((response) => {
         console.log("Teléfono actualizado:", response.data);
         setProfile((prevProfile) => ({ ...prevProfile, telefono }));
