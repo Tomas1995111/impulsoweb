@@ -230,10 +230,14 @@
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 .view-more-button:hover {
-  background-color: #3CA65C;
-  color: white;
+  background-color: #3CA65C; /* Fondo verde */
+  color: white; /* Texto blanco */
+  transform: scale(1.05); /* Ligera animación de escala */
+}
+
+.view-more-button:active {
+  transform: scale(1); /* Restaura la escala cuando se hace clic */
 }
 
 /* ---- Perfil del Usuario ---- */

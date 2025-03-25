@@ -1,11 +1,8 @@
-/* Courses.css */
-
 /* Contenedor principal de cursos */
 .courses-container {
     padding: 50px 20px;
     text-align: center;
   }
-  
   /* Título de los cursos */
   .courses-title {
     font-size: 1.8rem;
@@ -13,18 +10,16 @@
     margin-bottom: 30px;
     line-height: 1.5;
   }
-  
   /* Contenedor de las tarjetas de cursos (usando grid) */
   .courses-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 40px; /* Aumenta el espacio entre tarjetas */
+    gap: 40px; 
     margin-top: 20px;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
   }
-  
   /* Tarjeta de curso */
   .course-card {
     display: flex;
@@ -35,18 +30,15 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* El ancho se controla con el grid */
   }
-  
   .course-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   }
-  
   .course-image {
     width: 100%;
-    height: 220px; /* Mantén la altura fija si lo deseas */
-    object-fit: contain; /* La imagen se ajusta sin recortarse, pero puede dejar espacios vacíos */
+    height: 220px;
+    object-fit: contain;
     object-position: center;
     background-color: #f7f7f7;
   }
@@ -56,15 +48,13 @@
     text-align: center;
     font-family: "Poppins", sans-serif;
   }
-  
   /* Título del curso */
   .course-title {
     font-size: 1.8rem;
-    color: #1E5128;
+    color: #246C3C;
     margin-bottom: 12px;
     font-weight: 600;
   }
-  
   /* Descripción */
   .course-description {
     font-size: 1rem;
@@ -72,7 +62,6 @@
     margin-bottom: 20px;
     line-height: 1.6;
   }
-  
   /* Botón de ver curso */
   .view-course-btn {
     background: linear-gradient(135deg, #3CA65C, #246C3C);
@@ -86,16 +75,53 @@
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
-  
   .view-course-btn:hover {
     background: linear-gradient(135deg, #246C3C, #1A4D2E);
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   }
-  
   .view-course-btn:focus {
     outline: none;
   }
+  .purchase-info {
+    margin-top: 20px;
+    font-size: 16px;  
+    font-weight: bold; 
+    color: #333; 
+    text-align: center;
+    line-height: 1.5;
+  }
+  .promotions-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; 
+    margin-top: 40px; 
+    padding: 30px; 
+    text-align: center;
+}
+.promotion {
+    background-color: #f7f7f7; 
+    border-radius: 8px;
+    padding: 20px;
+    color: #333; 
+    border: 1px solid #ddd; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease; 
+}
+.promotions-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #246C3C;
+  margin-bottom: 20px; 
+  text-transform: uppercase; 
+  letter-spacing: 2px; 
+}
+.promotion p {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px; 
+    color: #333;
+}
   
   /* Responsive */
   @media (max-width: 768px) {
@@ -103,7 +129,7 @@
       font-size: 1.5rem;
     }
     .courses-list {
-      grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
+      grid-template-columns: 1fr; 
     }
   }
   
