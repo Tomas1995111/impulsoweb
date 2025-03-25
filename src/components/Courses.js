@@ -44,7 +44,11 @@ const Courses = () => {
        {/* Sección de promociones */}
        <div className="promotions-container">
         <h3 className="promotions-title">¡Ofertas especiales para ti!</h3>
-        <div className="promotion">
+        <div className="payment-info">
+    <div className="installments">3</div>
+    <p className="no-interest">Cuotas</p>
+    <p className="no-interest-subtext">Sin interés</p>
+  </div>        <div className="promotion">
           <p>2 cursos con 20% de descuento por solo $80k</p>
           <a href="https://mpago.la/2HDQcf2" className="view-course-btn" >¡Comprar ahora!</a>
         </div>
