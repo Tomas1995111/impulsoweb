@@ -8,12 +8,9 @@ const DollarWidget = () => {
   useEffect(() => {
     const fetchRates = async () => {
       try {
-        const response = await fetch('https://api.bluelytics.com.ar/v2/latest');
-        if (!response.ok) {
-          throw new Error(`Error: ${response.status} ${response.statusText}`);
-        }
+        const response = await fetch("http://localhost:3000/api/dollar/price");
         const data = await response.json();
-        setRates(data);
+        setRates(data.dolarBlue);
       } catch (err) {
         console.error("Error al obtener los datos:", err);
         setError(err.message);
@@ -25,30 +22,18 @@ const DollarWidget = () => {
 
   return (
     <div className="dollar-widget">
-      <h3>Valores del Dólar</h3>
+      <h3>Valores del Dolar Blue</h3>
       {error ? (
-        <p className="error-message">{`Error: ${error}`}</p>
+        <p className="error-message">{`Error: ${error}`}</p>  
       ) : !rates ? (
         <div className="loading-spinner">Cargando...</div>
       ) : (
         <div className="rates-container">
           <div className="rate-item">
-            <strong>Oficial:</strong> <span className="rate-value">${rates.oficial.value_avg.toFixed(2)}</span>
+            <strong>Compra:</strong> <span className="rate-value">${rates.compra}</span>
           </div>
           <div className="rate-item">
-            <strong>Compra:</strong> <span className="rate-value">${rates.oficial.value_buy.toFixed(2)}</span>
-          </div>
-          <div className="rate-item">
-            <strong>Venta:</strong> <span className="rate-value">${rates.oficial.value_sell.toFixed(2)}</span>
-          </div>
-          <div className="rate-item">
-            <strong>Blue:</strong> <span className="rate-value">${rates.blue.value_avg.toFixed(2)}</span>
-          </div>
-          <div className="rate-item">
-            <strong>Compra:</strong> <span className="rate-value">${rates.blue.value_buy.toFixed(2)}</span>
-          </div>
-          <div className="rate-item">
-            <strong>Venta:</strong> <span className="rate-value">${rates.blue.value_sell.toFixed(2)}</span>
+            <strong>Venta:</strong> <span className="rate-value">${rates.venta}</span>
           </div>
         </div>
       )}
