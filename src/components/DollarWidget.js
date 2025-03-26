@@ -9,8 +9,12 @@ const DollarWidget = () => {
     const fetchRates = async () => {
       try {
         const response = await fetch("http://localhost:3000/api/dollar/price");
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
         const data = await response.json();
-        setRates(data.dolarBlue);
+        console.log('Datos recibidos:', data);
+        setRates(data);
       } catch (err) {
         console.error("Error al obtener los datos:", err);
         setError(err.message);
@@ -20,21 +24,35 @@ const DollarWidget = () => {
     fetchRates();
   }, []);
 
+  const renderCard = (title, compra, venta) => (
+    <div className="card">
+      <h4>{title}</h4>
+      <div className="rate-info">
+        <div className="rate-item">
+          <p><strong>Compra:</strong> ${compra}</p>
+        </div>
+        <div className="rate-item">
+          <p><strong>Venta:</strong> ${venta}</p>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <div className="dollar-widget">
-      <h3>Valores del Dolar Blue</h3>
+      <h3>Valores del Dólar</h3>
       {error ? (
-        <p className="error-message">{`Error: ${error}`}</p>  
+        <p className="error-message">{`Error: ${error}`}</p>
       ) : !rates ? (
         <div className="loading-spinner">Cargando...</div>
       ) : (
         <div className="rates-container">
-          <div className="rate-item">
-            <strong>Compra:</strong> <span className="rate-value">${rates.compra}</span>
-          </div>
-          <div className="rate-item">
-            <strong>Venta:</strong> <span className="rate-value">${rates.venta}</span>
-          </div>
+          {rates.dolarBlue && renderCard('Dólar Blue', rates.dolarBlue.compra, rates.dolarBlue.venta)}
+          {rates.dolarOficial && renderCard('Dólar Oficial', rates.dolarOficial.compra, rates.dolarOficial.venta)}
+          {rates.dolarMep && renderCard('Dólar Mep', rates.dolarMep.compra, rates.dolarMep.venta)}
+          {rates.liqui && renderCard('Dólar Liqui', rates.liqui.compra, rates.liqui.venta)}
+          {rates.tarjeta && renderCard('Dólar Tarjeta', rates.tarjeta.compra)}
+          {rates.cripto && renderCard('Dólar Cripto', rates.cripto.compra, rates.cripto.venta)}
         </div>
       )}
     </div>
