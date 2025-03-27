@@ -55,12 +55,17 @@
     margin-bottom: 12px;
     font-weight: 600;
   }
-  /* Descripción */
   .course-description {
-    font-size: 1rem;
-    color: #444;
-    margin-bottom: 20px;
-    line-height: 1.6;
+    opacity: 0;
+    max-height: 0;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  
+  .course-card:hover .course-description {
+    opacity: 1;
+    max-height: 200px; 
   }
   /* Botón de ver curso */
   .view-course-btn {
