@@ -6,6 +6,7 @@ import AdminDashboard from '../components/AdminDashboard';
 import DollarWidget from '../components/DollarWidget';
 import NewsCard from '../components/NewsCard'; 
 import UserProfile from '../components/UserProfile';
+import Reviews from '../components/Reviews';
 import Footer from '../components/Footer';
 
 import AnalisisImg from '../assets/imagesCourses/Analisis-tecnico.jpeg';
@@ -107,7 +108,9 @@ const Home = () => {
           </div>
         )}
       </div>
-      
+      <div className="reviews-section">
+      <Reviews />
+    </div>
       <Footer />
     </div>
   );
