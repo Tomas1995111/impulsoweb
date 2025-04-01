@@ -17,7 +17,7 @@ import AdminProtectedRoute from './components/AdminProtectedRoute'; // Ruta prot
 import Courses from './components/Courses'; // Página para /cursos
 import News from './components/NewsCard'; // Página para /noticias
 import FinancialAdvisors from './pages/FinancialAdvisors';
-
+import MemberShip from './pages/MemberShip';
 const App = () => {
   return (
     <Router>
@@ -71,6 +71,7 @@ const App = () => {
         <Route path="/cursos" element={<Courses />} />
         <Route path="/noticias" element={<News />} />
         <Route path="/asesores-financieros" element={<FinancialAdvisors />} />
+        <Route path="/MemberShip" element={<MemberShip />} />
       </Routes>
       <WhatsAppButton />
     </Router>

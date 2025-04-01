@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import MegaMenu from './MegaMenu';
 import './styles/Navbar.css';
-import logo from '../assets/LOGOS IMPULSO MERVAL-05.png';
+import logo from '../assets/LOGOSIMPULSOMERVAL-05.png';
 
 const Navbar = () => {
   const token = localStorage.getItem('token');
@@ -95,8 +95,9 @@ const Navbar = () => {
           </li>
         ) : (
           <>
-            <li><Link to="/login">Iniciar Sesión</Link></li>
-            <li><Link to="/register">Registrarse</Link></li>
+           {/* <li><Link to="/login">Iniciar Sesión</Link></li>
+            <li><Link to="/register">Registrarse</Link></li>*/}
+            <li><Link to="/MemberShip">Sé miembro</Link></li>
           </>
         )}
       </ul>

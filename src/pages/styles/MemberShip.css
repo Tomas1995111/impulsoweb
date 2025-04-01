@@ -1,0 +1,116 @@
+/* Contenedor Principal */
+.membership-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;  /* Fondo blanco */
+    padding: 80px 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #333;  /* Color de texto oscuro para mayor contraste */
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: none;  /* Eliminar el contorno del contenedor */
+    border-radius: 0;  /* Eliminar los bordes redondeados del contenedor */
+  }
+  
+  /* Títulos */
+  .membership-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #1A8A34;  /* Verde para destacar el título */
+    margin-bottom: 30px;
+    letter-spacing: 1.5px;
+  }
+  
+  .subheading {
+    font-size: 1.5rem;
+    color: rgba(0, 0, 0, 0.7);  /* Color oscuro para el subtítulo */
+    margin-bottom: 40px;
+    font-weight: 400;
+    letter-spacing: 1.2px;
+  }
+  
+  /* Sección de Beneficios */
+  .membership-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 40px;
+  }
+  
+  /* Tarjetas de Beneficios */
+  .membership-item {
+    background-color: #ffffff;
+    color: #333;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);  /* Sombra sutil para las tarjetas */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 320px;
+    margin: 0 auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .membership-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Iconos */
+  .item-icon {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    background-color: #f1f1f1;
+    padding: 10px;
+    
+  }
+  
+  .item-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #1A8A34;
+  }
+  
+  .item-description {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 18px;
+    line-height: 1.5;
+  }
+  
+  /* Botón de CTA */
+  .cta-container {
+    margin-top: 50px;
+  }
+  
+  .cta-button {
+    background-color: #0D6B21;  /* Verde oscuro para el CTA */
+    color: white;
+    padding: 20px 45px;
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .cta-button:hover {
+    background-color: #0A5B19;
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+  }
+  

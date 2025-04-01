@@ -7,12 +7,13 @@ import AdminDashboard from '../components/AdminDashboard';
 //import NewsCard from '../components/NewsCard'; 
 import UserProfile from '../components/UserProfile';
 import Reviews from '../components/Reviews';
+import ContactForm from '../components/ContactForm'
 import Footer from '../components/Footer';
 
 import AnalisisImg from '../assets/imagesCourses/Analisis-tecnico.jpeg';
 import CriptomonedasImg from '../assets/imagesCourses/Criptomonedas-y-Blockchain.jpeg';
 import MoneyImg from '../assets/imagesCourses/Money-Management.jpeg';
-import WelcomeBannerImg from '../assets/diplomado-inversiones-financieras-min-1.jpg'; // Importa la imagen
+import WelcomeBannerImg from '../assets/diplomado-inversiones-financieras-min-1.jpg'; 
 
 const Home = () => {
   const user = JSON.parse(localStorage.getItem('user'));
@@ -49,8 +50,8 @@ const Home = () => {
           <p className="welcome-subtitle">
             Alcanza tu potencial financiero 
           </p>
-          <button className="hero-cta" onClick={() => navigate('/register')}>
-            Abrí tu cuenta
+          <button className="hero-cta" onClick={() => navigate('/MemberShip')}>
+            Impulsate 
           </button>
         </div>
       </div>
@@ -111,6 +112,9 @@ const Home = () => {
       <div className="reviews-section">
       <Reviews />
     </div>
+    <div className="contact-form-container">
+        <ContactForm />
+      </div>
       <Footer />
     </div>
   );

@@ -1,8 +1,8 @@
 /* ---- Banner de Bienvenida ---- */
 .welcome-banner {
   position: relative;
-  width: 100vw; /* 100% del viewport */
-  height: 100vh; /* O 70vh, según prefieras */
+  width: 100vw;
+  height: 70vh; /* Ajusta según tu preferencia */
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -18,17 +18,23 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.035);
   z-index: 1;
 }
 
 /* Contenedor del contenido dentro del banner */
 .banner-overlay {
   position: relative;
-  z-index: 2; /* Para que quede por encima del overlay oscuro */
+  z-index: 2;
   max-width: 800px;
+  margin-top: 10px;
   margin: 0 auto;
   padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 /* Animación FadeInUp */
@@ -47,16 +53,16 @@
 .welcome-title {
   font-size: 3rem;
   font-weight: 700;
-  margin: 0 0 1rem;
-  color: #fff;
+  margin-top: 10px;
+  color: #ffffff;
   line-height: 1.2;
   opacity: 0;
   animation: fadeInUp 0.8s ease forwards;
   animation-delay: 0.2s;
 }
-
 /* Texto con degradado parcial en "Inversiones" */
 .gradient-text {
+  margin-top: 10px;
   display: inline-block;
   background: linear-gradient(90deg, #ffffff 0%, #b2edc3 100%);
   -webkit-background-clip: text;
