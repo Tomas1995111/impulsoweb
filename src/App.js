@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import DollarWidget from './components/DollarWidget'; 
 import WhatsAppButton from './components/WhatsAppButton';
 import Register from './pages/Register';
 import Login from './pages/Login';
@@ -27,7 +28,7 @@ const App = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        
+      
 
         {/* Rutas protegidas para usuarios */}
         <Route
@@ -66,6 +67,7 @@ const App = () => {
         />
 
         {/* Otras rutas públicas */}
+        <Route path="/DollarWidget" element={<DollarWidget />} />
         <Route path="/cursos" element={<Courses />} />
         <Route path="/noticias" element={<News />} />
         <Route path="/asesores-financieros" element={<FinancialAdvisors />} />

@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import './styles/Home.css';
 import Navbar from '../components/Navbar';
 import AdminDashboard from '../components/AdminDashboard';
-import DollarWidget from '../components/DollarWidget';
-import NewsCard from '../components/NewsCard'; 
+//import DollarWidget from '../components/DollarWidget';
+//import NewsCard from '../components/NewsCard'; 
 import UserProfile from '../components/UserProfile';
 import Reviews from '../components/Reviews';
 import Footer from '../components/Footer';
@@ -87,11 +87,11 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="dollar-widget">
+        {/*<div className="dollar-widget">
           <DollarWidget />
-        </div>
+        </div>*/}
 
-        <div className="news-section">
+        {/*<div className="news-section">
           <h2 className="news-section-title">Noticias</h2>
           <NewsCard limit={2} />
           <button 
@@ -100,7 +100,7 @@ const Home = () => {
           >
             Ver más
           </button>
-        </div>
+        </div>*/}
 
         {user && (
           <div className="user-profile-section">

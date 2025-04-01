@@ -31,15 +31,17 @@ body {
   align-items: center;
   padding: 12px 30px;
   z-index: 1000;
-  justify-content: space-between; /* Distribuye los elementos */
+  justify-content: space-between;
 }
+
 /* Contenedor para los elementos de navegación */
 .navbar .nav-links {
   display: flex;
   gap: 25px;
-  justify-content: center; /* Centra los elementos en el menú */
-  flex-grow: 1; /* Asegura que los elementos se distribuyan correctamente */
+  justify-content: center;
+  flex-grow: 1;
 }
+
 /* Logo */
 .navbar .logo img {
   height: 45px;
@@ -54,14 +56,15 @@ body {
 .navbar ul {
   display: flex;
   gap: 25px;
-  justify-content: center; /* Centra los elementos en el menú */
-  flex-grow: 1; /* Asegura que los elementos se distribuyan correctamente */
+  justify-content: center;
+  flex-grow: 1;
 }
 
 .navbar ul li {
   list-style: none;
 }
 
+/* Estilo común para enlaces */
 .navbar a {
   color: #333;
   text-decoration: none;
@@ -69,6 +72,10 @@ body {
   font-weight: 500;
   position: relative;
   transition: color 0.3s ease;
+  padding: 12px 20px;
+  display: inline-block;
+  text-align: left;
+  border-radius: 8px;
 }
 
 /* Subrayado animado */
@@ -85,14 +92,105 @@ body {
   transform: translateX(-50%);
 }
 
-.navbar a:hover,
-.navbar a.active {
-  color: #3CA65C;
-}
-
 .navbar a:hover::after,
 .navbar a.active::after {
   width: 100%;
+}
+
+/* Estilo para el enlace de mega menú "Herramientas" */
+.navbar ul li.mega-link span {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+  padding: 12px 20px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Subrayado animado para el enlace "Herramientas" */
+.navbar ul li.mega-link span::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #3CA65C;
+  transition: width 0.3s ease-in-out;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar ul li.mega-link span:hover::after {
+  width: 100%;
+  
+}
+
+/* Mega menú wrapper */
+.mega-menu-wrapper {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100vw;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px 20px;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  color: #333;
+}
+
+/* Dropdown para "Mi Perfil" */
+.navbar ul li .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 10px;
+  min-width: 150px;
+  display: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.navbar ul li:hover .dropdown-menu {
+  display: block;
+}
+
+/* Estilo del enlace de "Cerrar Sesión" */
+.logout-link {
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: transparent;
+  display: inline-block;
+  width: 100%;
+  border: none;
+}
+
+.logout-link:hover {
+  background-color: #f0f0f0;
+  color: #3CA65C;
+  transform: translateY(-2px);
+}
+
+.logout-link:focus {
+  outline: none;
+}
+
+.logout-link:active {
+  transform: translateY(1px);
 }
 
 /* Menú responsivo */
@@ -114,7 +212,7 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 15px;
-    width: auto; /* Ajustamos el ancho del menú */
+    width: auto;
   }
 
   .navbar ul.active {
@@ -126,75 +224,9 @@ body {
   }
 }
 
-/* Estilo para el enlace de Mi Perfil */
-.navbar ul li.profile-link {
-  position: relative;
-}
-
-/* Estilo del dropdown (Cerrar sesión) */
-.navbar ul li .dropdown-menu {
-  position: absolute;
-  top: 100%; /* Aparece justo debajo del enlace */
-  left: 50%; /* Centra el dropdown debajo del enlace */
-  transform: translateX(-50%); /* Asegura que se quede centrado */
-  background: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  padding: 10px;
-  width: max-content;
-  display: none; /* Oculto por defecto */
-  transition: opacity 0.3s ease-in-out;
-  min-width: 150px;
-}
-
-.navbar ul li:hover .dropdown-menu {
-  display: block; /* Aparece al hacer hover */
-}
-
-/* Estilo del enlace de Cerrar sesión */
-.logout-link {
-  color: #333;
-  font-size: 16px;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 12px 25px;
-  border-radius: 8px; /* Bordes redondeados */
-  transition: all 0.3s ease;
-  background: transparent; /* Fondo transparente */
-  display: inline-block;
-  width: 100%; /* Ajusta el tamaño al 100% */
-  border: none; /* Elimina el borde */
-}
-
-.logout-link:hover {
-  background-color: #f0f0f0;
-  color: #3CA65C;
-  /* No se necesita border-color ya que lo eliminamos */
-  transform: translateY(-2px);
-}
-
-.logout-link:focus {
-  outline: none;
-}
-
-.logout-link:active {
-  transform: translateY(1px);
-}
-
-
-@media (max-width: 768px) {
-  .main-content {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .main-content .card {
-    max-width: 100%;
-  }
-}
 .navbar .profile-links {
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Alinea a la derecha */
+  justify-content: flex-end;
   gap: 25px;
 }
