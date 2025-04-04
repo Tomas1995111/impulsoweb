@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './styles/NewsCard.css';
+import defaultImage from '../assets/LOGOSIMPULSOMERVAL-03.png';
 
 const NewsCard = ({ limit }) => {
   const [news, setNews] = useState([]);
@@ -11,10 +12,17 @@ const NewsCard = ({ limit }) => {
     const fetchNews = async () => {
       try {
         const apiKey = process.env.REACT_APP_NEWS_API_KEY;
-        const response = await axios.get(
-          `https://newsdata.io/api/1/news?apikey=${process.env.REACT_APP_NEWS_API_KEY}&country=ar&language=es&category=business`
-        );
+        const response = await axios.get('https://newsdata.io/api/1/news', {
+          params: {
+            apikey: apiKey,
+            country: 'ar',
+            language: 'es',
+            q: 'finanzas'
+          }
+        });
         
+
+        console.log(response.data); // para debug
         setNews(response.data.results || []);
         setLoading(false);
       } catch (err) {
@@ -39,13 +47,11 @@ const NewsCard = ({ limit }) => {
         <div className="news-container">
           {displayedNews.map((article, index) => (
             <div key={index} className="news-item">
-              {article.image_url && (
                 <img
-                  src={article.image_url}
-                  alt={article.title}
-                  className="news-image"
-                />
-              )}
+                src={article.image_url || defaultImage}
+                alt={article.title}
+                className="news-image"
+              />
               <h3 className="news-title">{article.title}</h3>
               {article.description && (
                 <p className="news-description">{article.description}</p>
