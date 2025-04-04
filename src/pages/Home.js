@@ -14,7 +14,7 @@ import Footer from '../components/Footer';
 import AnalisisImg from '../assets/imagesCourses/Analisis-tecnico.jpeg';
 import CriptomonedasImg from '../assets/imagesCourses/Criptomonedas-y-Blockchain.jpeg';
 import MoneyImg from '../assets/imagesCourses/Money-Management.jpeg';
-import WelcomeBannerImg from '../assets/diplomado-inversiones-financieras-min-1.jpg'; 
+//import WelcomeBannerImg from '../assets/diplomado-inversiones-financieras-min-1.jpg'; 
 
 const Home = () => {
   const user = JSON.parse(localStorage.getItem('user'));
@@ -43,7 +43,11 @@ const Home = () => {
   return (
     <div className="home-container">
       <Navbar />
-      <div className="welcome-banner" style={{ backgroundImage: `url(${WelcomeBannerImg})` }}>
+      <div className="welcome-banner">
+  <video className="banner-video" autoPlay loop muted playsInline>
+    <source src={require('../assets/video/7579564-uhd_4096_2160_25fps.mp4')} type="video/mp4" />
+    Tu navegador no soporta el video.
+  </video>
         <div className="banner-overlay">
           <h1 className="welcome-title">
             <span className="gradient-text">Bienvenido</span> a Impulso Merval
