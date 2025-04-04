@@ -83,8 +83,10 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="logo">
-        <img src={logo} alt="Logo" />
+      <div className="logo-link">
+      <Link to="/" className="logo-link">
+  <img src={logo} alt="Logo" className="logo-img" />
+</Link>
       </div>
       <ul className="nav-links">
         <li>
@@ -186,7 +188,7 @@ const Navbar = () => {
             rel="noopener noreferrer"
             className="free-trial-btn"
           >
-            Prueba Gratis
+            Probar Gratis
           </a>
         </li>
       </ul>
