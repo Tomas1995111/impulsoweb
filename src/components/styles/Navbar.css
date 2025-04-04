@@ -169,7 +169,28 @@ body {
 .navbar ul li:hover .dropdown-menu {
   display: block;
 }
-
+.free-trial-btn {
+  background: linear-gradient(135deg, #3CA65C, #246C3C);
+      color: white  !important;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      
+  }
+  .free-trial-btn:hover {
+    background: linear-gradient(135deg, #246C3C, #1A4D2E);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .free-trial-btn::after {
+    display: none !important; 
+  }
 /* Estilo del enlace de "Cerrar Sesión" */
 .logout-link {
   color: #333;

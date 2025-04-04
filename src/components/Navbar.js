@@ -177,7 +177,18 @@ const Navbar = () => {
               </div>
             )}
           </li>
+          
         )}
+        <li>
+          <a 
+            href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380847596cf970175ae9482893205" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="free-trial-btn"
+          >
+            Prueba Gratis
+          </a>
+        </li>
       </ul>
     </nav>
   );
