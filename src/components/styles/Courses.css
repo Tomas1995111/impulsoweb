@@ -6,7 +6,7 @@
   /* Título de los cursos */
   .courses-title {
     font-size: 1.8rem;
-    color: #246C3C;
+    color: #246C3C; 
     margin-bottom: 30px;
     line-height: 1.5;
   }
@@ -51,7 +51,7 @@
   /* Título del curso */
   .course-title {
     font-size: 1.8rem;
-    color: #246C3C;
+    color: #246C3C; 
     margin-bottom: 12px;
     font-weight: 600;
   }

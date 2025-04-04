@@ -51,8 +51,25 @@
     box-shadow: 0 0 4px rgba(36, 108, 60, 0.2); 
   }
   
-  .view-more-button{
+  .view-course-btn1{
     display: block;
     margin: 20px auto;
-
+    background: linear-gradient(135deg, #3CA65C, #246C3C);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .view-course-btn1:hover {
+    background: linear-gradient(135deg, #246C3C, #1A4D2E);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  .view-course-btn1:focus {
+    outline: none;
   }

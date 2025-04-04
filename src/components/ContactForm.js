@@ -93,7 +93,7 @@ const ContactForm = () => {
         required
       ></textarea>
       
-      <button type="submit" className="view-more-button">Enviar Mensaje</button>
+      <button type="submit" className="view-course-btn1">Enviar Mensaje</button>
     </form>
   );
 };

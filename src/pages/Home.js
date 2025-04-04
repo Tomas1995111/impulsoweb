@@ -6,6 +6,7 @@ import AdminDashboard from '../components/AdminDashboard';
 //import DollarWidget from '../components/DollarWidget';
 //import NewsCard from '../components/NewsCard'; 
 import UserProfile from '../components/UserProfile';
+import Membership from './MemberShip';
 import Reviews from '../components/Reviews';
 import ContactForm from '../components/ContactForm'
 import Footer from '../components/Footer';
@@ -51,8 +52,27 @@ const Home = () => {
             Alcanza tu potencial financiero 
           </p>
           <button className="hero-cta" onClick={() => navigate('/MemberShip')}>
-            Impulsate 
+            más información
           </button>
+          <header className="header">
+  <div className="cta-container">
+    <a 
+      href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380847596cf970175ae9482893205" 
+      target="_blank" 
+      rel="noopener noreferrer"
+    >
+      <button className="cta-button secondary">Probar 1 mes Gratis</button>
+    </a>
+    <a 
+      href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c938084744b7f5301744f2448a604f5" 
+      target="_blank" 
+      rel="noopener noreferrer"
+    >
+      <button className="cta-button">Hazte Miembro Ahora</button>
+    </a>
+  </div>
+</header>
+
         </div>
       </div>
       <div className="content-container">
