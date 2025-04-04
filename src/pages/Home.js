@@ -58,24 +58,7 @@ const Home = () => {
           <button className="hero-cta" onClick={() => navigate('/MemberShip')}>
             más información
           </button>
-          <header className="header">
-  <div className="cta-container">
-    <a 
-      href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380847596cf970175ae9482893205" 
-      target="_blank" 
-      rel="noopener noreferrer"
-    >
-      <button className="cta-button secondary">Probar 1 mes Gratis</button>
-    </a>
-    <a 
-      href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c938084744b7f5301744f2448a604f5" 
-      target="_blank" 
-      rel="noopener noreferrer"
-    >
-      <button className="cta-button">Hazte Miembro Ahora</button>
-    </a>
-  </div>
-</header>
+        
 
         </div>
       </div>
@@ -111,7 +94,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-
+     
         {/*<div className="dollar-widget">
           <DollarWidget />
         </div>*/}
