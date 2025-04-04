@@ -1,61 +1,67 @@
 .mega-menu {
-    display: flex;
-    position: absolute;
-    top: 10%; 
-    left: 0;
-    width: 100vw; 
-    background-color: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px 40px;
-    z-index: 999;
-    justify-content: center;
-  }
-  
-  .mega-menu-column {
-    display: flex;
+  display: flex;
+  flex-direction: column; 
+  position: absolute;
+  top: 100%;
+  left: 0; 
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  z-index: 999;
+  min-width: 200px;
+}
+
+.mega-menu-column {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+
+.mega-menu-column h4 {
+  display: none;
+}
+
+.mega-item {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+/* Subrayado animado */
+.mega-item::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #3CA65C;
+  transition: width 0.3s ease-in-out;
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mega-item:hover::after,
+.mega-item.active::after {
+  width: 100%;
+}
+
+
+@media (max-width: 768px) {
+  .mega-menu {
+    position: static;
+    width: auto;
     flex-direction: column;
-    min-width: 200px;
-    margin-right: 20px;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 10px;
   }
-  
-  .mega-menu-column:last-child {
-    margin-right: 0;
+
+  .mega-menu-column {
+    margin: 0 0 20px 0;
   }
-  
-  .mega-menu-column h4 {
-    margin-bottom: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #3CA65C;
-    text-align: left;
-  }
-  
-  .mega-item {
-    display: block;
-    margin-bottom: 8px;
-    color: #333;
-    text-decoration: none;
-    transition: color 0.2s ease;
-    
-  }
-  
-  .mega-item:hover {
-    color: #3CA65C;
-  }
-  
-  /* Responsivo */
-  @media (max-width: 768px) {
-    .mega-menu {
-      position: static;
-      width: auto;
-      flex-direction: column;
-      border-radius: 0;
-      box-shadow: none;
-      padding: 10px;
-    }
-    
-    .mega-menu-column {
-      margin: 0 0 20px 0;
-    }
-  }
-  
+}

@@ -78,7 +78,7 @@ body {
   border-radius: 8px;
 }
 
-/* Subrayado animado */
+/* Subrayado animado para enlaces */
 .navbar a::after {
   content: "";
   display: block;
@@ -92,12 +92,16 @@ body {
   transform: translateX(-50%);
 }
 
+/* Al pasar el mouse o si el enlace tiene la clase active */
 .navbar a:hover::after,
 .navbar a.active::after {
   width: 100%;
 }
+.navbar ul li.mega-link {
+  position: relative;
+}
 
-/* Estilo para el enlace de mega menú "Herramientas" */
+/* Estilo para el enlace del mega menú ("Herramientas" y "Servicios") */
 .navbar ul li.mega-link span {
   color: #333;
   text-decoration: none;
@@ -111,7 +115,7 @@ body {
   border-radius: 8px;
 }
 
-/* Subrayado animado para el enlace "Herramientas" */
+/* Subrayado animado para el span del mega menú */
 .navbar ul li.mega-link span::after {
   content: "";
   display: block;
@@ -125,25 +129,26 @@ body {
   transform: translateX(-50%);
 }
 
-.navbar ul li.mega-link span:hover::after {
+/* Al pasar el mouse o si el span tiene la clase active */
+.navbar ul li.mega-link span:hover::after,
+.navbar ul li.mega-link span.active::after {
   width: 100%;
-  
 }
 
 /* Mega menú wrapper */
 .mega-menu-wrapper {
   position: absolute;
-  top: 100%;
+  top: 120%;
   left: 0;
-  width: 100vw;
   background-color: #fff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 20px 20px;
+  padding: 5px;
   z-index: 999;
   display: flex;
-  justify-content: space-between;
-  color: #333;
+  flex-direction: column; 
+  min-width: 200px; 
 }
+
 
 /* Dropdown para "Mi Perfil" */
 .navbar ul li .dropdown-menu {
@@ -158,6 +163,7 @@ body {
   min-width: 150px;
   display: none;
   transition: opacity 0.3s ease-in-out;
+  
 }
 
 .navbar ul li:hover .dropdown-menu {

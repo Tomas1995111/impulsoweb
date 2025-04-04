@@ -1,10 +1,11 @@
 import React, { useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import MegaMenu from './MegaMenu';
 import './styles/Navbar.css';
 import logo from '../assets/LOGOSIMPULSOMERVAL-05.png';
 
 const Navbar = () => {
+  const location = useLocation();
   const token = localStorage.getItem('token');
   const role = localStorage.getItem('role');
 
@@ -14,7 +15,30 @@ const Navbar = () => {
   const megaMenuTimerRef = useRef(null);
   const servicesMenuTimerRef = useRef(null);  
 
-  // Maneja el mouse enter para el menú de "Herramientas"
+  // Secciones para el mega menú de "Herramientas"
+  const megaMenuSections = [
+    {
+      title: '',
+      items: [
+        { label: 'Cotización Dólar', link: '/DollarWidget' },
+        { label: 'Últimas Noticias', link: '/noticias' },
+      ],
+    },
+    
+  ];
+
+  // Secciones para el mega menú de "Servicios"
+  const servicesMenuSections = [
+    {
+      title: '',
+      items: [
+        { label: 'Cursos', link: '/cursos' },
+        { label: 'Sé miembro', link: '/MemberShip' },
+      ],
+    },
+  ];
+
+  // Funciones para mostrar/ocultar mega menús
   const handleMegaMenuMouseEnter = () => {
     if (megaMenuTimerRef.current) {
       clearTimeout(megaMenuTimerRef.current);
@@ -22,14 +46,12 @@ const Navbar = () => {
     setMegaMenuVisible(true); 
   };
 
-  // Maneja el mouse leave para el menú de "Herramientas"
   const handleMegaMenuMouseLeave = () => {
     megaMenuTimerRef.current = setTimeout(() => {
       setMegaMenuVisible(false); 
     }, 200);
   };
 
-  // Maneja el mouse enter para el menú de "Servicios"
   const handleServicesMenuMouseEnter = () => {
     if (servicesMenuTimerRef.current) {
       clearTimeout(servicesMenuTimerRef.current);  
@@ -37,7 +59,6 @@ const Navbar = () => {
     setServicesMenuVisible(true); 
   };
 
-  // Maneja el mouse leave para el menú de "Servicios"
   const handleServicesMenuMouseLeave = () => {
     servicesMenuTimerRef.current = setTimeout(() => {
       setServicesMenuVisible(false);
@@ -51,32 +72,14 @@ const Navbar = () => {
     window.location.href = '/';
   };
 
-  // Sección de menú para "Herramientas"
-  const megaMenuSections = [
-    {
-      title: 'Cotizaciones',
-      items: [
-        { label: 'Cotización Dólar', link: '/DollarWidget' },
-      ],
-    },
-    {
-      title: 'Noticias',
-      items: [
-        { label: 'Últimas Noticias', link: '/noticias' },
-      ],
-    },
-  ];
+   
+  const isActiveHerramientas = megaMenuSections.some(section =>
+    section.items.some(item => item.link === location.pathname)
+  );
 
-  // Sección de menú para "Servicios"
-  const servicesMenuSections = [
-    {
-      title: 'Opciones de Servicios',
-      items: [
-        { label: 'Cursos', link: '/cursos' },
-        { label: 'Sé miembro', link: '/MemberShip' },
-      ],
-    },
-  ];
+  const isActiveServicios = servicesMenuSections.some(section =>
+    section.items.some(item => item.link === location.pathname)
+  );
 
   return (
     <nav className="navbar">
@@ -84,8 +87,21 @@ const Navbar = () => {
         <img src={logo} alt="Logo" />
       </div>
       <ul className="nav-links">
-        <li><Link to="/">Inicio</Link></li>
-        {role === 'admin' && <li><Link to="/dashboard">Dashboard</Link></li>}
+        <li>
+          <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
+            Inicio
+          </Link>
+        </li>
+        {role === 'admin' && (
+          <li>
+            <Link 
+              to="/dashboard" 
+              className={location.pathname === '/dashboard' ? 'active' : ''}
+            >
+              Dashboard
+            </Link>
+          </li>
+        )}
 
         {/* Menú de "Herramientas" */}
         <li 
@@ -93,7 +109,9 @@ const Navbar = () => {
           onMouseEnter={handleMegaMenuMouseEnter} 
           onMouseLeave={handleMegaMenuMouseLeave} 
         >
-          <span>Herramientas</span>
+          <span className={isActiveHerramientas ? 'active' : ''}>
+            Herramientas
+          </span>
           {megaMenuVisible && (
             <div 
               className="mega-menu-wrapper"
@@ -111,7 +129,9 @@ const Navbar = () => {
           onMouseEnter={handleServicesMenuMouseEnter} 
           onMouseLeave={handleServicesMenuMouseLeave}
         >
-          <span>Servicios</span>
+          <span className={isActiveServicios ? 'active' : ''}>
+            Servicios
+          </span>
           {servicesMenuVisible && (
             <div 
               className="mega-menu-wrapper"
@@ -123,16 +143,30 @@ const Navbar = () => {
           )}
         </li>
 
-        <li><Link to="/asesores-financieros">Asesores Financieros</Link></li>
+        <li>
+          <Link 
+            to="/asesores-financieros" 
+            className={location.pathname === '/asesores-financieros' ? 'active' : ''}
+          >
+            Asesores Financieros
+          </Link>
+        </li>
 
         {/* Menú de perfil y cierre de sesión */}
-        {token ? (
+        {token && (
           <li 
             className="profile-link"
             onMouseEnter={() => setDropdownVisible(true)} 
             onMouseLeave={() => setDropdownVisible(false)}
           >
-            <Link to={role === 'admin' ? '/admin-profile' : '/user-profile'}>
+            <Link 
+              to={role === 'admin' ? '/admin-profile' : '/user-profile'}
+              className={
+                (location.pathname === '/admin-profile' || location.pathname === '/user-profile') 
+                  ? 'active' 
+                  : ''
+              }
+            >
               Mi Perfil
             </Link>
             {dropdownVisible && (
@@ -143,7 +177,7 @@ const Navbar = () => {
               </div>
             )}
           </li>
-        ) : null}
+        )}
       </ul>
     </nav>
   );
