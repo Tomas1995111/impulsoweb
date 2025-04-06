@@ -40,8 +40,11 @@ const NewsCard = ({ limit }) => {
   return (
     <div className="news-card">
       {loading ? (
-        <p>Cargando noticias...</p>
-      ) : error ? (
+  <div className="spinner-container">
+    <div className="spinner"></div>
+    <p className="loading-text">Cargando noticias...</p>
+  </div>
+) : error ? (
         <p>{error}</p>
       ) : (
         <div className="news-container">
