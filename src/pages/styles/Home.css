@@ -34,8 +34,15 @@
   background: rgba(0, 0, 0, 0.4); 
   padding: 20px;
   z-index: 1;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.2s;
 }
-
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
 /* Animación FadeInUp */
 @keyframes fadeInUp {
   0% {
@@ -57,7 +64,7 @@
   line-height: 1.2;
   opacity: 0;
   animation: fadeInUp 0.8s ease forwards;
-  animation-delay: 0.2s;
+  animation-delay: 0.1s;
 }
 /* Texto con degradado parcial en "Inversiones" */
 .gradient-text {
@@ -210,40 +217,6 @@
   background-color: #3CA65C;
 }
 
-/* ---- Sección de Noticias ---- */
-.news-section {
-  margin-top: 30px;
-  text-align: center;
-}
-
-.news-section-title {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-/* ---- Botón de Ver Más ---- */
-.view-more-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  background-color: transparent;
-  color: #3CA65C;
-  border: 2px solid #3CA65C;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.view-more-button:hover {
-  background-color: #3CA65C; /* Fondo verde */
-  color: white; /* Texto blanco */
-  transform: scale(1.05); /* Ligera animación de escala */
-}
-
-.view-more-button:active {
-  transform: scale(1); /* Restaura la escala cuando se hace clic */
-}
 
 /* ---- Perfil del Usuario ---- */
 .user-profile-section {
