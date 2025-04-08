@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import MegaMenu from './MegaMenu';
 import './styles/Navbar.css';
@@ -11,9 +11,11 @@ const Navbar = () => {
 
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [megaMenuVisible, setMegaMenuVisible] = useState(false);
-  const [servicesMenuVisible, setServicesMenuVisible] = useState(false); 
+  const [servicesMenuVisible, setServicesMenuVisible] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); 
   const megaMenuTimerRef = useRef(null);
   const servicesMenuTimerRef = useRef(null);  
+  const navRef = useRef(null); // Referencia al contenedor de la navbar
 
   // Secciones para el mega menú de "Herramientas"
   const megaMenuSections = [
@@ -24,7 +26,6 @@ const Navbar = () => {
         { label: 'Últimas Noticias', link: '/noticias' },
       ],
     },
-    
   ];
 
   // Secciones para el mega menú de "Servicios"
@@ -40,9 +41,7 @@ const Navbar = () => {
 
   // Funciones para mostrar/ocultar mega menús
   const handleMegaMenuMouseEnter = () => {
-    if (megaMenuTimerRef.current) {
-      clearTimeout(megaMenuTimerRef.current);
-    }
+    if (megaMenuTimerRef.current) clearTimeout(megaMenuTimerRef.current);
     setMegaMenuVisible(true); 
   };
 
@@ -53,9 +52,7 @@ const Navbar = () => {
   };
 
   const handleServicesMenuMouseEnter = () => {
-    if (servicesMenuTimerRef.current) {
-      clearTimeout(servicesMenuTimerRef.current);  
-    }
+    if (servicesMenuTimerRef.current) clearTimeout(servicesMenuTimerRef.current);  
     setServicesMenuVisible(true); 
   };
 
@@ -72,7 +69,6 @@ const Navbar = () => {
     window.location.href = '/';
   };
 
-   
   const isActiveHerramientas = megaMenuSections.some(section =>
     section.items.some(item => item.link === location.pathname)
   );
@@ -80,15 +76,40 @@ const Navbar = () => {
   const isActiveServicios = servicesMenuSections.some(section =>
     section.items.some(item => item.link === location.pathname)
   );
+// menú mobile
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  // Cierra el menú mobile si se hace click fuera del nav
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isMobileMenuOpen &&
+        navRef.current &&
+        !navRef.current.contains(event.target)
+      ) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isMobileMenuOpen]);
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" ref={navRef}>
       <div className="logo-link">
-      <Link to="/" className="logo-link">
-  <img src={logo} alt="Logo" className="logo-img" />
-</Link>
+        <Link to="/" className="logo-link">
+          <img src={logo} alt="Logo" className="logo-img" />
+        </Link>
       </div>
-      <ul className="nav-links">
+
+      
+      <button className="hamburger" onClick={toggleMobileMenu}>
+        ☰
+      </button>
+
+      <ul className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
         <li>
           <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
             Inicio
@@ -179,7 +200,6 @@ const Navbar = () => {
               </div>
             )}
           </li>
-          
         )}
         <li>
           <a 

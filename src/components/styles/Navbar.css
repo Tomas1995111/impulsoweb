@@ -29,18 +29,9 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
-  
-  z-index: 1000;
   justify-content: space-between;
-}
-
-
-/* Contenedor para los elementos de navegación */
-.navbar .nav-links {
-  display: flex;
-  gap: 25px;
-  justify-content: center;
-  flex-grow: 1;
+  z-index: 1000;
+  padding: 0 20px;
 }
 
 /* Logo */
@@ -55,27 +46,18 @@ body {
   display: block;
   transition: transform 0.3s ease;
   text-decoration: none !important;
-
 }
 
 .logo-img:hover {
   transform: scale(1.1) rotate(-2deg);
-  text-decoration: none !important;
-
-}
-.logo-link::after {
-  display: none !important;
 }
 
 /* Menú de navegación */
-.navbar ul {
+.nav-links {
   display: flex;
   gap: 25px;
   justify-content: center;
   flex-grow: 1;
-}
-
-.navbar ul li {
   list-style: none;
 }
 
@@ -85,15 +67,13 @@ body {
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
-  position: relative;
-  transition: color 0.3s ease;
   padding: 12px 20px;
+  position: relative;
   display: inline-block;
-  text-align: left;
   border-radius: 8px;
+  transition: color 0.3s ease;
 }
 
-/* Subrayado animado para enlaces */
 .navbar a::after {
   content: "";
   display: block;
@@ -107,30 +87,29 @@ body {
   transform: translateX(-50%);
 }
 
-/* Al pasar el mouse o si el enlace tiene la clase active */
 .navbar a:hover::after,
 .navbar a.active::after {
   width: 100%;
 }
+
+/* Mega menú */
 .navbar ul li.mega-link {
   position: relative;
 }
 
-/* Estilo para el enlace del mega menú ("Herramientas" y "Servicios") */
 .navbar ul li.mega-link span {
   color: #333;
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
-  position: relative;
-  transition: color 0.3s ease;
   padding: 12px 20px;
+  position: relative;
   display: inline-block;
-  text-align: center;
   border-radius: 8px;
+  transition: color 0.3s ease;
+  text-align: center;
 }
 
-/* Subrayado animado para el span del mega menú */
 .navbar ul li.mega-link span::after {
   content: "";
   display: block;
@@ -144,13 +123,11 @@ body {
   transform: translateX(-50%);
 }
 
-/* Al pasar el mouse o si el span tiene la clase active */
 .navbar ul li.mega-link span:hover::after,
 .navbar ul li.mega-link span.active::after {
   width: 100%;
 }
 
-/* Mega menú wrapper */
 .mega-menu-wrapper {
   position: absolute;
   top: 120%;
@@ -160,10 +137,9 @@ body {
   padding: 5px;
   z-index: 999;
   display: flex;
-  flex-direction: column; 
-  min-width: 200px; 
+  flex-direction: column;
+  min-width: 200px;
 }
-
 
 /* Dropdown para "Mi Perfil" */
 .navbar ul li .dropdown-menu {
@@ -178,35 +154,33 @@ body {
   min-width: 150px;
   display: none;
   transition: opacity 0.3s ease-in-out;
-  
 }
 
 .navbar ul li:hover .dropdown-menu {
   display: block;
 }
+
+/* Botón de acción */
 .free-trial-btn {
   background: linear-gradient(135deg, #3CA65C, #246C3C);
-      color: white  !important;
-      font-size: 1rem;
-      font-weight: 600;
-      padding: 8px 20px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      
-  }
-  .free-trial-btn:hover {
-    background: linear-gradient(135deg, #246C3C, #1A4D2E);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  }
-  
-  .free-trial-btn::after {
-    display: none !important; 
-  }
-/* Estilo del enlace de "Cerrar Sesión" */
+  color: white !important;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.free-trial-btn:hover {
+  background: linear-gradient(135deg, #246C3C, #1A4D2E);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Enlace de "Cerrar Sesión" */
 .logout-link {
   color: #333;
   font-size: 16px;
@@ -227,42 +201,48 @@ body {
   transform: translateY(-2px);
 }
 
-.logout-link:focus {
-  outline: none;
-}
-
-.logout-link:active {
-  transform: translateY(1px);
-}
-
-/* Menú responsivo */
-.menu-toggle {
+/* Menú responsivo: Botón Hamburguesa y menú dropdown */
+.hamburger {
   display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
   cursor: pointer;
-  font-size: 24px;
-  color: #333;
+  padding: 10px;
+  margin-right: 20px;
+  z-index: 1001;
 }
 
 @media (max-width: 768px) {
-  .navbar ul {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    padding: 15px;
-    width: auto;
+  .hamburger {
+    display: block;
   }
 
-  .navbar ul.active {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    flex-direction: column;
+    width: 200px;
+    padding: 1rem;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .nav-links.open {
     display: flex;
   }
 
-  .menu-toggle {
-    display: block;
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  /* Para que el mega-menu en mobile esté en posición estática */
+  .mega-menu-wrapper {
+    position: static;
+    box-shadow: none;
   }
 }
 
