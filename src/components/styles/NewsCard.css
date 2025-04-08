@@ -109,3 +109,8 @@
   background: transparent; 
   margin: 20px 0;
 }
+@media (max-width: 768px) {
+  .news-container {
+    grid-template-columns: 1fr;
+  }
+}
