@@ -25,15 +25,17 @@ const DollarWidget = () => {
   }, []);
 
   const renderCard = (title, compra, venta) => (
-    <div className="card">
+    <div className="card" key={title}>
       <h4>{title}</h4>
       <div className="rate-info">
         <div className="rate-item">
           <p><strong>Compra:</strong> ${compra}</p>
         </div>
-        <div className="rate-item">
-          <p><strong>Venta:</strong> ${venta}</p>
-        </div>
+        {venta && (
+          <div className="rate-item">
+            <p><strong>Venta:</strong> ${venta}</p>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -44,10 +46,17 @@ const DollarWidget = () => {
       {error ? (
         <p className="error-message">{`Error: ${error}`}</p>
       ) : !rates ? (
-        <div className="spinner-container">
-        <div className="spinner"></div>
-        <p className="loading-text">Cargando cotizaciones...</p>
-      </div>
+        <div className="rates-container">
+          {Array.from({ length: 6 }).map((_, index) => (
+            <div className="card skeleton-card" key={index}>
+              <div className="skeleton-title shimmer"></div>
+              <div className="rate-info">
+                <div className="skeleton-text shimmer"></div>
+                <div className="skeleton-text shimmer"></div>
+              </div>
+            </div>
+          ))}
+        </div>
       ) : (
         <div className="rates-container">
           {rates.dolarBlue && renderCard('Dólar Blue', rates.dolarBlue.compra, rates.dolarBlue.venta)}
