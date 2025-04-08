@@ -12,7 +12,7 @@ import UserProfile from './components/UserProfile';
 import AdminDashboard from './components/AdminDashboard'; // Panel de admin
 import AdminProfile from './components/AdminProfile'; // Perfil de admin
 import AdminProtectedRoute from './components/AdminProtectedRoute'; // Ruta protegida para admin
-
+import ScrollToTopButton from './components/ScrollToTopButton';
 // Páginas adicionales
 import Courses from './components/Courses'; // Página para /cursos
 import News from './components/NewsCard'; // Página para /noticias
@@ -73,7 +73,9 @@ const App = () => {
         <Route path="/asesores-financieros" element={<FinancialAdvisors />} />
         <Route path="/MemberShip" element={<MemberShip />} />
       </Routes>
+      <ScrollToTopButton />
       <WhatsAppButton />
+      
     </Router>
   );
 };
