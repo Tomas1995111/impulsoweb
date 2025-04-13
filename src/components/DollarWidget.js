@@ -8,7 +8,7 @@ const DollarWidget = () => {
   useEffect(() => {
     const fetchRates = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/dollar/price");
+        const response = await fetch("http://3.139.82.45:3000/api/dollar/price");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

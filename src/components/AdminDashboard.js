@@ -16,7 +16,7 @@ const AdminDashboard = () => {
 
     const token = localStorage.getItem('token');
     const api = axios.create({
-      baseURL: 'http://localhost:3000/api/admin',
+      baseURL: 'http://3.139.82.45:3000/api/admin',
       headers: {
         'Authorization': `Bearer ${token}`,
       },

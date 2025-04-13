@@ -24,7 +24,7 @@ const UserProfile = () => {
 
     console.log("Token obtenido:", token);
 
-    axios.get('http://localhost:3000/api/user-profile', {
+    axios.get('http://3.139.82.45:3000/api/user-profile', {
       headers: {
         Authorization: `Bearer ${token}`
       }

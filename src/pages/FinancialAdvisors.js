@@ -9,7 +9,7 @@ const FinancialAdvisors = () => {
       <h1>Asesoría Personalizada</h1>
       <p>¿Necesitás ayuda? Contactanos por WhatsApp y te ayudamos al instante.</p>
       <a 
-        href="https://wa.me/YOUR_PHONE_NUMBER" 
+        href="https://wa.me/5491124035535" 
         target="_blank" 
         rel="noopener noreferrer"
         className="whatsapp-btn"
