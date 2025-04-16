@@ -13,7 +13,7 @@ const Dashboard = () => {
     }
 
     const api = axios.create({
-      baseURL: 'http://3.139.82.45:3000/api',
+      baseURL: 'https://impulsomerval.duckdns.org/api',
       headers: {
         'Authorization': `Bearer ${token}`,
       },

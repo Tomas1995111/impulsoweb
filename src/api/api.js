@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://3.139.82.45:3000/api', // Verifica la URL de tu API
+  baseURL: 'https://impulsomerval.duckdns.org/api', // Verifica la URL de tu API
 });
 
 // Interceptor para agregar token de acceso a las solicitudes

@@ -16,7 +16,7 @@ const AdminDashboard = () => {
 
     const token = localStorage.getItem('token');
     const api = axios.create({
-      baseURL: 'http://3.139.82.45:3000/api/admin',
+      baseURL: 'https://impulsomerval.duckdns.org/api/admin',
       headers: {
         'Authorization': `Bearer ${token}`,
       },
