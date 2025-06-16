@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import DollarWidget from './components/DollarWidget'; 
 import WhatsAppButton from './components/WhatsAppButton';
@@ -20,7 +20,7 @@ import FinancialAdvisors from './pages/FinancialAdvisors';
 import MemberShip from './pages/MemberShip';
 const App = () => {
   return (
-    <Router>
+    <Router basename="/ImpulsoMerval-Front">
       <Navbar />
       <Routes>
         {/* Rutas públicas */}
