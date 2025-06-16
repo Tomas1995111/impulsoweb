@@ -8,13 +8,33 @@ const DollarWidget = () => {
   useEffect(() => {
     const fetchRates = async () => {
       try {
-        const response = await fetch("https://impulsomerval.duckdns.org/api/dollar/price");
+        const response = await fetch('https://dolarapi.com/v1/dolares');
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        console.log('Datos recibidos:', data);
-        setRates(data);
+        console.log('Datos recibidos desde dolarapi:', data);
+
+        // Procesamos los datos igual que lo hacías en el backend
+        const mappedRates = {
+          dolarBlue: data.find(d => d.nombre === 'Blue'),
+          dolarOficial: data.find(d => d.nombre === 'Oficial'),
+          dolarMep: data.find(d => d.nombre === 'Bolsa'),
+          liqui: data.find(d => d.nombre === 'Contado con Liqui'),
+          tarjeta: data.find(d => d.nombre === 'Tarjeta'),
+          cripto: data.find(d => d.nombre === 'Cripto'),
+        };
+
+        const formattedRates = {
+          dolarBlue: { compra: mappedRates.dolarBlue?.compra, venta: mappedRates.dolarBlue?.venta },
+          dolarOficial: { compra: mappedRates.dolarOficial?.compra, venta: mappedRates.dolarOficial?.venta },
+          dolarMep: { compra: mappedRates.dolarMep?.compra, venta: mappedRates.dolarMep?.venta },
+          liqui: { compra: mappedRates.liqui?.compra, venta: mappedRates.liqui?.venta },
+          tarjeta: { compra: mappedRates.tarjeta?.compra, venta: mappedRates.tarjeta?.venta },
+          cripto: { compra: mappedRates.cripto?.compra, venta: mappedRates.cripto?.venta }
+        };
+
+        setRates(formattedRates);
       } catch (err) {
         console.error("Error al obtener los datos:", err);
         setError(err.message);
