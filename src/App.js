@@ -9,18 +9,18 @@ import Dashboard from './pages/Dashboard';
 import ProtectedRoute from './pages/ProtectedRoute';
 import Home from './pages/Home';
 import UserProfile from './components/UserProfile';
-import AdminDashboard from './components/AdminDashboard'; // Panel de admin
-import AdminProfile from './components/AdminProfile'; // Perfil de admin
-import AdminProtectedRoute from './components/AdminProtectedRoute'; // Ruta protegida para admin
+import AdminDashboard from './components/AdminDashboard';
+import AdminProfile from './components/AdminProfile';
+import AdminProtectedRoute from './components/AdminProtectedRoute';
 import ScrollToTopButton from './components/ScrollToTopButton';
-// Páginas adicionales
-import Courses from './components/Courses'; // Página para /cursos
-import News from './components/NewsCard'; // Página para /noticias
+import Courses from './components/Courses';
+import News from './components/NewsCard';
 import FinancialAdvisors from './pages/FinancialAdvisors';
 import MemberShip from './pages/MemberShip';
+
 const App = () => {
   return (
-    <Router basename="/ImpulsoMerval-Front">
+    <Router> 
       <Navbar />
       <Routes>
         {/* Rutas públicas */}
@@ -28,43 +28,30 @@ const App = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-      
 
         {/* Rutas protegidas para usuarios */}
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/user-profile"
-          element={
-            <ProtectedRoute>
-              <UserProfile />
-            </ProtectedRoute>
-          }
-        />
+        <Route path="/dashboard" element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        } />
+        <Route path="/user-profile" element={
+          <ProtectedRoute>
+            <UserProfile />
+          </ProtectedRoute>
+        } />
 
         {/* Rutas protegidas para administradores */}
-        <Route
-          path="/admin-dashboard"
-          element={
-            <AdminProtectedRoute>
-              <AdminDashboard />
-            </AdminProtectedRoute>
-          }
-        />
-        <Route
-          path="/admin-profile"
-          element={
-            <AdminProtectedRoute>
-              <AdminProfile />
-            </AdminProtectedRoute>
-          }
-        />
+        <Route path="/admin-dashboard" element={
+          <AdminProtectedRoute>
+            <AdminDashboard />
+          </AdminProtectedRoute>
+        } />
+        <Route path="/admin-profile" element={
+          <AdminProtectedRoute>
+            <AdminProfile />
+          </AdminProtectedRoute>
+        } />
 
         {/* Otras rutas públicas */}
         <Route path="/DollarWidget" element={<DollarWidget />} />
@@ -75,7 +62,6 @@ const App = () => {
       </Routes>
       <ScrollToTopButton />
       <WhatsAppButton />
-      
     </Router>
   );
 };
