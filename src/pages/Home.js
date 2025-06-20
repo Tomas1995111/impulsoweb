@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import './styles/Home.css';
 import Navbar from '../components/Navbar';
 import AdminDashboard from '../components/AdminDashboard';
+import LeadSection from '../components/LeadSection';
+import GuideLead from '../components/GuideLead';
 //import DollarWidget from '../components/DollarWidget';
 //import NewsCard from '../components/NewsCard'; 
 import UserProfile from '../components/UserProfile';
@@ -62,6 +64,7 @@ const Home = () => {
 
         </div>
       </div>
+      <LeadSection />
       <div className="content-container">
       
 
@@ -119,6 +122,7 @@ const Home = () => {
       <div className="reviews-section">
       <Reviews />
     </div>
+    <GuideLead/>
     <div className="contact-form-container">
         <ContactForm />
       </div>
