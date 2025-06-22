@@ -65,13 +65,51 @@ const Home = () => {
   <p>Incluye guía en PDF para empezar hoy mismo.</p>
   <p>+150 inversores ya se sumaron. El 97% renueva mes a mes 🚀</p>
 </div>
-
-
-
-
         </div>
       </div>
       <LeadSection />
+      <section className="benefits-section">
+  <div className="benefits-grid">
+
+    <div className="benefit-card">
+      <span className="emoji">⏱️</span>
+      <h3>Solo 1 min/día</h3>
+      <p>Filtramos el ruido: recibís lo esencial y seguís con tu vida.</p>
+    </div>
+
+    <div className="benefit-card">
+      <span className="emoji">🚨</span>
+      <h3>Alertas al instante</h3>
+      <p>Señales claras con zona de compra, stop y objetivos.</p>
+    </div>
+
+    <div className="benefit-card">
+      <span className="emoji">🎓</span>
+      <h3>Aprendé de cero</h3>
+      <p>Mini-clases y glosario sin jerga bursátil.</p>
+    </div>
+
+    <div className="benefit-card">
+      <span className="emoji">🤝</span>
+      <h3>Comunidad real</h3>
+      <p>+150 inversores activos; 97 % renueva cada mes.</p>
+    </div>
+
+    <div className="benefit-card">
+      <span className="emoji">📊</span>
+      <h3>Carteras listas</h3>
+      <p>Estrategias probadas y calendario de balances.</p>
+    </div>
+
+    <div className="benefit-card">
+      <span className="emoji">🔓</span>
+      <h3>Probá sin riesgo</h3>
+      <p>7 días gratis; cancelás cuando quieras.</p>
+    </div>
+
+  </div>
+</section>
+
       <div className="content-container">
       
 
