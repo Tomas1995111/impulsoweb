@@ -51,16 +51,23 @@ const Home = () => {
     Tu navegador no soporta el video.
   </video>
         <div className="banner-overlay">
-          <h1 className="welcome-title">
-            <span className="gradient-text">Bienvenido</span> a Impulso Merval
-          </h1>
-          <p className="welcome-subtitle">
-            Alcanza tu potencial financiero 
-          </p>
-          <button className="hero-cta" onClick={() => navigate('/MemberShip')}>
-            más información
-          </button>
-        
+<h1 className="welcome-title">
+  Invertí en la Bolsa Argentina
+</h1>
+<h2 className="welcome-subtitle">
+  en solo <strong>5 minutos al día</strong>
+</h2>
+
+<button className="view-course-btn" onClick={() => navigate('/MemberShip')}>
+  Probá 7 días GRATIS
+</button>
+<div className="hero-mini-block">
+  <p>Incluye guía en PDF para empezar hoy mismo.</p>
+  <p>+150 inversores ya se sumaron. El 97% renueva mes a mes 🚀</p>
+</div>
+
+
+
 
         </div>
       </div>
