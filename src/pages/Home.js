@@ -83,8 +83,7 @@ const Home = () => {
         </div>
       </div>
 
-      <LeadSection />
-      <MembershipPlans />
+      {/*<LeadSection />*/}
       <section className="benefits-section">
         <div className="benefits-grid">
           {[
@@ -103,7 +102,7 @@ const Home = () => {
           ))}
         </div>
       </section>
-
+      <MembershipPlans />
       <div className="content-container">
         {role === 'admin' && (
           <div className="dashboard-section">
