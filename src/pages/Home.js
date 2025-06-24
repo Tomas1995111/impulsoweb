@@ -11,6 +11,7 @@ import ContactForm from '../components/ContactForm';
 import MembershipPlans from '../components/MembershipPlans';
 import Footer from '../components/Footer';
 import ExitIntentModal from '../components/ExitIntentModal';
+import FaqAccordion from '../components/FaqAccordion';
 
 import AnalisisImg from '../assets/imagesCourses/Analisis-tecnico.jpeg';
 import CriptomonedasImg from '../assets/imagesCourses/Criptomonedas-y-Blockchain.jpeg';
@@ -144,6 +145,7 @@ const Home = () => {
       <div className="reviews-section">
         <Reviews />
       </div>
+      <FaqAccordion/>
 
       {/*<GuideLead />*/}
 
