@@ -147,9 +147,9 @@ const Home = () => {
 
       <GuideLead />
 
-      <div className="contact-form-container">
+      {/*<div className="contact-form-container">
         <ContactForm />
-      </div>
+      </div>*/}
 
       <Footer />
       <ExitIntentModal />
