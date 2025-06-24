@@ -84,26 +84,30 @@
     color: #888;
   }
 .prefooter-banner {
-  background-color: #ffffff; /* gris medio, más claro que el footer */
+  background-color: #f3f4f6;
+  padding: 4rem 1.5rem;
   text-align: center;
-  padding: 3rem 1rem;
-  color: rgb(46, 46, 46);
+  border-top: 1px solid #e5e7eb;
 }
 
-.prefooter-banner h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  line-height: 1.4;
+.prefooter-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.prefooter-sub {
+  font-size: 1.125rem;
+  color: #374151;
+  margin-bottom: 2rem;
 }
 
 .prefooter-banner .resaltado {
-  color: #2c8d48;
-
+  color: #2C8D48;
+  font-weight: 600;
 }
 
-
- 
   /* Responsive */
   @media (max-width: 600px) {
     .footer-links {

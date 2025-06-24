@@ -6,13 +6,12 @@ const Footer = () => {
   return (
     <>
       {/* Bloque de promoción */}
-      <div className="prefooter-banner">
-        <h2>
-          Sumate hoy y recibí <br />
-          el próximo resumen <span className="resaltado">antes de la apertura</span>
-        </h2>
-        <a href="/MemberShip" className="view-course-btn">Probá 7 días gratis</a>
-      </div>
+    <div className="prefooter-banner">
+  <h2 className="prefooter-title">¿Querés empezar antes que abran los mercados?</h2>
+  <p className="prefooter-sub">Sumate gratis y recibí el resumen diario <span className="resaltado">antes de las 9 AM</span>.</p>
+  <a href="/MemberShip" className="view-course-btn">Probá 7 días gratis</a>
+</div>
+
 
       {/* Footer original */}
       <footer className="footer">
