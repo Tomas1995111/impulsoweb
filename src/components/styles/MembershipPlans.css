@@ -17,16 +17,7 @@
   gap: 2rem;
   max-width: 1000px;
   margin: 0 auto;
-}
-.plan button {
-  margin-top: auto;
-}
-
-@media (min-width: 768px) {
-  .plans-container {
-    flex-direction: row;
-    justify-content: center;
-  }
+  align-items: center; /* asegura que los planes estén centrados en mobile */
 }
 
 .plan {
@@ -34,10 +25,14 @@
   border: 1.5px solid #3CA65C;
   border-radius: 1rem;
   padding: 2rem;
-  width: 100%;
+  width: 90%;
   max-width: 300px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
   position: relative;
+}
+
+.plan button {
+  margin-top: auto;
 }
 
 .destacado {
@@ -88,9 +83,21 @@
   margin-bottom: 0.5rem;
 }
 
-
 .footnote {
   margin-top: 2rem;
   color: #6b7280;
   font-size: 0.875rem;
+}
+
+/* 💻 Versión desktop: mostrar en fila */
+@media (min-width: 768px) {
+  .plans-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .plan {
+    width: 100%;
+  }
 }
