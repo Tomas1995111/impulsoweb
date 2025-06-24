@@ -145,7 +145,7 @@ const Home = () => {
         <Reviews />
       </div>
 
-      <GuideLead />
+      {/*<GuideLead />*/}
 
       {/*<div className="contact-form-container">
         <ContactForm />
