@@ -8,6 +8,7 @@ import GuideLead from '../components/GuideLead';
 import UserProfile from '../components/UserProfile';
 import Reviews from '../components/Reviews';
 import ContactForm from '../components/ContactForm';
+import MembershipPlans from '../components/MembershipPlans';
 import Footer from '../components/Footer';
 
 import AnalisisImg from '../assets/imagesCourses/Analisis-tecnico.jpeg';
@@ -82,7 +83,7 @@ const Home = () => {
       </div>
 
       <LeadSection />
-
+      <MembershipPlans />
       <section className="benefits-section">
         <div className="benefits-grid">
           {[

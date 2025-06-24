@@ -1,0 +1,96 @@
+.membership-section {
+  background-color: #f9fafb;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #303030;
+  margin-bottom: 2rem;
+}
+
+.plans-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.plan button {
+  margin-top: auto;
+}
+
+@media (min-width: 768px) {
+  .plans-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.plan {
+  background-color: #ffffff;
+  border: 1.5px solid #3CA65C;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.destacado {
+  border: 2px solid #3CA65C;
+}
+
+.badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #3CA65C;
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.plan h3 {
+  font-size: 1.25rem;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #3CA65C;
+  margin-bottom: 0.25rem;
+}
+
+.subprice {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.plan ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  color: #374151;
+  text-align: left;
+}
+
+.plan ul li {
+  margin-bottom: 0.5rem;
+}
+
+
+.footnote {
+  margin-top: 2rem;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
