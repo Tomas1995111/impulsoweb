@@ -11,22 +11,18 @@
   color: #1d1d1f;
 }
 
-.reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 2rem;
-  padding: 2rem 0;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-
 .review-card {
   background: white;
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   text-align: left;
+  animation: fadeInUp 0.5s ease both;
+  transition: transform 0.3s;
+}
+
+.review-card:hover {
+  transform: scale(1.02);
 }
 
 .review-header {
@@ -54,8 +50,41 @@
   color: #333;
   line-height: 1.5;
 }
-@media (max-width: 768px) {
-  .reviews-grid {
-    grid-template-columns: 1fr; 
+
+.reviews-swiper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+/* Swiper pagination custom fuera del carrusel */
+.custom-pagination {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.custom-pagination .swiper-pagination-bullet {
+  background-color: #ccc !important;
+  opacity: 1;
+  transition: background-color 0.3s;
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+  background-color: #217a41 !important;
+}
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

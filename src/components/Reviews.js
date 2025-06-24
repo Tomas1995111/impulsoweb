@@ -1,5 +1,9 @@
 import React from 'react';
 import './styles/Reviews.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 const reviews = [
   {
@@ -68,11 +72,30 @@ const ReviewCard = ({ name, age, job, location, comment, img }) => (
 const Reviews = () => (
   <section className="reviews-section">
     <h2 className="reviews-title">Lo que dicen quienes ya invierten con Impulso</h2>
-    <div className="reviews-grid">
+
+    <Swiper
+      modules={[Pagination, Autoplay]}
+      pagination={{ el: '.custom-pagination', clickable: true }}
+      autoplay={{ delay: 5000, disableOnInteraction: false }}
+      speed={600}
+      spaceBetween={30}
+      loop={true}
+      breakpoints={{
+        0: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+      }}
+      className="reviews-swiper"
+    >
       {reviews.map((review, index) => (
-        <ReviewCard key={index} {...review} />
+        <SwiperSlide key={index}>
+          <ReviewCard {...review} />
+        </SwiperSlide>
       ))}
-    </div>
+    </Swiper>
+
+    {/* Paginación afuera del carrusel */}
+    <div className="custom-pagination"></div>
   </section>
 );
 
