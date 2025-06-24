@@ -112,7 +112,7 @@ const Home = () => {
 
         <div className="courses-carousel-container">
           <div className="course-info">
-            <h2 className="course-section-title">Aprendé a invertir</h2>
+            <h2 className="course-section-title">Nuestros Cursos</h2>
           </div>
 
           <div className="course-carousel">
