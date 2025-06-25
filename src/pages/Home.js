@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './styles/Home.css';
-import Navbar from '../components/Navbar';
 import AdminDashboard from '../components/AdminDashboard';
 import LeadSection from '../components/LeadSection';
 import GuideLead from '../components/GuideLead';
@@ -17,7 +16,8 @@ import AnalisisImg from '../assets/imagesCourses/Analisis-tecnico.jpeg';
 import CriptomonedasImg from '../assets/imagesCourses/Criptomonedas-y-Blockchain.jpeg';
 import MoneyImg from '../assets/imagesCourses/Money-Management.jpeg';
 
-const Home = () => {
+const Home = ({ onOpenPopup }) => {
+
   const user = JSON.parse(localStorage.getItem('user'));
   const role = localStorage.getItem('role');
   const navigate = useNavigate();
@@ -53,12 +53,11 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <Navbar />
-
+     {/*} <Navbar />*/}
       {showBanner && (
         <div className="scroll-banner">
           <span>¿Querés 7 días premium + PDF gratis?</span>
-          <button className="view-course-btn" onClick={() => navigate('/MemberShip')}>
+          <button className="view-course-btn"  onClick={onOpenPopup}>
             Probar ahora
           </button>
         </div>
@@ -153,7 +152,8 @@ const Home = () => {
         <ContactForm />
       </div>*/}
 
-      <Footer />
+      <Footer onOpenPopup={onOpenPopup} />
+
       <ExitIntentModal />
 
     </div>

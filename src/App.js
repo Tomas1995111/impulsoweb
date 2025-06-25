@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import DollarWidget from './components/DollarWidget'; 
@@ -17,19 +17,25 @@ import Courses from './components/Courses';
 import News from './components/NewsCard';
 import FinancialAdvisors from './pages/FinancialAdvisors';
 import MemberShip from './pages/MemberShip';
+import PopupForm from './components/PopupForm';
 
 const App = () => {
+  const [showPopup, setShowPopup] = useState(false);
+console.log('Popup visible:', showPopup);
+
   return (
     <Router> 
-      <Navbar />
+      <Navbar onOpenPopup={() => setShowPopup(true)} />
+      <PopupForm isVisible={showPopup} onClose={() => setShowPopup(false)} />
+
       <Routes>
-        {/* Rutas públicas */}
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home onOpenPopup={() => setShowPopup(true)} />} />
+
+        <Route path="/home" element={<Home onOpenPopup={() => setShowPopup(true)} />} />
+
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
 
-        {/* Rutas protegidas para usuarios */}
         <Route path="/dashboard" element={
           <ProtectedRoute>
             <Dashboard />
@@ -41,7 +47,6 @@ const App = () => {
           </ProtectedRoute>
         } />
 
-        {/* Rutas protegidas para administradores */}
         <Route path="/admin-dashboard" element={
           <AdminProtectedRoute>
             <AdminDashboard />
@@ -53,13 +58,13 @@ const App = () => {
           </AdminProtectedRoute>
         } />
 
-        {/* Otras rutas públicas */}
         <Route path="/DollarWidget" element={<DollarWidget />} />
         <Route path="/cursos" element={<Courses />} />
         <Route path="/noticias" element={<News />} />
         <Route path="/asesores-financieros" element={<FinancialAdvisors />} />
-        <Route path="/MemberShip" element={<MemberShip />} />
+        <Route path="/MemberShip" element={<MemberShip onOpenPopup={() => setShowPopup(true)} />} />
       </Routes>
+
       <ScrollToTopButton />
       <WhatsAppButton />
     </Router>
