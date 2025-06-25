@@ -1,20 +1,17 @@
 import React from 'react';
 import './styles/MemberShip.css'; // Estilos para el componente
-const Membership = () => {
+const MemberShip = ({ onOpenPopup }) => {
+
   return (
     <div className="membership-container">
       <header className="header">
         <h1 className="membership-title">¡Únete a Impulso Premium!</h1>
         <p className="subheading">Accede a beneficios exclusivos que potenciarán tus inversiones.</p>
-        <div className="cta-container">
-    <a 
-      href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380847596cf970175ae9482893205" 
-      target="_blank" 
-      rel="noopener noreferrer"
-    >
-      <button className="cta-button secondary">Probar 1 mes Gratis</button>
-    </a>
-  
+      <div className="cta-container">
+
+  <button onClick={onOpenPopup} className="cta-button secondary">
+    Probar 1 mes Gratis
+  </button>
           <a 
             href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c938084744b7f5301744f2448a604f5" 
             target="_blank" 
@@ -97,4 +94,4 @@ const Membership = () => {
   );
 };
 
-export default Membership;
+export default MemberShip;

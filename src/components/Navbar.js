@@ -4,7 +4,7 @@ import MegaMenu from './MegaMenu';
 import './styles/Navbar.css';
 import logo from '../assets/LOGOSIMPULSOMERVAL-05.png';
 
-const Navbar = () => {
+const Navbar = ({ onOpenPopup }) => {
   const location = useLocation();
   const token = localStorage.getItem('token');
   const role = localStorage.getItem('role');
@@ -202,14 +202,17 @@ const Navbar = () => {
           </li>
         )}
         <li>
-          <a 
-            href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380847596cf970175ae9482893205" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="free-trial-btn"
-          >
-            Probar Gratis
-          </a>
+        <button
+  onClick={() => {
+    console.log('Se hizo clic en Probar Gratis');
+    onOpenPopup();
+  }}
+  className="free-trial-btn"
+>
+  Probar Gratis
+</button>
+
+
         </li>
       </ul>
     </nav>

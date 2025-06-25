@@ -2,14 +2,17 @@ import React from 'react';
 import './styles/Footer.css';
 import logoFooter from '../assets/LOGOSIMPULSOMERVAL-03.png';
 
-const Footer = () => {
+const Footer = ({ onOpenPopup }) => {
+
   return (
     <>
       {/* Bloque de promoción */}
     <div className="prefooter-banner">
   <h2 className="prefooter-title">¿Querés empezar antes que abran los mercados?</h2>
   <p className="prefooter-sub">Sumate gratis y recibí el resumen diario <span className="resaltado">antes de las 9 AM</span>.</p>
-  <a href="/MemberShip" className="view-course-btn">Probá 7 días gratis</a>
+<button onClick={onOpenPopup} className="view-course-btn">
+  Probá 7 días gratis
+</button>
 </div>
 
 
