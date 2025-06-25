@@ -18,16 +18,19 @@ import News from './components/NewsCard';
 import FinancialAdvisors from './pages/FinancialAdvisors';
 import MemberShip from './pages/MemberShip';
 import PopupForm from './components/PopupForm';
+import ExitIntentModal from './components/ExitIntentModal';
+
 
 const App = () => {
   const [showPopup, setShowPopup] = useState(false);
-console.log('Popup visible:', showPopup);
+
 
   return (
     <Router> 
       <Navbar onOpenPopup={() => setShowPopup(true)} />
       <PopupForm isVisible={showPopup} onClose={() => setShowPopup(false)} />
-
+      
+<ExitIntentModal />
       <Routes>
         <Route path="/" element={<Home onOpenPopup={() => setShowPopup(true)} />} />
 
