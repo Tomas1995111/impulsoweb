@@ -407,16 +407,6 @@
   font-size: 1rem;
 }
 
-.banner-btn {
-  background: #00c853;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  font-weight: bold;
-  cursor: pointer;
-}
-
 .close-banner {
   cursor: pointer;
   font-size: 1.2rem;
@@ -499,6 +489,27 @@
 @media (max-width: 600px) {
   .benefits-grid {
     grid-template-columns: 1fr;
+  }
+.scroll-banner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .scroll-banner span {
+    font-size: 0.95rem;
+    flex: 1 1 auto;
+  }
+
+  .scroll-banner .view-course-btn {
+    font-size: 0.95rem;
+    padding: 0.5rem 1.25rem;
+    flex: none;
+    white-space: nowrap;
   }
 }
 
