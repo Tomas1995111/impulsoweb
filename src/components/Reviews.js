@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 const reviews = [
   {
     name: 'Lucas P.',
-    age: 31,
+    age: 41,
     job: 'Diseñador',
     location: 'CABA',
     comment: 'Antes perdía la mañana leyendo foros. Con el resumen arranco el laburo sabiendo dónde poner la plata.',
@@ -16,7 +16,7 @@ const reviews = [
   },
   {
     name: 'Estela G.',
-    age: 42,
+    age: 28,
     job: 'Empleada',
     location: 'Rosario',
     comment: 'Invertí por primera vez gracias a la guía paso a paso. Claro, sin jerga y todo desde el celu. 10 pts.',
@@ -24,7 +24,7 @@ const reviews = [
   },
   {
     name: 'Florencia S.',
-    age: 23,
+    age: 46,
     job: 'Administrativa',
     location: 'Mendoza',
     comment: 'Probé los 7 días gratis y me quedé. El 97% renueva por algo: la info llega filtrada y sin humo.',
