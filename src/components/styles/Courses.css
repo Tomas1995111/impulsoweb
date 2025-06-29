@@ -93,7 +93,7 @@
     margin-top: 20px;
     font-size: 16px;  
     font-weight: bold; 
-    color: #333; 
+    color: #444; 
     text-align: center;
     line-height: 1.5;
   }
@@ -109,7 +109,7 @@
     background-color: #f7f7f7; 
     border-radius: 8px;
     padding: 20px;
-    color: #333; 
+    color: #444; 
     border: 1px solid #ddd; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
     transition: transform 0.3s ease; 
@@ -126,7 +126,7 @@
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 20px; 
-    color: #333;
+    color: #444;
 }
 .payment-info {
   text-align: center;
@@ -142,7 +142,7 @@
 .no-interest {
   font-size: 1.5rem; 
   font-weight: 600;
-  color: #333;
+  color: #444;
 }
 
 .no-interest-subtext {
