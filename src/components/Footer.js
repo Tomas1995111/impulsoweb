@@ -31,8 +31,6 @@ const Footer = ({ onOpenPopup }) => {
             <a href="/DollarWidget">Dólar Hoy</a>
           </div>
 
-          <a href="/asesores-financieros" className="footer-cta">Contáctanos</a>
-
           <div className="social-icons">
             <a href="https://www.facebook.com/impulso.merval" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-facebook"></i>
