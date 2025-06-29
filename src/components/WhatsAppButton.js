@@ -8,6 +8,7 @@ const WhatsAppButton = () => {
       className="whatsapp-button"
       target="_blank"
       rel="noopener noreferrer"
+      aria-label="Contactar por WhatsApp"
     >
       <i className="fab fa-whatsapp"></i>
     </a>
