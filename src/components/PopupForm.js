@@ -3,13 +3,53 @@ import './styles/PopupForm.css';
 
 const PopupForm = ({ isVisible, onClose }) => {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [error, setError] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const [formData, setFormData] = useState({
+    nombre: '',
+    email: '',
+    whatsapp: '',
+    token: 'impulso2025',
+  });
 
   if (!isVisible) return null;
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Acá podrías enviar datos a una API si querés
-    setFormSubmitted(true);
+
+    if (isSubmitting) return; // Previene reenvíos rápidos
+    setIsSubmitting(true);
+
+    const data = new URLSearchParams();
+    Object.entries(formData).forEach(([key, value]) => {
+      data.append(key, value);
+    });
+
+    try {
+      const response = await fetch(
+        'https://script.google.com/macros/s/AKfycby9VQcK0F-tnI4ljVwfNBcVMfl3MmHie973ZYJNiVHaqNn3FCzb8Vbf35g5BvRM8qlivw/exec',
+        {
+          method: 'POST',
+          body: data,
+        }
+      );
+
+      if (response.ok) {
+        setFormSubmitted(true);
+        setError('');
+      } else {
+        setError('❌ Hubo un problema. Intentá de nuevo.');
+      }
+    } catch (err) {
+      setError('❌ Error al enviar. Reintentá en unos segundos.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -20,19 +60,21 @@ const PopupForm = ({ isVisible, onClose }) => {
         {formSubmitted ? (
           <div className="success-message">
             <h2 className="popup-title">¡Gracias!</h2>
-            <p>
-              Te llegará el PDF al email y ya podés disfrutar de <strong>7 días gratis</strong> de los beneficios de Impulso Merval 🚀
-            </p>
+            <p>Te llegará el PDF al email y ya podés disfrutar de <strong>7 días gratis</strong> de los beneficios de Impulso Merval 🚀</p>
           </div>
         ) : (
           <>
             <h2 className="popup-title">Accedé gratis 7 días</h2>
             <form className="popup-form" onSubmit={handleSubmit}>
-              <input type="text" placeholder="Tu nombre" required />
-              <input type="email" placeholder="tucorreo@ejemplo.com" required />
-              <input type="tel" placeholder="54911..." required />
-              <button type="submit" className="view-course-btn">Enviar y acceder</button>
+              <input type="hidden" name="token" value={formData.token} />
+              <input type="text" name="nombre" placeholder="Nombre completo" value={formData.nombre} onChange={handleChange} required />
+              <input type="email" name="email" placeholder="Correo electrónico" value={formData.email} onChange={handleChange} required />
+              <input type="text" name="whatsapp" placeholder="WhatsApp (con código de país)" value={formData.whatsapp} onChange={handleChange} required />
+              <button type="submit" className="view-course-btn" disabled={isSubmitting}>
+                {isSubmitting ? 'Enviando...' : 'Enviar y acceder'}
+              </button>
             </form>
+            {error && <p className="error-message">{error}</p>}
           </>
         )}
       </div>
