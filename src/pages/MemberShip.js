@@ -9,11 +9,14 @@ const MemberShip = ({ onOpenPopup }) => {
         <p className="subheading">Accede a beneficios exclusivos que potenciarán tus inversiones.</p>
       <div className="cta-container">
 
-  <button onClick={onOpenPopup} className="cta-button secondary">
-    Probar 1 mes Gratis
-  </button>
+<button 
+  onClick={() => window.open("https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808476d74ecd0176de28badb1380", "_blank")} 
+  className="cta-button secondary"
+>
+  Probá 7 días Gratis
+</button>
           <a 
-            href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c938084744b7f5301744f2448a604f5" 
+            href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808476d74ecd0176de28badb1380" 
             target="_blank" 
             rel="noopener noreferrer"
           >
