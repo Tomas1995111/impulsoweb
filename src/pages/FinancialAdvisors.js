@@ -13,6 +13,7 @@ const FinancialAdvisors = () => {
         target="_blank" 
         rel="noopener noreferrer"
         className="whatsapp-btn"
+        aria-label="Abrir chat de WhatsApp"
       >
         <FaWhatsapp className="whatsapp-icon" /> 
       </a>
