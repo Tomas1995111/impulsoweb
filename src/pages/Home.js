@@ -73,9 +73,10 @@ const Home = ({ onOpenPopup }) => {
           <h2 className="welcome-subtitle">
             en solo <strong>5 minutos al día</strong>
           </h2>
-          <button className="view-course-btn" onClick={() => navigate('/MemberShip')}>
-            Probá 7 días GRATIS
-          </button>
+          <button className="view-course-btn" onClick={onOpenPopup}>
+  Probá 7 días GRATIS
+</button>
+
           <div className="hero-mini-block">
             <p>Incluye guía en PDF para empezar hoy mismo.</p>
             <p>+150 inversores ya se sumaron. El 97% renueva mes a mes 🚀</p>
