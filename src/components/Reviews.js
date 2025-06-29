@@ -35,7 +35,7 @@ const reviews = [
     age: 24,
     job: 'Estudiante',
     location: 'Córdoba',
-    comment: 'Las alertas me llegan al toque. Compré CEDEARs con la zona de stop bien marcada y duermo más tranquilo.',
+    comment: 'Los análisis me llegan al toque. Compré CEDEARs con la zona de stop bien marcada y duermo más tranquilo.',
     img: 'https://randomuser.me/api/portraits/men/35.jpg',
   },
   {

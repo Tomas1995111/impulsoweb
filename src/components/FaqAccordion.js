@@ -8,11 +8,11 @@ const faqs = [
   },
   {
     question: '¿Cuánto tiempo me lleva por día?',
-    answer: 'Menos de 5 minutos: leés el resumen diario y, si hay alerta, el mensaje explica la zona de compra, stop y objetivo.'
+    answer: 'Menos de 5 minutos: leés el resumen diario y, si hay análisis, el mensaje explica la zona de compra, stop y objetivo.'
   },
   {
     question: '¿Cómo y cuándo recibo los mensajes?',
-    answer: 'En un grupo de WhatsApp “solo admins”. Lunes a viernes 9 AM resumen + alertas en tiempo real cuando surge una oportunidad.'
+    answer: 'En un grupo de WhatsApp “solo admins”. Lunes a viernes 9 AM resumen + análisis en tiempo real cuando surge una oportunidad.'
   },
   {
     question: '¿Qué pasa después de los 7 días gratis?',
@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     question: '¿Incluye recomendaciones obligatorias?',
-    answer: 'No damos asesoramiento individual. Compartimos ideas, contexto y alertas; la decisión final es tuya.'
+    answer: 'No damos asesoramiento individual. Compartimos ideas, contexto y análisis; la decisión final es tuya.'
   },
   {
     question: '¿Qué diferencia a Impulso de un grupo de Telegram o Twitter?',

@@ -89,7 +89,7 @@ const Home = ({ onOpenPopup }) => {
         <div className="benefits-grid">
           {[
             ['⏱️', 'Solo 1 min/día', 'Filtramos el ruido: recibís lo esencial y seguís con tu vida.'],
-            ['🚨', 'Alertas al instante', 'Señales claras con zona de compra, stop y objetivos.'],
+            ['🚨', 'Análisis al instante', 'Señales claras con zona de compra, stop y objetivos.'],
             ['🎓', 'Aprendé de cero', 'Mini-clases y glosario sin jerga bursátil.'],
             ['🤝', 'Comunidad real', '+150 inversores activos; 97 % renueva cada mes.'],
             ['📊', 'Carteras listas', 'Estrategias probadas y calendario de balances.'],
