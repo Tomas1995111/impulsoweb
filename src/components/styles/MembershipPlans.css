@@ -17,7 +17,7 @@
   gap: 2rem;
   max-width: 1000px;
   margin: 0 auto;
-  align-items: center; /* asegura que los planes estén centrados en mobile */
+  align-items: center;
 }
 
 .plan {
@@ -29,10 +29,14 @@
   max-width: 300px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-.plan button {
-  margin-top: auto;
+
+.plan .plan-btn {
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
 }
 
 .destacado {
@@ -89,7 +93,7 @@
   font-size: 0.875rem;
 }
 
-/* 💻 Versión desktop: mostrar en fila */
+/* 💻 Desktop */
 @media (min-width: 768px) {
   .plans-container {
     flex-direction: row;

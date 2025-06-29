@@ -19,7 +19,7 @@ const MembershipPlans = () => {
     <li>🎓 Guías paso a paso</li>
   </ul>
   <a
-    className="view-course-btn"
+    className="view-course-btn plan-btn"
     href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808476d74ecd0176de28badb1380"
     target="_blank"
     rel="noopener noreferrer"
@@ -39,7 +39,7 @@ const MembershipPlans = () => {
     <li>📈 Informe sectorial extra</li>
   </ul>
   <a
-    className="view-course-btn"
+    className="view-course-btn plan-btn"
     href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808497ad02ae0197b1df7b4e0245"
     target="_blank"
     rel="noopener noreferrer"
@@ -59,7 +59,7 @@ const MembershipPlans = () => {
     <li>🎁 1 × sesión 1-a-1</li>
   </ul>
   <a
-    className="view-course-btn"
+    className="view-course-btn plan-btn"
     href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380847d94c33d017d9f6fb50a04cc"
     target="_blank"
     rel="noopener noreferrer"
