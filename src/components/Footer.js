@@ -58,7 +58,7 @@ const Footer = ({ onOpenPopup }) => {
           </div>
 
           <p className="footer-copy">
-            &copy; {new Date().getFullYear()} Tu Plataforma de Asesoría Financiera. Todos los derechos reservados.
+            &copy; {new Date().getFullYear()} Tu Plataforma de Análisis Financiero. Todos los derechos reservados.
           </p>
         </div>
       </footer>
