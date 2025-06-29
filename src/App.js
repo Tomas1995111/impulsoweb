@@ -12,6 +12,7 @@ import UserProfile from './components/UserProfile';
 import AdminDashboard from './components/AdminDashboard';
 import AdminProfile from './components/AdminProfile';
 import AdminProtectedRoute from './components/AdminProtectedRoute';
+import ScrollToTop from './components/ScrollToTop';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import Courses from './components/Courses';
 import News from './components/NewsCard';
@@ -27,6 +28,7 @@ const App = () => {
 
   return (
     <Router> 
+      <ScrollToTop />
       <Navbar onOpenPopup={() => setShowPopup(true)} />
       <PopupForm isVisible={showPopup} onClose={() => setShowPopup(false)} />
       
