@@ -81,11 +81,12 @@ const MemberShip = ({ onOpenPopup }) => {
           />
           <h3 className="item-title">Beneficios Exclusivos</h3>
           <ul className="benefits-list">
-            <li>Abrir cuenta bancaria sin comisiones</li>
-            <li>Abrir cuenta en broker sin cargos</li>
-            <li>Descuento en la compra de autos Toyota</li>
-            <p>y más...</p>
-          </ul>
+             <li>Abrir cuenta bancaria sin comisiones</li>
+  <li> Abrir cuenta en broker sin cargos</li>
+  <li> Descuento en la compra de autos Toyota</li>
+  <p>Y más...</p>
+</ul>
+
         </div>
       </div>
 
