@@ -14,7 +14,7 @@ const MembershipPlans = () => {
   <p className="price">$7.500</p>
   <ul>
     <li>📊 Resumen diario</li>
-    <li>🚨 Alertas accionables</li>
+    <li>🚨 Análisis accionables</li>
     <li>📅 Calendario de balances</li>
     <li>🎓 Guías paso a paso</li>
   </ul>

@@ -25,7 +25,7 @@ const Footer = ({ onOpenPopup }) => {
 
           <div className="footer-links">
             <a href="/MemberShip">Sé Miembro</a>
-            <a href="/asesores-financieros">Asesores</a>
+           {/* <a href="/asesores-financieros">Asesores</a>*/}
             <a href="/cursos">Cursos</a>
             <a href="/noticias">Noticias</a>
             <a href="/DollarWidget">Dólar Hoy</a>

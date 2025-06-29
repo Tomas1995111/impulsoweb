@@ -16,7 +16,7 @@ const LeadSection = () => {
         Invertí mejor en la Bolsa Argentina con <strong>5 minutos al día</strong>
       </h2>
       <p className="lead-subtitle">
-        Alertas, carteras y educación clara — directo a tu WhatsApp cada mañana.
+        Análisis, carteras y educación clara — directo a tu WhatsApp cada mañana.
       </p>
 
       {submitted ? (
