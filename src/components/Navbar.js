@@ -167,12 +167,12 @@ const Navbar = ({ onOpenPopup }) => {
         </li>
 
         <li>
-          <Link 
+          {/*<Link 
             to="/asesores-financieros" 
             className={location.pathname === '/asesores-financieros' ? 'active' : ''}
           >
             Asesores Financieros
-          </Link>
+          </Link>*/}
         </li>
 
         {/* Menú de perfil y cierre de sesión */}
