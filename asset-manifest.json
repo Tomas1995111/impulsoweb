@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/impulsoweb/static/css/main.cdf64b89.css",
-    "main.js": "/impulsoweb/static/js/main.cd5463d4.js",
+    "main.js": "/impulsoweb/static/js/main.940e1e64.js",
     "static/js/453.15ca1630.chunk.js": "/impulsoweb/static/js/453.15ca1630.chunk.js",
     "static/media/7579564-uhd_4096_2160_25fps.mp4": "/impulsoweb/static/media/7579564-uhd_4096_2160_25fps.acecdd33a97fda6ed981.mp4",
     "static/media/guia.jpg": "/impulsoweb/static/media/guia.a3206b15dc6023fc316b.jpg",
@@ -13,11 +13,11 @@
     "static/media/Analisis-tecnico.jpeg": "/impulsoweb/static/media/Analisis-tecnico.e670e0b4c6fcd39122f8.jpeg",
     "index.html": "/impulsoweb/index.html",
     "main.cdf64b89.css.map": "/impulsoweb/static/css/main.cdf64b89.css.map",
-    "main.cd5463d4.js.map": "/impulsoweb/static/js/main.cd5463d4.js.map",
+    "main.940e1e64.js.map": "/impulsoweb/static/js/main.940e1e64.js.map",
     "453.15ca1630.chunk.js.map": "/impulsoweb/static/js/453.15ca1630.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cdf64b89.css",
-    "static/js/main.cd5463d4.js"
+    "static/js/main.940e1e64.js"
   ]
 }
