@@ -1,126 +1,146 @@
 /* Contenedor Principal */
 .membership-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: white;  /* Fondo blanco */
-    padding: 80px 20px;
-    font-family: 'Roboto', sans-serif;
-    color: #333;  /* Color de texto oscuro para mayor contraste */
-    text-align: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    box-shadow: none;  /* Eliminar el contorno del contenedor */
-    border-radius: 0;  /* Eliminar los bordes redondeados del contenedor */
-  }
-  
-  /* Títulos */
-  .membership-title {
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: #1A8A34;  /* Verde para destacar el título */
-    margin-bottom: 30px;
-    letter-spacing: 1.5px;
-  }
-  
-  .subheading {
-    font-size: 1.5rem;
-    color: rgba(0, 0, 0, 0.7);  /* Color oscuro para el subtítulo */
-    margin-bottom: 40px;
-    font-weight: 400;
-    letter-spacing: 1.2px;
-  }
-  
-  /* Sección de Beneficios */
+  padding: 50px 20px;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Títulos */
+.membership-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #1A8A34;
+  margin-bottom: 18px;
+}
+
+.subheading {
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 28px;
+}
+
+/* Botón CTA */
+.cta-container {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  background-color: #0D6B21;
+  color: white;
+  padding: 14px 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #0A5B19;
+}
+
+/* Sección de Beneficios */
+.membership-benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  width: 100%;
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+
+/* Tarjeta de beneficio */
+.membership-item {
+  background: white;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.item-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+
+.item-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1A8A34;
+  margin-bottom: 8px;
+}
+
+.item-description,
+.benefits-list {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+/* Quitar viñetas y márgenes de ul en beneficios */
+.benefits-list li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+.benefits-list li::before {
+  content: '\2713'; /* checkmark */
+  color: #1A8A34;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
   .membership-benefits {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-    width: 100%;
-    max-width: 1200px;
-    margin-top: 40px;
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  /* Tarjetas de Beneficios */
-  .membership-item {
-    background-color: #ffffff;
-    color: #333;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);  /* Sombra sutil para las tarjetas */
-    display: flex;
-    flex-direction: column;
+
+  .benefits-list li {
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    max-width: 320px;
-    margin: 0 auto;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  
-  .membership-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+  .membership-benefits {
+    grid-template-columns: 1fr;
   }
-  
-  /* Iconos */
-  .item-icon {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 20px;
-    border-radius: 50%;
-    background-color: #f1f1f1;
-    padding: 10px;
-    
+
+  .membership-title {
+    font-size: 2.2rem;
   }
-  
-  .item-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 12px;
-    color: #1A8A34;
-  }
-  
-  .item-description {
+
+  .subheading {
     font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 18px;
-    line-height: 1.5;
   }
-  
-  /* Botón de CTA */
-  .cta-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 50px;
-    flex-wrap: wrap; /* Para que en pantallas chicas se apilen */
-  }
-  
+
   .cta-button {
-    background-color: #0D6B21;
-    color: white;
-    padding: 20px 45px;
-    font-size: 1.6rem;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    font-weight: 600;
-    letter-spacing: 1px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    white-space: nowrap; /* Evita que se corte el texto */
+    font-size: 1rem;
+    padding: 14px 28px;
   }
-  
-  .cta-button:hover {
-    background-color: #0A5B19;
-    transform: scale(1.05);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
-  }
-  @media (max-width: 768px) {
-    .subheading  {
-align-items: center;
-margin: 20px;
-    }
-  }
+}
