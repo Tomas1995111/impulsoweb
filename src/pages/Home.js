@@ -64,7 +64,7 @@ const Home = ({ onOpenPopup }) => {
       )}
 
       <div className="welcome-banner">
-        <video className="banner-video" autoPlay loop muted playsInline>
+        <video className="banner-video" autoPlay loop muted playsInline preload="auto" poster={require('../assets/video/screenbannervideo.png')}>
           <source src={require('../assets/video/7579564-uhd_4096_2160_25fps.mp4')} type="video/mp4" />
           Tu navegador no soporta el video.
         </video>
