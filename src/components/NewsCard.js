@@ -8,6 +8,23 @@ const NewsCard = ({ limit }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
+  // 👉 Función para limpiar scripts y etiquetas HTML
+  const cleanText = (raw) => {
+  if (!raw) return '';
+
+  // 1. Remover etiquetas HTML
+  let clean = raw.replace(/<\/?[^>]+>/gi, '');
+
+  // 2. Dividir en líneas y filtrar las que parecen scripts o tracking
+  clean = clean
+    .split('\n')
+    .filter(line => !/analytics|gtm|\.push\(|script|createElement|insertBefore|scorecardresearch/i.test(line))
+    .join(' ');
+
+  // 3. Limpiar espacios extra
+  return clean.replace(/\s{2,}/g, ' ').trim();
+};
+
   useEffect(() => {
     const fetchNews = async () => {
       try {
@@ -20,7 +37,6 @@ const NewsCard = ({ limit }) => {
             q: 'finanzas'
           }
         });
-        
 
         console.log(response.data); // para debug
         setNews(response.data.results || []);
@@ -40,24 +56,26 @@ const NewsCard = ({ limit }) => {
   return (
     <div className="news-card">
       {loading ? (
-  <div className="spinner-container">
-    <div className="spinner"></div>
-    <p className="loading-text">Cargando noticias...</p>
-  </div>
-) : error ? (
+        <div className="spinner-container">
+          <div className="spinner"></div>
+          <p className="loading-text">Cargando noticias...</p>
+        </div>
+      ) : error ? (
         <p>{error}</p>
       ) : (
         <div className="news-container">
           {displayedNews.map((article, index) => (
             <div key={index} className="news-item">
-                <img
+              <img
                 src={article.image_url || defaultImage}
                 alt={article.title}
                 className="news-image"
               />
               <h3 className="news-title">{article.title}</h3>
               {article.description && (
-                <p className="news-description">{article.description}</p>
+                <p className="news-description">
+                  {cleanText(article.description)}
+                </p>
               )}
               <a
                 href={article.link}

@@ -100,7 +100,9 @@
     justify-content: center;
     align-items: stretch;
   }
-
+  .membership-container {
+    padding-top: 80px;
+  }
   .plan {
     width: 100%;
   }
