@@ -3,27 +3,29 @@
   --green-dark:#246c3c;
   --txt:#333;
   --blur-bg:#fff;
-  --hover-bg:#f7f7f7;
 }
 
-/* =========== RESET =========== */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+/* -------- reset breve -------- */
+*,
+*::before,
+*::after{box-sizing:border-box;margin:0;padding:0;}
 
-/* =========== NAVBAR DESKTOP =========== */
+/* -------- navbar base -------- */
 .navbar{
   position:fixed;top:0;left:0;width:100%;height:64px;
   display:flex;align-items:center;justify-content:space-between;
-  padding:0 1.5rem;
-  background:var(--blur-bg);backdrop-filter:blur(12px);
+  padding:0 2rem;background:var(--blur-bg);
+  backdrop-filter:blur(12px);
   box-shadow:0 2px 10px rgba(0,0,0,.05);
   z-index:1000;
 }
-.logo-link{display:flex;align-items:center;padding:0!important;}
 .logo-img{height:42px;transition:transform .3s;}
 .logo-img:hover{transform:scale(1.08) rotate(-2deg);}
 
-/* enlaces desktop */
-.nav-links{display:flex;align-items:center;gap:24px;}
+/* -------- enlaces desktop -------- */
+.nav-links{
+  display:flex;align-items:center;gap:24px;
+}
 .nav-item{position:relative;}
 .navbar a,.nav-btn{
   font:500 15px/1 'Inter',sans-serif;color:var(--txt);
@@ -37,7 +39,7 @@
   background:var(--green-dark);
 }
 
-/* submenú desktop */
+/* -------- submenu desktop -------- */
 .submenu{
   position:absolute;top:100%;left:0;min-width:180px;
   background:#fff;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,.08);
@@ -48,7 +50,7 @@
 .submenu li{list-style:none;}
 .submenu li a{display:block;padding:.75rem 1rem;}
 
-/* CTA común */
+/* -------- CTA -------- */
 .free-trial-btn{
   margin-left:1rem;background:linear-gradient(135deg,var(--green),var(--green-dark));
   color:#fff;font-weight:600;padding:.55rem 1.25rem;border:none;border-radius:8px;
@@ -56,85 +58,52 @@
 }
 .free-trial-btn:hover{transform:translateY(-2px);}
 
-/* =========== HAMBURGER =========== */
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;}
-.bar{
-  display:block;width:26px;height:3px;background:var(--txt);border-radius:2px;
-  transition:transform .3s,opacity .3s;
-}
-.hamburger.open .bar:nth-child(1){transform:translateY(8px) rotate(45deg);}
-.hamburger.open .bar:nth-child(2){opacity:0;}
-.hamburger.open .bar:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+/* -------- hamburguesa -------- */
+.hamburger{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;}
+.bar{width:24px;height:3px;background:var(--txt);}
 
-/* =========== OVERLAY móvil =========== */
-.nav-overlay{
-  position:fixed;inset:0;background:rgba(0,0,0,.45);
-  opacity:0;pointer-events:none;transition:opacity .3s;
-  z-index:998;
-}
-.nav-overlay.show{opacity:1;pointer-events:auto;}
-
-/* =========== MOBILE (≤ 768 px) =========== */
+/* ===================================================== */
+/* ===============  MOBILE  (≤ 768 px)  ================= */
+/* ===================================================== */
 @media (max-width:768px){
-
+  /* muestra botón */
   .hamburger{display:flex;}
 
-  /* drawer */
+  /* panel deslizable ocupando toda la pantalla */
   .nav-links{
-    position:fixed;top:0;right:0;width:75vw;max-width:260px;height:100vh;
+    position:fixed;top:64px;left:0;width:100%;
+    height:calc(100vh - 64px);
     flex-direction:column;align-items:flex-start;
-    background:#fff;padding:80px 1.25rem 3.5rem;
-    transform:translateX(100%);transition:transform .35s ease;
-    overflow-y:auto;pointer-events:none;z-index:999;
-    box-shadow:-4px 0 12px rgba(0,0,0,.12);
+    background:#fff;padding:2rem 1.5rem 4rem;
+    transform:translateY(-100%);
+    transition:transform .35s ease;
+    overflow-y:auto;               /* scroll si hay muchos links */
+    z-index:999;                   /* sobre hero & company */
   }
-  .nav-links.open{transform:translateX(0);pointer-events:auto;}
+  .nav-links.open{transform:translateY(0);}
 
-  /* nivel 1 */
+  /* tamaño y separación de items */
   .navbar a,.nav-btn{
-    width:100%;text-align:left;
-    font-size:17px;line-height:1.25;
-    padding:.95rem 0 .95rem .25rem;
+    width:100%;
+    font-size:17px;
+    padding:1rem 0;
     border-bottom:1px solid #efefef;
   }
-  .nav-item:first-child .nav-btn,
-  .nav-item:first-child a{padding-top:.65rem;}   /* “Inicio” alineado */
 
-  .nav-btn.open{color:var(--green-dark);font-weight:600;}
-
-  /* ---------- submenú estético ---------- */
+  /* submenú collapsable */
   .submenu{
-    position:static;background:transparent;border:none;
-    width:100%;max-height:0;overflow:hidden;transition:max-height .3s ease;
+    position:static;opacity:1;pointer-events:auto;transform:none;
+    box-shadow:none;border-left:4px solid var(--green);
+    width:100%;background:#f8f8f8;
+    max-height:0;overflow:hidden;
+    transition:max-height .3s ease;
   }
-  .submenu.show{max-height:450px;}
+  .submenu.show{max-height:400px;}
+  .submenu li a{padding:.75rem 1rem;font-size:15px;border:none;}
 
-  .submenu li a{
-    position:relative;
-    display:block;padding:.75rem 1rem .75rem 1.5rem;
-    font-size:15px;color:#555;border-bottom:1px solid #eee;
-  }
-  .submenu li:last-child a{border-bottom:none;}
-
-  /* barrita verde a la izquierda */
-  .submenu li a::before{
-    content:'';position:absolute;left:0;top:0;bottom:0;width:4px;
-    background:var(--green);opacity:0;transition:opacity .2s;
-    border-radius:0 2px 2px 0;
-  }
-  .submenu li a:hover,
-  .submenu li a:active{
-    background:var(--hover-bg);
-  }
-  .submenu li a:hover::before,
-  .submenu li a.active::before{opacity:1;}
-
-  /* separador entre grupos nivel 1 */
-  .nav-item+ .nav-item{margin-top:.25rem;}
-
-  /* CTA */
+  /* CTA ocupa todo el ancho */
   .free-trial-btn{
-    width:100%;margin:1.6rem 0 0;
-    padding:.95rem 0;font-size:17px;text-align:center;
+    width:100%;margin-top:1rem;padding:.9rem 0;font-size:17px;
+    text-align:center;
   }
 }
