@@ -32,8 +32,8 @@ const MemberShip = ({ onOpenPopup }) => {
             alt="Ideas de trading"
             className="item-icon"
           />
-          <h3 className="item-title">Ideas de Trading</h3>
-          <p>Obtén estrategias y análisis expertos para maximizar tus ganancias.</p>
+          <h3 className="item-title">Resumen Diario</h3>
+          <p>Panorama de índices, dólar y acciones en lenguaje simple, directo a tu WhatsApp.</p>
         </div>
 
         <div className="membership-item">
@@ -52,8 +52,9 @@ const MemberShip = ({ onOpenPopup }) => {
             alt="Capacitaciones en vivo"
             className="item-icon"
           />
-          <h3 className="item-title">Capacitaciones en Vivo</h3>
-          <p>Accede a cursos interactivos de trading, ¡en tiempo real!</p>
+          <h3 className="item-title">Educación Continua</h3>
+          <p>Mini-clases, glosario y guías paso a paso que transforman conceptos difíciles en acciones
+            simples.</p>
         </div>
 
         <div className="membership-item">
@@ -82,14 +83,14 @@ const MemberShip = ({ onOpenPopup }) => {
             alt="Beneficios Extra"
             className="item-icon"
           />
-          <h3 className="item-title">Beneficios Exclusivos</h3>
+          <h3 className="item-title">Extras de Suscriptor</h3>
           <ul className="benefits-list">
-             <li>Abrir cuenta bancaria sin comisiones</li>
-  <li> Abrir cuenta en broker sin cargos</li>
-  <li> Descuento en la compra de autos Toyota</li>
-  <p>Y más...</p>
-</ul>
-
+            <li>Abrí cuenta en broker sin costos</li>
+            <li>Programa de referidos</li>
+            <li>Descuentos en plataformas de datos y herramientas</li>
+            <li>Descuentos y acuerdos exclusivos</li>
+            <li>Y nuevas ventajas cada mes</li>
+          </ul>
         </div>
       </div>
 
