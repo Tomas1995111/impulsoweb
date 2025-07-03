@@ -1,10 +1,9 @@
 {
   "files": {
-    "main.css": "/impulsoweb/static/css/main.c7e197f5.css",
-    "main.js": "/impulsoweb/static/js/main.29cc247e.js",
+    "main.css": "/impulsoweb/static/css/main.7c3d1e70.css",
+    "main.js": "/impulsoweb/static/js/main.b7e76333.js",
     "static/js/453.15ca1630.chunk.js": "/impulsoweb/static/js/453.15ca1630.chunk.js",
     "static/media/7579564-uhd_4096_2160_25fps.mp4": "/impulsoweb/static/media/7579564-uhd_4096_2160_25fps.791a8ff59bed691adf49.mp4",
-    "static/media/guia.jpg": "/impulsoweb/static/media/guia.a3206b15dc6023fc316b.jpg",
     "static/media/screenbannervideo.png": "/impulsoweb/static/media/screenbannervideo.f23bb4fd6afd21c9e92c.png",
     "static/media/Money-Management.jpeg": "/impulsoweb/static/media/Money-Management.49d4951e6d692251a012.jpeg",
     "static/media/LOGOSIMPULSOMERVAL-03.png": "/impulsoweb/static/media/LOGOSIMPULSOMERVAL-03.409f39b08ef44f8cb852.png",
@@ -12,12 +11,12 @@
     "static/media/Criptomonedas-y-Blockchain.jpeg": "/impulsoweb/static/media/Criptomonedas-y-Blockchain.1508c89091655c0fbf5f.jpeg",
     "static/media/Analisis-tecnico.jpeg": "/impulsoweb/static/media/Analisis-tecnico.e670e0b4c6fcd39122f8.jpeg",
     "index.html": "/impulsoweb/index.html",
-    "main.c7e197f5.css.map": "/impulsoweb/static/css/main.c7e197f5.css.map",
-    "main.29cc247e.js.map": "/impulsoweb/static/js/main.29cc247e.js.map",
+    "main.7c3d1e70.css.map": "/impulsoweb/static/css/main.7c3d1e70.css.map",
+    "main.b7e76333.js.map": "/impulsoweb/static/js/main.b7e76333.js.map",
     "453.15ca1630.chunk.js.map": "/impulsoweb/static/js/453.15ca1630.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c7e197f5.css",
-    "static/js/main.29cc247e.js"
+    "static/css/main.7c3d1e70.css",
+    "static/js/main.b7e76333.js"
   ]
 }
