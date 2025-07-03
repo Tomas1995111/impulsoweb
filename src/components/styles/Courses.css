@@ -82,14 +82,14 @@
     transition: all .3s ease;
 }
 .view-course-btn:hover,
-.promo-cta:hover {
+.promo-ctaa:hover {
   background: linear-gradient(135deg, #246c3c, #1a4d2e);
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* BOTÓN — tamaño fijo para promos */
-.promo-cta {
+.promo-ctaa {
   width: 70%;
   max-width: 300px;
   line-height: 44px;
@@ -222,6 +222,35 @@
   color: #555;
   margin-top: 6px;
 }
+
+/* ========== BOTÓN DE PROMOCIÓN (cta) ========== */
+.promo-ctaa {
+  display: inline-block;
+  width: 70%;
+  max-width: 300px;
+  text-align: center;
+  background: linear-gradient(135deg, #3ca65c, #246c3c);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 44px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin: 12px auto 0;
+}
+
+.promo-ctaa:hover {
+  background: linear-gradient(135deg, #246c3c, #1a4d2e);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* MOBILE */
 
 /* promo card más ancha en mobile */
 @media (max-width: 480px) {
