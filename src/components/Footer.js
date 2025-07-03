@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // 👈 Importamos Link
 import './styles/Footer.css';
-import logoFooter from '../assets/LOGOSIMPULSOMERVAL-03.png';
+import logoFooter from '../assets/LOGOSIMPULSOMERVAL-03.webp';
 
 const Footer = ({ onOpenPopup }) => {
   return (

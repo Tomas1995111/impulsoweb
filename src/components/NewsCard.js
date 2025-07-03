@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './styles/NewsCard.css';
-import defaultImage from '../assets/LOGOSIMPULSOMERVAL-03.png';
+import defaultImage from '../assets/LOGOSIMPULSOMERVAL-03.webp';
 
 const NewsCard = ({ limit }) => {
   const [news, setNews] = useState([]);
