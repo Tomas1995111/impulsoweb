@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import MegaMenu from './MegaMenu';
 import './styles/Navbar.css';
-import logo from '../assets/LOGOSIMPULSOMERVAL-05.png';
+import logo from '../assets/LOGOSIMPULSOMERVAL-05.webp';
 
 const Navbar = ({ onOpenPopup }) => {
   const location = useLocation();
