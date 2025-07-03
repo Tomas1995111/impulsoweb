@@ -20,7 +20,7 @@ const Footer = ({ onOpenPopup }) => {
       {/* Footer original */}
       <footer className="footer">
         <div className="footer-container">
-          <img src={logoFooter} alt="Impulso Merval Logo" className="footer-logo" />
+          <img src={logoFooter} alt="Impulso Merval Logo" className="footer-logo" loading="lazy" />
 
           <p className="footer-motto">
             Impulsando tu futuro financiero con educación y comunidad.
