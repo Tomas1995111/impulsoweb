@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/impulsoweb/static/css/main.7c3d1e70.css",
-    "main.js": "/impulsoweb/static/js/main.b7e76333.js",
+    "main.css": "/impulsoweb/static/css/main.b444407a.css",
+    "main.js": "/impulsoweb/static/js/main.3b1097c7.js",
     "static/js/453.15ca1630.chunk.js": "/impulsoweb/static/js/453.15ca1630.chunk.js",
     "static/media/7579564-uhd_4096_2160_25fps.mp4": "/impulsoweb/static/media/7579564-uhd_4096_2160_25fps.791a8ff59bed691adf49.mp4",
     "static/media/screenbannervideo.png": "/impulsoweb/static/media/screenbannervideo.f23bb4fd6afd21c9e92c.png",
@@ -11,12 +11,12 @@
     "static/media/Criptomonedas-y-Blockchain.jpeg": "/impulsoweb/static/media/Criptomonedas-y-Blockchain.1508c89091655c0fbf5f.jpeg",
     "static/media/Analisis-tecnico.jpeg": "/impulsoweb/static/media/Analisis-tecnico.e670e0b4c6fcd39122f8.jpeg",
     "index.html": "/impulsoweb/index.html",
-    "main.7c3d1e70.css.map": "/impulsoweb/static/css/main.7c3d1e70.css.map",
-    "main.b7e76333.js.map": "/impulsoweb/static/js/main.b7e76333.js.map",
+    "main.b444407a.css.map": "/impulsoweb/static/css/main.b444407a.css.map",
+    "main.3b1097c7.js.map": "/impulsoweb/static/js/main.3b1097c7.js.map",
     "453.15ca1630.chunk.js.map": "/impulsoweb/static/js/453.15ca1630.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7c3d1e70.css",
-    "static/js/main.b7e76333.js"
+    "static/css/main.b444407a.css",
+    "static/js/main.3b1097c7.js"
   ]
 }
