@@ -1,164 +1,234 @@
-/* Contenedor principal de cursos */
+/* ========== CONTENEDOR PRINCIPAL ========== */
 .courses-container {
-    padding: 50px 20px;
-    text-align: center;
-  }
-  /* Título de los cursos */
-  .courses-title {
-    font-size: 1.8rem;
-    color: #246C3C; 
-    margin-bottom: 30px;
-    line-height: 1.5;
-  }
-  /* Contenedor de las tarjetas de cursos (usando grid) */
-  .courses-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 40px; 
-    margin-top: 20px;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  /* Tarjeta de curso */
-  .course-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .course-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  }
-  .course-image {
-    width: 100%;
-    height: 220px;
-    object-fit: contain;
-    object-position: center;
-    background-color: #f7f7f7;
-  }
-  /* Contenedor de información */
-  .course-info {
-    padding: 24px;
-    text-align: center;
-    font-family: "Poppins", sans-serif;
-  }
-  /* Título del curso */
-  .course-title {
-    font-size: 1.8rem;
-    color: #246C3C; 
-    margin-bottom: 12px;
-    font-weight: 600;
-  }
-  .course-description {
-    opacity: 0;
-    max-height: 0;
-    transition: opacity 0.3s ease, max-height 0.3s ease;
-    overflow: hidden;
-    margin-bottom: 10px;
-  }
-  
-  .course-card:hover .course-description {
-    opacity: 1;
-    max-height: 200px; 
-  }
-  /* Botón de ver curso */
-  .view-course-btn {
-    background: linear-gradient(135deg, #3CA65C, #246C3C);
-    color: white;
-    font-size: 1rem;
-    font-weight: 600;
-    padding: 12px 28px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-decoration: none;
-  }
-  .view-course-btn:hover {
-    background: linear-gradient(135deg, #246C3C, #1A4D2E);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  }
-  .view-course-btn:focus {
-    outline: none;
-  }
-  .purchase-info {
-    margin-top: 20px;
-    font-size: 16px;  
-    font-weight: bold; 
-    color: #444; 
-    text-align: center;
-    line-height: 1.5;
-  }
-  .promotions-container {
-    display: flex;
-    flex-direction: column;
-    gap: 30px; 
-    margin-top: 40px; 
-    padding: 30px; 
-    text-align: center;
-}
-.promotion {
-    background-color: #f7f7f7; 
-    border-radius: 8px;
-    padding: 20px;
-    color: #444; 
-    border: 1px solid #ddd; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-    transition: transform 0.3s ease; 
-}
-.promotions-title {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #246C3C;
-  margin-bottom: 20px; 
-  text-transform: uppercase; 
-  letter-spacing: 2px; 
-}
-.promotion p {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 20px; 
-    color: #444;
-}
-.payment-info {
+  padding: 50px 20px;
   text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ========== TÍTULO cursos ========== */
+.courses-title {
+  font-size: 1.8rem;
+  color: #246c3c;
   margin-bottom: 30px;
+  line-height: 1.45;
 }
 
-.installments {
-  font-size: 3rem; 
-  font-weight: bold;
-  color: #246C3C; 
+/* ========== GRID DE CURSOS ========== */
+.courses-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 20px auto 0;
 }
 
-.no-interest {
-  font-size: 1.5rem; 
+/* ========== TARJETA DE CURSO ========== */
+.course-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.course-image {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  background: #f7f7f7;
+}
+.course-info { padding: 24px; text-align: center; }
+.course-title {
+  font-size: 1.8rem;
+  color: #246c3c;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.course-description {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+  margin-bottom: 10px;
+}
+.course-card:hover .course-description {
+  opacity: 1;
+  max-height: 200px;
+}
+
+/* MOBILE — muestra siempre la descripción */
+@media (max-width: 768px) {
+  .course-description { opacity: 1; max-height: 200px; }
+}
+
+/* ========== BOTÓN GENÉRICO ========== */
+.view-course-btn,
+.promo-cta {
+  display: inline-block;
+  background: linear-gradient(135deg, #3ca65c, #246c3c);
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+.view-course-btn:hover,
+.promo-cta:hover {
+  background: linear-gradient(135deg, #246c3c, #1a4d2e);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* BOTÓN — tamaño fijo para promos */
+.promo-cta {
+  width: 70%;
+  max-width: 300px;
+  line-height: 44px;
+  font-size: 1rem;
+  margin: 12px auto 0;
+}
+
+/* ========== INFO DE COMPRA ========== */
+.purchase-info {
+  margin-top: 20px;
+  font-size: 16px;
   font-weight: 600;
   color: #444;
 }
 
-.no-interest-subtext {
-  font-size: 1.2rem; 
-  color: #888;
-  margin-top: 5px; 
+/* ========== PROMOCIONES ========== */
+.promotions-container {
+  margin: 40px auto 0;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+  align-items: center;
+  background: linear-gradient(#f4fdf6 0%, #ffffff 100%);
+  padding-bottom: 40px;
+  border-radius: 12px;
 }
 
+.promotions-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #246c3c;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 30px;
+  margin-bottom: 4px;
+}
 
-  /* Responsive */
-  @media (max-width: 768px) {
-    .courses-title {
-      font-size: 1.5rem;
-    }
-    .courses-list {
-      grid-template-columns: 1fr; 
-    }
-  }
-  
+.promotions-subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 24px;
+}
+
+/* cuotas destacadas */
+.payment-info {
+  text-align: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 10px 18px;
+  width: fit-content;
+  margin: 0 auto 26px;
+}
+.installments        { font-size: 2.5rem; font-weight: 700; color: #246c3c; }
+.no-interest         { font-size: 1.4rem; font-weight: 600; color: #444; margin-top: -2px; }
+.no-interest-subtext { font-size: 1rem; color: #888; }
+
+/* card de promoción */
+.promotion {
+  transition: transform 0.25s ease;
+  position:relative;
+  width:100%;
+  max-width:520px;
+  background:#fff;
+  border:2px solid #3ca65c;
+  border-radius:12px;
+  padding:34px 28px 28px;   /* ya tenías 28 abajo */
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;                  /* ⬅️ reduje de 14 px a 8 px */
+      
+}
+.promotion:hover { transform: translateY(-4px); }
+
+/* BADGE OFF */
+.promo-badge {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 16px;
+}
+.badge-green { background: #3ca65c; }
+.badge-red   { background: #d94141; }
+
+.promo-name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #246c3c;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.promo-micro { font-size: 0.95rem; font-weight: 500; color: #4a4a4a; }
+
+.promo-details {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.price-block {
+  margin:0 auto 0; 
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.promo-price {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a4d2e;
+  letter-spacing: 0.5px;
+}
+.currency { font-size: 1rem; vertical-align: super; }
+
+.installment-caption {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 6px;
+}
+
+/* promo card más ancha en mobile */
+@media (max-width: 480px) {
+  .promotion { max-width: 90%; }
+}
+
+/* ========== RESPONSIVE general ========== */
+@media (max-width: 768px) {
+  .courses-title        { font-size: 1.5rem; }
+  .courses-list         { grid-template-columns: 1fr; }
+  .promotions-container { padding: 0 10px 40px; }
+}
