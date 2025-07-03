@@ -27,12 +27,8 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <!-- ✅ Preload del poster del video para mejorar LCP -->
-    <link
-      rel="preload"
-      as="image"
-      href="/impulsoweb/static/media/screenbannervideo.f23bb4fd6afd21c9e92c.png"
-    />
+    <!-- ❌ Se eliminó el preload del poster porque la ruta real es dinámica -->
+    <!-- El poster se debe importar y usar con poster={bannerPoster} en React -->
 
     <title>Impulso Merval | Educación Financiera y Bolsa Argentina</title>
   </head>
