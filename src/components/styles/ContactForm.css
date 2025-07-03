@@ -63,7 +63,6 @@
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   .view-course-btn1:hover {
     background: linear-gradient(135deg, #246C3C, #1A4D2E);

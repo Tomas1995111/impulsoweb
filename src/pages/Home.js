@@ -2,11 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './styles/Home.css';
 import AdminDashboard from '../components/AdminDashboard';
-import LeadSection from '../components/LeadSection';
-import GuideLead from '../components/GuideLead';
 import UserProfile from '../components/UserProfile';
 import Reviews from '../components/Reviews';
-import ContactForm from '../components/ContactForm';
 import MembershipPlans from '../components/MembershipPlans';
 import Footer from '../components/Footer';
 import ExitIntentModal from '../components/ExitIntentModal';
@@ -122,6 +119,7 @@ const Home = ({ onOpenPopup }) => {
               alt="Curso"
               className="course-carousel-image"
               onClick={handleImageClick}
+              loading="lazy"
             />
             <div className="carousel-indicators">
               {courseImages.map((_, index) => (

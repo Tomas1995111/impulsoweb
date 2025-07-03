@@ -70,6 +70,7 @@ const NewsCard = ({ limit }) => {
                 src={article.image_url || defaultImage}
                 alt={article.title}
                 className="news-image"
+                loading="lazy"
               />
               <h3 className="news-title">{article.title}</h3>
               {article.description && (

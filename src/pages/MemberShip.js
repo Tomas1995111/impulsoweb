@@ -31,6 +31,7 @@ const MemberShip = ({ onOpenPopup }) => {
             src="https://i.pinimg.com/236x/4c/5c/08/4c5c081ff92084279f3a4a75057390c3.jpg"
             alt="Ideas de trading"
             className="item-icon"
+            loading="lazy"
           />
           <h3 className="item-title">Resumen Diario</h3>
           <p>Panorama de índices, dólar y acciones en lenguaje simple, directo a tu WhatsApp.</p>
@@ -41,6 +42,7 @@ const MemberShip = ({ onOpenPopup }) => {
             src="https://www.adslzone.net/app/uploads-adslzone.net/2020/03/notificacion-whatsapp.jpg"
             alt="Comunidad WhatsApp"
             className="item-icon"
+            loading="lazy"
           />
           <h3 className="item-title">Comunidad Exclusiva</h3>
           <p>Conéctate con traders, comparte tus dudas y aprende de la experiencia colectiva.</p>
@@ -51,6 +53,7 @@ const MemberShip = ({ onOpenPopup }) => {
             src="https://www.newtechla.com/wp-content/uploads/2023/02/Imagen-CAPACITACION-VIRTUAL-EN-VIVO2.jpg"
             alt="Capacitaciones en vivo"
             className="item-icon"
+            loading="lazy"
           />
           <h3 className="item-title">Educación Continua</h3>
           <p>Mini-clases, glosario y guías paso a paso que transforman conceptos difíciles en acciones
@@ -62,6 +65,7 @@ const MemberShip = ({ onOpenPopup }) => {
             src="https://popularenlinea.com/Personas/blog/PublishingImages/2020/Junio/Ventajas-de-la-capacitaci%C3%B3n-en-l%C3%ADnea-para-las-pymes.jpg"
             alt="Café en vivo"
             className="item-icon"
+            loading="lazy"
           />
           <h3 className="item-title">Café en Vivo</h3>
           <p>Únete a conversaciones informales y aprende de tus compañeros.</p>
@@ -72,6 +76,7 @@ const MemberShip = ({ onOpenPopup }) => {
             src="https://statics.forbes.com.ec/2023/12/crop/658d85fd60ee8__600x390.webp"
             alt="Análisis de acciones"
             className="item-icon"
+            loading="lazy"
           />
           <h3 className="item-title">Análisis de Acciones</h3>
           <p>Recibe análisis detallados sobre acciones que te ayudarán a tomar decisiones informadas.</p>
@@ -82,6 +87,7 @@ const MemberShip = ({ onOpenPopup }) => {
             src="https://ugc.production.linktr.ee/lPlhFKPQzaRsEWr3v7Og_IZQWyyJsiEflg2N8?io=true&size=avatar-v3_0"
             alt="Beneficios Extra"
             className="item-icon"
+            loading="lazy"
           />
           <h3 className="item-title">Extras de Suscriptor</h3>
           <ul className="benefits-list">

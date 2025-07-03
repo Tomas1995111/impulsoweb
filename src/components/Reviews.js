@@ -59,7 +59,7 @@ const reviews = [
 const ReviewCard = ({ name, age, job, location, comment, img }) => (
   <div className="review-card">
     <div className="review-header">
-      <img src={img} alt={name} className="review-avatar" />
+      <img src={img} alt={name} className="review-avatar" loading="lazy" />
       <div>
         <strong>{name}</strong> · {age}
         <p className="review-sub">{job} · {location}</p>
