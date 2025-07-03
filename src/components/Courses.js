@@ -85,7 +85,7 @@ const Courses = () => (
 
         <a
           href="https://mpago.la/2jaYnZY"
-          className="promo-cta"
+          className="promo-ctaa"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -120,7 +120,7 @@ const Courses = () => (
 
         <a
           href="https://mpago.la/2zGLi3L"
-          className="promo-cta"
+          className="promo-ctaa"
           target="_blank"
           rel="noopener noreferrer"
         >
