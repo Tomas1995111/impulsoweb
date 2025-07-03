@@ -8,7 +8,8 @@ import MembershipPlans from '../components/MembershipPlans';
 import Footer from '../components/Footer';
 import ExitIntentModal from '../components/ExitIntentModal';
 import FaqAccordion from '../components/FaqAccordion';
-
+import bannerPoster from '../assets/video/screenbannervideo.webp';
+import bannerVideo from '../assets/video/7579564-uhd_4096_2160_25fps.mp4';
 import AnalisisImg from '../assets/imagesCourses/Analisis-tecnico.jpeg';
 import CriptomonedasImg from '../assets/imagesCourses/Criptomonedas-y-Blockchain.jpeg';
 import MoneyImg from '../assets/imagesCourses/Money-Management.jpeg';
@@ -61,8 +62,16 @@ const Home = ({ onOpenPopup }) => {
       )}
 
       <div className="welcome-banner">
-        <video className="banner-video" autoPlay loop muted playsInline preload="auto" poster={require('../assets/video/screenbannervideo.png')}>
-          <source src={require('../assets/video/7579564-uhd_4096_2160_25fps.mp4')} type="video/mp4" />
+        <video
+          className="banner-video"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          poster={bannerPoster}
+        >
+          <source src={bannerVideo} type="video/mp4" />
           Tu navegador no soporta el video.
         </video>
         <div className="banner-overlay">
