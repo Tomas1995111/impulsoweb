@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b444407a.css",
-    "main.js": "/static/js/main.8d76fd3d.js",
+    "main.js": "/static/js/main.d2ac90cc.js",
     "static/js/453.15ca1630.chunk.js": "/static/js/453.15ca1630.chunk.js",
     "static/media/7579564-uhd_4096_2160_25fps.mp4": "/static/media/7579564-uhd_4096_2160_25fps.791a8ff59bed691adf49.mp4",
     "static/media/Money-Management.jpeg": "/static/media/Money-Management.49d4951e6d692251a012.jpeg",
@@ -12,11 +12,11 @@
     "static/media/screenbannervideo.webp": "/static/media/screenbannervideo.f0f146e4d826cf798381.webp",
     "index.html": "/index.html",
     "main.b444407a.css.map": "/static/css/main.b444407a.css.map",
-    "main.8d76fd3d.js.map": "/static/js/main.8d76fd3d.js.map",
+    "main.d2ac90cc.js.map": "/static/js/main.d2ac90cc.js.map",
     "453.15ca1630.chunk.js.map": "/static/js/453.15ca1630.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b444407a.css",
-    "static/js/main.8d76fd3d.js"
+    "static/js/main.d2ac90cc.js"
   ]
 }
