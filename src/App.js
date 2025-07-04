@@ -75,5 +75,7 @@ const App = () => {
     </Router>
   );
 };
+const preloadLogo = new Image();
+preloadLogo.src = "/logo.png";
 
 export default App;
