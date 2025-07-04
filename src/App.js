@@ -77,5 +77,5 @@ const App = () => {
 };
 const preloadLogo = new Image();
 preloadLogo.src = "/logo.png";
-
+new Image().src = process.env.PUBLIC_URL + "/logo.png";
 export default App;
