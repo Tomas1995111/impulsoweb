@@ -71,6 +71,33 @@
   color: #666;
 }
 
+.popup-link-btn {
+  display: block;
+  margin: 12px 0;
+  padding: 10px;
+  background-color: #2563eb;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.popup-link-btn:hover {
+  background-color: #1e40af;
+}
+
+.popup-link-btn.whatsapp {
+  background-color: #25D366;
+}
+
+.popup-link-btn.whatsapp:hover {
+  background-color: #1da851;
+}
+
+
+
 /* Animaciones */
 @keyframes fadeIn {
   from { opacity: 0; }
