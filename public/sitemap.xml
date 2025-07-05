@@ -43,7 +43,7 @@
   </url>
   <url>
     <loc>https://impulsomerval.com/DollarWidget</loc>
-    <changefreq=daily</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
