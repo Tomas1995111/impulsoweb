@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.b444407a.css",
-    "main.js": "/static/js/main.d2ac90cc.js",
+    "main.css": "/static/css/main.5d44c103.css",
+    "main.js": "/static/js/main.c18c1802.js",
     "static/js/453.15ca1630.chunk.js": "/static/js/453.15ca1630.chunk.js",
     "static/media/7579564-uhd_4096_2160_25fps.mp4": "/static/media/7579564-uhd_4096_2160_25fps.791a8ff59bed691adf49.mp4",
     "static/media/Money-Management.jpeg": "/static/media/Money-Management.49d4951e6d692251a012.jpeg",
@@ -11,12 +11,12 @@
     "static/media/LOGOSIMPULSOMERVAL-03.webp": "/static/media/LOGOSIMPULSOMERVAL-03.31a50e825ca7b9edaff7.webp",
     "static/media/screenbannervideo.webp": "/static/media/screenbannervideo.f0f146e4d826cf798381.webp",
     "index.html": "/index.html",
-    "main.b444407a.css.map": "/static/css/main.b444407a.css.map",
-    "main.d2ac90cc.js.map": "/static/js/main.d2ac90cc.js.map",
+    "main.5d44c103.css.map": "/static/css/main.5d44c103.css.map",
+    "main.c18c1802.js.map": "/static/js/main.c18c1802.js.map",
     "453.15ca1630.chunk.js.map": "/static/js/453.15ca1630.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b444407a.css",
-    "static/js/main.d2ac90cc.js"
+    "static/css/main.5d44c103.css",
+    "static/js/main.c18c1802.js"
   ]
 }
