@@ -21,10 +21,9 @@ const PopupForm = ({ isVisible, onClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isSubmitting) return;
 
-    if (isSubmitting) return; // Previene reenvíos rápidos
     setIsSubmitting(true);
-
     const data = new URLSearchParams();
     Object.entries(formData).forEach(([key, value]) => {
       data.append(key, value);
@@ -33,10 +32,7 @@ const PopupForm = ({ isVisible, onClose }) => {
     try {
       const response = await fetch(
         'https://script.google.com/macros/s/AKfycby9VQcK0F-tnI4ljVwfNBcVMfl3MmHie973ZYJNiVHaqNn3FCzb8Vbf35g5BvRM8qlivw/exec',
-        {
-          method: 'POST',
-          body: data,
-        }
+        { method: 'POST', body: data }
       );
 
       if (response.ok) {
@@ -60,7 +56,25 @@ const PopupForm = ({ isVisible, onClose }) => {
         {formSubmitted ? (
           <div className="success-message">
             <h2 className="popup-title">¡Gracias!</h2>
-            <p>Te llegará el PDF al email y ya podés disfrutar de <strong>7 días gratis</strong> de los beneficios de Impulso Merval 🚀</p>
+            <p>🎉 Ya podés disfrutar de <strong>7 días gratis</strong> de Impulso Merval.</p>
+
+            <a
+              href="https://drive.google.com/file/d/1IG2JEz0wzLVQv06eSHv-7TGzkYOPKCOD/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="popup-link-btn"
+            >
+              📄 Descargar PDF
+            </a>
+
+            <a
+              href="https://chat.whatsapp.com/LDHlzsldWl2B03bfRnVNA9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="popup-link-btn whatsapp"
+            >
+              💬 Unirme al grupo de WhatsApp
+            </a>
           </div>
         ) : (
           <>
