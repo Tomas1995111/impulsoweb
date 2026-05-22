@@ -85,7 +85,7 @@ const Home = ({ onOpenPopup }) => {
 
           <div className="hero-mini-block">
             <p>Incluye guía en PDF para empezar hoy mismo.</p>
-            <p>+150 inversores ya se sumaron. El 97% renueva mes a mes 🚀</p>
+            <p>+150 inversores ya se sumaron. El 98% renueva mes a mes 🚀</p>
           </div>
         </div>
       </div>
