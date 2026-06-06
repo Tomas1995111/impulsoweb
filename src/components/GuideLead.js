@@ -15,7 +15,7 @@ const GuideLead = () => {
   return (
     <section className="guide-lead">
       <div className="guide-lead-container">
-        <img src={guiaImg} alt="Guía Express" className="guide-lead-image" />
+        <img src={guiaImg} alt="Guía Express" className="guide-lead-image" width="4016" height="6016" />
 
         <div className="guide-lead-content">
           <h3>Recibí gratis la Guía Express</h3>

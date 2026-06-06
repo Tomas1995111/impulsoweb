@@ -35,6 +35,8 @@ const MemberShip = () => {
             alt="Ideas de trading"
             className="item-icon"
             loading="lazy"
+            width="80"
+            height="80"
           />
           <h3 className="item-title">Resumen Diario</h3>
           <p>Panorama de índices, dólar y acciones en lenguaje simple, directo a tu WhatsApp.</p>
@@ -46,6 +48,8 @@ const MemberShip = () => {
             alt="Comunidad WhatsApp"
             className="item-icon"
             loading="lazy"
+            width="80"
+            height="80"
           />
           <h3 className="item-title">Comunidad Exclusiva</h3>
           <p>Conéctate con traders, comparte tus dudas y aprende de la experiencia colectiva.</p>
@@ -57,6 +61,8 @@ const MemberShip = () => {
             alt="Capacitaciones en vivo"
             className="item-icon"
             loading="lazy"
+            width="80"
+            height="80"
           />
           <h3 className="item-title">Educación Continua</h3>
           <p>Mini-clases, glosario y guías paso a paso que transforman conceptos difíciles en acciones
@@ -69,6 +75,8 @@ const MemberShip = () => {
             alt="Café en vivo"
             className="item-icon"
             loading="lazy"
+            width="80"
+            height="80"
           />
           <h3 className="item-title">Café en Vivo</h3>
           <p>Únete a conversaciones informales y aprende de tus compañeros.</p>
@@ -80,6 +88,8 @@ const MemberShip = () => {
             alt="Análisis de acciones"
             className="item-icon"
             loading="lazy"
+            width="80"
+            height="80"
           />
           <h3 className="item-title">Análisis de Acciones</h3>
           <p>Recibe análisis detallados sobre acciones que te ayudarán a tomar decisiones informadas.</p>
@@ -91,6 +101,8 @@ const MemberShip = () => {
             alt="Beneficios Extra"
             className="item-icon"
             loading="lazy"
+            width="80"
+            height="80"
           />
           <h3 className="item-title">Extras de Suscriptor</h3>
           <ul className="benefits-list">

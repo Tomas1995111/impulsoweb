@@ -8,7 +8,7 @@ const CourseCard = ({ title, description, image, purchaseLink }) => {
 
   return (
     <div className="course-card">
-      <img src={image} alt={title} className="course-image" loading="lazy" />
+      <img src={image} alt={title} className="course-image" loading="lazy" width="1280" height="1280" />
       <div className="course-info">
         <h3 className="course-title">{title}</h3>
         <p className="course-description">{description}</p>

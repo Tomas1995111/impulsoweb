@@ -71,6 +71,8 @@ const NewsCard = ({ limit }) => {
                 alt={article.title}
                 className="news-image"
                 loading="lazy"
+                width="800"
+                height="450"
               />
               <h3 className="news-title">{article.title}</h3>
               {article.description && (

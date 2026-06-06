@@ -101,7 +101,7 @@ const Navbar = () => {
     <nav className="navbar" ref={navRef}>
       <div className="logo-link">
         <Link to="/" className="logo-link">
-          <img src={logo} alt="Logo" className="logo-img" />
+          <img src={logo} alt="Logo" className="logo-img" width="3702" height="2843" />
         </Link>
       </div>
 
