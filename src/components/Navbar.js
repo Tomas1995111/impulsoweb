@@ -43,24 +43,24 @@ const Navbar = () => {
   // Funciones para mostrar/ocultar mega menús
   const handleMegaMenuMouseEnter = () => {
     if (megaMenuTimerRef.current) clearTimeout(megaMenuTimerRef.current);
-    setMegaMenuVisible(true); 
+    setMegaMenuVisible(true);
   };
 
   const handleMegaMenuMouseLeave = () => {
     megaMenuTimerRef.current = setTimeout(() => {
-      setMegaMenuVisible(false); 
-    }, 200);
+      setMegaMenuVisible(false);
+    }, 300);
   };
 
   const handleServicesMenuMouseEnter = () => {
-    if (servicesMenuTimerRef.current) clearTimeout(servicesMenuTimerRef.current);  
-    setServicesMenuVisible(true); 
+    if (servicesMenuTimerRef.current) clearTimeout(servicesMenuTimerRef.current);
+    setServicesMenuVisible(true);
   };
 
   const handleServicesMenuMouseLeave = () => {
     servicesMenuTimerRef.current = setTimeout(() => {
       setServicesMenuVisible(false);
-    }, 200);
+    }, 300);
   };
 
   // Función para el cierre de sesión
@@ -128,19 +128,20 @@ const Navbar = () => {
         )}
 
         {/* Menú de "Herramientas" */}
-        <li 
+        <li
           className="mega-link"
-          onMouseEnter={handleMegaMenuMouseEnter} 
-          onMouseLeave={handleMegaMenuMouseLeave} 
+          onMouseEnter={handleMegaMenuMouseEnter}
+          onMouseLeave={handleMegaMenuMouseLeave}
+          onClick={() => setMegaMenuVisible(prev => !prev)}
         >
           <span className={isActiveHerramientas ? 'active' : ''}>
             Herramientas
           </span>
           {megaMenuVisible && (
-            <div 
+            <div
               className="mega-menu-wrapper"
               onMouseEnter={handleMegaMenuMouseEnter}
-              onMouseLeave={handleMegaMenuMouseLeave} 
+              onMouseLeave={handleMegaMenuMouseLeave}
             >
               <MegaMenu sections={megaMenuSections} />
             </div>
@@ -148,19 +149,20 @@ const Navbar = () => {
         </li>
 
         {/* Menú de "Servicios" */}
-        <li 
+        <li
           className="mega-link"
-          onMouseEnter={handleServicesMenuMouseEnter} 
+          onMouseEnter={handleServicesMenuMouseEnter}
           onMouseLeave={handleServicesMenuMouseLeave}
+          onClick={() => setServicesMenuVisible(prev => !prev)}
         >
           <span className={isActiveServicios ? 'active' : ''}>
             Servicios
           </span>
           {servicesMenuVisible && (
-            <div 
+            <div
               className="mega-menu-wrapper"
               onMouseEnter={handleServicesMenuMouseEnter}
-              onMouseLeave={handleServicesMenuMouseLeave} 
+              onMouseLeave={handleServicesMenuMouseLeave}
             >
               <MegaMenu sections={servicesMenuSections} />
             </div>

@@ -343,6 +343,7 @@
 
 .course-carousel-image {
   width: 100%;
+  aspect-ratio: 16 / 5;
   object-fit: cover;
   border-radius: 20px;
   transition: all 0.3s ease-in-out;
@@ -443,10 +444,6 @@
 
   .course-carousel {
     max-width: 100%;
-  }
-
-  .course-carousel-image {
-    max-height: 250px;
   }
    .guide-lead-container {
     flex-direction: column;
