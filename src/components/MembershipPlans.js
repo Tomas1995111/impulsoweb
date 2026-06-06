@@ -1,5 +1,6 @@
 import React from 'react';
-import '../components/styles/MembershipPlans.css'; // si usás CSS tradicional
+import '../components/styles/MembershipPlans.css';
+import { waLink } from '../config/cta';
 
 const MembershipPlans = () => {
   return (
@@ -20,7 +21,7 @@ const MembershipPlans = () => {
   </ul>
   <a
     className="view-course-btn plan-btn"
-    href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808476d74ecd0176de28badb1380"
+    href={waLink('planMensual')}
     target="_blank"
     rel="noopener noreferrer"
   >
@@ -40,7 +41,7 @@ const MembershipPlans = () => {
   </ul>
   <a
     className="view-course-btn plan-btn"
-    href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808497ad02ae0197b1df7b4e0245"
+    href={waLink('planTrimestral')}
     target="_blank"
     rel="noopener noreferrer"
   >
@@ -60,7 +61,7 @@ const MembershipPlans = () => {
   </ul>
   <a
     className="view-course-btn plan-btn"
-    href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c9380847d94c33d017d9f6fb50a04cc"
+    href={waLink('planAnual')}
     target="_blank"
     rel="noopener noreferrer"
   >
@@ -69,7 +70,7 @@ const MembershipPlans = () => {
 </div>
       </div>
 
-      <p className="footnote">Pagás con MercadoPago. Cancelás cuando quieras.</p>
+      <p className="footnote">Te contactamos por WhatsApp y activás el plan con MercadoPago. Cancelás cuando quieras.</p>
     </section>
   );
 };

@@ -3,8 +3,9 @@ import { Link, useLocation } from 'react-router-dom';
 import MegaMenu from './MegaMenu';
 import './styles/Navbar.css';
 import logo from '../assets/LOGOSIMPULSOMERVAL-05.webp';
+import { waLink } from '../config/cta';
 
-const Navbar = ({ onOpenPopup }) => {
+const Navbar = () => {
   const location = useLocation();
   const token = localStorage.getItem('token');
   const role = localStorage.getItem('role');
@@ -22,7 +23,7 @@ const Navbar = ({ onOpenPopup }) => {
     {
       title: '',
       items: [
-        { label: 'Cotización Dólar', link: '/DollarWidget' },
+        { label: 'Cotización Dólar', link: '/cotizacion-dolar' },
         { label: 'Últimas Noticias', link: '/noticias' },
       ],
     },
@@ -34,7 +35,7 @@ const Navbar = ({ onOpenPopup }) => {
       title: '',
       items: [
         { label: 'Cursos', link: '/cursos' },
-        { label: 'Sé miembro', link: '/MemberShip' },
+        { label: 'Sé miembro', link: '/membresia' },
       ],
     },
   ];
@@ -202,17 +203,14 @@ const Navbar = ({ onOpenPopup }) => {
           </li>
         )}
         <li>
-        <button
-  onClick={() => {
-    console.log('Se hizo clic en Probar Gratis');
-    onOpenPopup();
-  }}
-  className="free-trial-btn"
->
-  Probar Gratis
-</button>
-
-
+          <a
+            href={waLink('navbar')}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="free-trial-btn"
+          >
+            Probar Gratis
+          </a>
         </li>
       </ul>
     </nav>

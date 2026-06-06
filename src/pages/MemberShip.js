@@ -1,26 +1,29 @@
 import React from 'react';
-import './styles/MemberShip.css'; // Estilos para el componente
-const MemberShip = ({ onOpenPopup }) => {
+import './styles/MemberShip.css';
+import { waLink } from '../config/cta';
 
+const MemberShip = () => {
   return (
     <div className="membership-container">
       <header className="header">
         <h1 className="membership-title">¡Únete a Impulso Premium!</h1>
         <p className="subheading">Accede a beneficios exclusivos que potenciarán tus inversiones.</p>
-      <div className="cta-container">
-
-<button 
-  onClick={() => window.open("https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808476d74ecd0176de28badb1380", "_blank")} 
-  className="cta-button secondary"
->
-  Probá 7 días Gratis
-</button>
-          <a 
-            href="https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=2c93808476d74ecd0176de28badb1380" 
-            target="_blank" 
+        <div className="cta-container">
+          <a
+            href={waLink('planMensual')}
+            target="_blank"
             rel="noopener noreferrer"
+            className="cta-button secondary"
           >
-            <button className="cta-button">Hazte Miembro Ahora</button>
+            Probá 7 días Gratis
+          </a>
+          <a
+            href={waLink('hazteMiembro')}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cta-button"
+          >
+            Hazte Miembro Ahora
           </a>
         </div>
       </header>

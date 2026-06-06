@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom'; // 👈 Importamos Link
 import './styles/Footer.css';
 import logoFooter from '../assets/LOGOSIMPULSOMERVAL-03.webp';
+import { waLink } from '../config/cta';
 
-const Footer = ({ onOpenPopup }) => {
+const Footer = () => {
   return (
     <>
       {/* Bloque de promoción */}
@@ -12,9 +13,14 @@ const Footer = ({ onOpenPopup }) => {
         <p className="prefooter-sub">
           Sumate gratis y recibí el resumen diario <span className="resaltado">antes de las 9 AM</span>.
         </p>
-        <button onClick={onOpenPopup} className="view-course-btn">
+        <a
+          href={waLink('footer')}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="view-course-btn"
+        >
           Probá 7 días gratis
-        </button>
+        </a>
       </div>
 
       {/* Footer original */}
@@ -27,10 +33,10 @@ const Footer = ({ onOpenPopup }) => {
           </p>
 
           <div className="footer-links">
-            <Link to="/MemberShip">Sé Miembro</Link>
+            <Link to="/membresia">Sé Miembro</Link>
             <Link to="/cursos">Cursos</Link>
             <Link to="/noticias">Noticias</Link>
-            <Link to="/DollarWidget">Dólar Hoy</Link>
+            <Link to="/cotizacion-dolar">Dólar Hoy</Link>
           </div>
 
           <div className="social-icons">
@@ -49,13 +55,17 @@ const Footer = ({ onOpenPopup }) => {
               <i className="fab fa-instagram"></i>
             </a>
             <a
-              href="https://wa.me/5491124035535"
+              href={waLink('floating')}
               target="_blank"
               rel="noopener noreferrer"
             >
               <i className="fab fa-whatsapp"></i>
             </a>
           </div>
+
+          <p className="footer-disclaimer">
+            El contenido de este sitio se facilita con fines informativos y educativos. No constituye asesoramiento financiero personalizado. Las decisiones de inversión son de tu exclusiva responsabilidad; no garantizamos resultados ni rentabilidades futuras.
+          </p>
 
           <p className="footer-copy">
             &copy; {new Date().getFullYear()} Tu Plataforma de Análisis Financiero. Todos los derechos reservados.

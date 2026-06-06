@@ -1,10 +1,11 @@
 import React from "react";
 import "./styles/WhatsAppButton.css";
+import { waLink } from "../config/cta";
 
 const WhatsAppButton = () => {
   return (
     <a
-      href="https://wa.me/5491124035535" 
+      href={waLink("floating")}
       className="whatsapp-button"
       target="_blank"
       rel="noopener noreferrer"

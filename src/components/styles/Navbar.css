@@ -1,22 +1,6 @@
-/* Reseteo de estilos globales */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* Los estilos globales (reset + body) se movieron a src/index.css */
 
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #fff;
-  color: #444;
-  padding-top: 70px; /* Ajuste para la navbar fija */
-  height: 100vh;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-}
+
 
 /* Navbar moderna y fija */
 .navbar {

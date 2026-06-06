@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles/Courses.css';
 import CourseCard from './CourseCard';
+import { waLink } from '../config/cta';
 
 import AnalisisImg      from '../assets/imagesCourses/Analisis-tecnico.jpeg';
 import CriptomonedasImg from '../assets/imagesCourses/Criptomonedas-y-Blockchain.jpeg';
@@ -12,21 +13,21 @@ const coursesData = [
     description:
       'Interpretá gráficos, detectá tendencias y gestioná riesgos con técnicas prácticas de trading.',
     image: AnalisisImg,
-    purchaseLink: 'https://mpago.la/2cCkKdD',
+    purchaseLink: waLink('cursoAnalisis'),
   },
   {
     title: 'Criptomonedas & Blockchain',
     description:
       'Entendé cómo funciona el ecosistema cripto y descubrí oportunidades reales de inversión.',
     image: CriptomonedasImg,
-    purchaseLink: 'https://mpago.la/2cCkKdD',
+    purchaseLink: waLink('cursoCripto'),
   },
   {
     title: 'Money Management',
     description:
       'Domina la gestión del riesgo y la asignación eficiente de tu capital para invertir con cabeza fría.',
     image: MoneyImg,
-    purchaseLink: 'https://mpago.la/2cCkKdD',
+    purchaseLink: waLink('cursoMoney'),
   },
 ];
 
@@ -84,7 +85,7 @@ const Courses = () => (
         </div>
 
         <a
-          href="https://mpago.la/2jaYnZY"
+          href={waLink('packDuo')}
           className="promo-ctaa"
           target="_blank"
           rel="noopener noreferrer"
@@ -119,7 +120,7 @@ const Courses = () => (
         </div>
 
         <a
-          href="https://mpago.la/2zGLi3L"
+          href={waLink('packTrilogia')}
           className="promo-ctaa"
           target="_blank"
           rel="noopener noreferrer"

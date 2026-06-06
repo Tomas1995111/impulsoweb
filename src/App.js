@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import React from 'react';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import DollarWidget from './components/DollarWidget'; 
 import WhatsAppButton from './components/WhatsAppButton';
@@ -18,25 +18,18 @@ import Courses from './components/Courses';
 import News from './components/NewsCard';
 import FinancialAdvisors from './pages/FinancialAdvisors';
 import MemberShip from './pages/MemberShip';
-import PopupForm from './components/PopupForm';
-import ExitIntentModal from './components/ExitIntentModal';
 
 
 const App = () => {
-  const [showPopup, setShowPopup] = useState(false);
-
-
   return (
     <Router> 
       <ScrollToTop />
-      <Navbar onOpenPopup={() => setShowPopup(true)} />
-      <PopupForm isVisible={showPopup} onClose={() => setShowPopup(false)} />
+      <Navbar />
       
-<ExitIntentModal />
       <Routes>
-        <Route path="/" element={<Home onOpenPopup={() => setShowPopup(true)} />} />
+        <Route path="/" element={<Home />} />
 
-        <Route path="/home" element={<Home onOpenPopup={() => setShowPopup(true)} />} />
+        <Route path="/home" element={<Home />} />
 
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
@@ -63,11 +56,13 @@ const App = () => {
           </AdminProtectedRoute>
         } />
 
-        <Route path="/DollarWidget" element={<DollarWidget />} />
+        <Route path="/DollarWidget" element={<Navigate to="/cotizacion-dolar" replace />} />
+        <Route path="/cotizacion-dolar" element={<DollarWidget />} />
         <Route path="/cursos" element={<Courses />} />
         <Route path="/noticias" element={<News />} />
         <Route path="/asesores-financieros" element={<FinancialAdvisors />} />
-        <Route path="/MemberShip" element={<MemberShip onOpenPopup={() => setShowPopup(true)} />} />
+        <Route path="/MemberShip" element={<Navigate to="/membresia" replace />} />
+        <Route path="/membresia" element={<MemberShip />} />
       </Routes>
 
       <ScrollToTopButton />

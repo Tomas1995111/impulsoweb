@@ -6,15 +6,15 @@ import UserProfile from '../components/UserProfile';
 import Reviews from '../components/Reviews';
 import MembershipPlans from '../components/MembershipPlans';
 import Footer from '../components/Footer';
-import ExitIntentModal from '../components/ExitIntentModal';
 import FaqAccordion from '../components/FaqAccordion';
+import { waLink } from '../config/cta';
 import bannerPoster from '../assets/video/screenbannervideo.webp';
 import bannerVideo from '../assets/video/7579564-uhd_4096_2160_25fps.mp4';
 import AnalisisImg from '../assets/imagesCourses/Analisis-tecnico.jpeg';
 import CriptomonedasImg from '../assets/imagesCourses/Criptomonedas-y-Blockchain.jpeg';
 import MoneyImg from '../assets/imagesCourses/Money-Management.jpeg';
 
-const Home = ({ onOpenPopup }) => {
+const Home = () => {
 
   const user = JSON.parse(localStorage.getItem('user'));
   const role = localStorage.getItem('role');
@@ -55,9 +55,14 @@ const Home = ({ onOpenPopup }) => {
       {showBanner && (
         <div className="scroll-banner">
           <span>¿Querés 7 días premium + PDF gratis?</span>
-          <button className="view-course-btn"  onClick={onOpenPopup}>
+          <a
+            href={waLink('scrollBanner')}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="view-course-btn"
+          >
             Probar ahora
-          </button>
+          </a>
         </div>
       )}
 
@@ -79,12 +84,18 @@ const Home = ({ onOpenPopup }) => {
           <h2 className="welcome-subtitle">
             en solo <strong>5 minutos al día</strong>
           </h2>
-          <button className="view-course-btn" onClick={onOpenPopup}>
-  Probá 7 días GRATIS
-</button>
+          <a
+            href={waLink('hero')}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="view-course-btn"
+          >
+            Hablar por WhatsApp
+          </a>
 
           <div className="hero-mini-block">
             <p>Incluye guía en PDF para empezar hoy mismo.</p>
+            <p>Te contestamos por WhatsApp en menos de 5 minutos.</p>
             <p>+150 inversores ya se sumaron. El 97% renueva mes a mes 🚀</p>
           </div>
         </div>
@@ -160,9 +171,7 @@ const Home = ({ onOpenPopup }) => {
         <ContactForm />
       </div>*/}
 
-      <Footer onOpenPopup={onOpenPopup} />
-
-      <ExitIntentModal />
+      <Footer />
 
     </div>
   );
