@@ -142,8 +142,6 @@ const Home = () => {
               className="course-carousel-image"
               onClick={handleImageClick}
               loading="lazy"
-              width="1280"
-              height="400"
             />
             <div className="carousel-indicators">
               {courseImages.map((_, index) => (

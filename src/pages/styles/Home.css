@@ -339,6 +339,7 @@
   flex: 2;
   position: relative;
   max-width: 600px;
+  min-width: 0;
 }
 
 .course-carousel-image {
