@@ -27,7 +27,7 @@ const Footer = () => {
       {/* Footer original */}
       <footer className="footer">
         <div className="footer-container">
-          <img src={logoFooter} alt="Impulso Merval Logo" className="footer-logo" loading="lazy" width="3702" height="2843" />
+          <img src={logoFooter} alt="Impulso Merval Logo" className="footer-logo" loading="lazy" width="3702" height="2000" />
 
           <p className="footer-motto">
             Impulsando tu futuro financiero con educación y comunidad.

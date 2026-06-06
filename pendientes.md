@@ -1,46 +1,48 @@
 # Pendientes Impulso Merval
 
-## 🎯 Lighthouse (post-deploy 2026-06-06)
+## 🎯 Lighthouse (post-deploy 2026-06-06, segundo run)
 
-Score actual: **Acc 89/100 · SEO 100 · BP 100** (Performance no se midió, pedir run nuevo)
+Score actual: **Acc 100/100 ✅ · SEO 100 · BP 100** (L-01..L-05 aplicados en commit `5733d4d`)
 
 ### Alta prioridad (rápido, alto impacto)
 
-- [ ] **L-01 · `aria-label` en íconos sociales del Footer** *(3 líneas)*
-  Agregar `aria-label="Facebook de Impulso Merval"`, `"Instagram de Impulso Merval"`, `"WhatsApp de Impulso Merval"` a los `<a>` de `src/components/Footer.js:43-63`.
+- [x] **L-01 · `aria-label` en íconos sociales del Footer** ✅ commit `5733d4d`
   Resuelve: "Links do not have a discernible name" (Acc).
 
-- [ ] **L-02 · Envolver contenido de cada página en `<main>`** *(~10 líneas)*
-  Wrappear el contenido (después de `<Navbar />` y antes de `<Footer />`) en `<main id="main-content" role="main">` en `src/App.js:29-66` o en cada page.
+- [x] **L-02 · Envolver contenido de cada página en `<main>`** ✅ commit `5733d4d`
   Resuelve: "Document does not have a main landmark" (Acc).
 
-- [ ] **L-03 · Mejorar contraste de textos secundarios en Footer** *(CSS)*
-  En `src/components/styles/Footer.css`:
-  - L25 `color: #8f8f8f` → `#a8a8a8` (4.0:1 → 5.3:1) o superior
-  - L72 `color: #ccc` ya está OK sobre `#303030` (10.5:1)
-  - L84, L94 `color: #888` → `#aaa` (mismo cambio)
+- [x] **L-03 · Mejorar contraste de textos secundarios en Footer** ✅ commit `5733d4d`
   Resuelve: "Background and foreground colors do not have a sufficient contrast ratio" (Acc).
 
-- [ ] **L-04 · `width`/`height` explícitos en todas las `<img>`** *(CLS = 0)*
-  Agregar `width="1024" height="434"` (o lo que corresponda) a:
-  - `src/components/Footer.js:29` (logo)
-  - `src/components/Reviews.js:62` (avatars 64x64)
-  - `src/pages/Home.js:138` (course carousel, mantener aspect-ratio)
-  - `src/components/Navbar.js:104` (logo 50px height)
+- [x] **L-04 · `width`/`height` explícitos en todas las `<img>`** ✅ commit `bc4a4b7` (13 imágenes)
   Resuelve: "Image elements do not have explicit width and height" (Diag → CLS).
 
-- [ ] **L-05 · `aria-label` distintos en CTAs WhatsApp idénticos** *(2 min)*
-  En `src/components/WhatsAppButton.js:13` ya tiene `aria-label="Contactar por WhatsApp"`. Replicar en los demás CTAs con sufijos (`"...desde el hero"`, `"...planes mensuales"`, etc.) o mover el texto a `<span class="sr-only">` adentro del `<a>`.
+- [x] **L-05 · `aria-label` distintos en CTAs WhatsApp idénticos** ✅ commit `3cd09f6` (14 CTAs)
   Resuelve: "Identical links have the same purpose" (Acc).
+
+- [ ] **L-12 · Self-host Font Awesome** *(pendiente, este commit)*
+  Causa: CDN `cdnjs.cloudflare.com` deja 3 cookies (`__cf_bm`).
+  Fix: `src/index.js:3` + `import '@fortawesome/fontawesome-free/css/all.min.css';`, borrar bloque `<link>` en `public/index.html:32-43`.
+  Resuelve: "Uses third-party cookies" (General).
+
+- [ ] **L-13 · Fix image aspect ratio en course carousel y CourseCard** *(pendiente, este commit)*
+  Causa: JPEGs en `src/assets/imagesCourses/*.jpeg` son 1280×1280, pero CSS los renderiza a aspect ancho (`max-height: 250px` y `height: 220px` con `object-fit`). El audit compara aspect del archivo vs renderizado.
+  Fix: re-encodear los 3 JPEGs a 1280×400 (carousel) con ffmpeg `-q:v 5`, actualizar `width`/`height` en JSX.
+  Resuelve: "Displays images with incorrect aspect ratio" (User Experience).
+
+- [ ] **L-14 · Crop de logos del Navbar y Footer** *(pendiente, este commit)*
+  Causa: `src/assets/LOGOSIMPULSOMERVAL-05.webp` y `-03.webp` (Navbar y Footer) son 3702×2843 (1.3:1) con **masivo espacio vacío** alrededor del toro. Eso hace que se vea "dimensiones raras" al renderizar.
+  Fix: crop a 3702×2000 (aspect 1.85:1) con ffmpeg, actualizar `width`/`height` en JSX.
 
 ### Media prioridad (mejora perf, no urgente)
 
-- [ ] **L-06 · Reducir JS sin usar: 572 KiB ahorrados** *(deps cleanup)*
+- [ ] **L-06 · Reducir JS sin usar: 541 KiB ahorrados** *(deps cleanup)*
   - `package.json:11` `react-icons` — confirmar uso con grep; si no, desinstalar
   - `package.json:7-8` `@splidejs/*` — `grep -r "splide" src/` debería dar 0 hits, eliminar
   - `package.json:13` `emailjs-com` — desinstalar (reemplazado por WhatsApp)
   - `package.json:17` `react-phone-number-input` — confirmar uso
-  - `package.json:6` `@fortawesome/fontawesome-free` — instalado pero no usado (se carga vía CDN)
+  - `package.json:6` `@fortawesome/fontawesome-free` — instalado pero no usado (se carga vía CDN) — **se va a usar con L-12**
   Después correr `npm prune` y medir bundle.
   Resuelve: "Reduce unused JavaScript" (Diag).
 
@@ -91,10 +93,11 @@ Score actual: **Acc 89/100 · SEO 100 · BP 100** (Performance no se midió, ped
 
 ## 📊 Scorecard después del fix batch L-01..L-05
 
-| Métrica | Hoy | Esperado |
+| Métrica | Antes | Después |
 |---|---|---|
-| Accessibility | 89 | 100 |
-| Performance (CLS) | con warnings | 0 CLS |
-| Best Practices | 100 | 100 |
-| SEO | 100 | 100 |
+| Accessibility | 89 | 100 ✅ |
+| Performance (CLS) | con warnings | 0 CLS ✅ |
+| Best Practices | 100 | 100 ✅ |
+| SEO | 100 | 100 ✅ |
 | LCP | sin medir | mejora con L-08 |
+| 3rd-party cookies | 3 | 0 con L-12 |
