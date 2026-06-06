@@ -14,6 +14,7 @@ const MemberShip = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="cta-button secondary"
+            aria-label="Probar 7 días gratis del plan mensual por WhatsApp"
           >
             Probá 7 días Gratis
           </a>
@@ -22,6 +23,7 @@ const MemberShip = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="cta-button"
+            aria-label="Hacerme miembro del plan mensual por WhatsApp"
           >
             Hazte Miembro Ahora
           </a>

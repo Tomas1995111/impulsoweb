@@ -89,6 +89,7 @@ const Courses = () => (
           className="promo-ctaa"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Comprar Pack Dúo por WhatsApp"
         >
           ¡Quiero este pack hoy!
         </a>
@@ -124,6 +125,7 @@ const Courses = () => (
           className="promo-ctaa"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Comprar Pack Trilogía por WhatsApp"
         >
           ¡Quiero este pack hoy!
         </a>

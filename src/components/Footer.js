@@ -18,6 +18,7 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="view-course-btn"
+          aria-label="Probar 7 días gratis por WhatsApp (pie de página)"
         >
           Probá 7 días gratis
         </a>
@@ -60,7 +61,7 @@ const Footer = () => {
               href={waLink('floating')}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="WhatsApp de Impulso Merval"
+              aria-label="WhatsApp de Impulso Merval (ícono social del pie)"
             >
               <i className="fab fa-whatsapp" aria-hidden="true"></i>
             </a>

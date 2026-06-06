@@ -15,9 +15,9 @@ const FinancialAdvisors = () => {
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-btn"
-        aria-label="Abrir chat de WhatsApp"
+        aria-label="Abrir chat de WhatsApp para asesoría personalizada"
       >
-        <FaWhatsapp className="whatsapp-icon" />
+        <FaWhatsapp className="whatsapp-icon" aria-hidden="true" />
       </a>
       <div className="contact-form-container">
         <ContactForm />

@@ -9,9 +9,9 @@ const WhatsAppButton = () => {
       className="whatsapp-button"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Contactar por WhatsApp"
+      aria-label="Contactar por WhatsApp (botón flotante)"
     >
-      <i className="fab fa-whatsapp"></i>
+      <i className="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
   );
 };

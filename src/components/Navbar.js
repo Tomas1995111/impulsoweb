@@ -208,6 +208,7 @@ const Navbar = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="free-trial-btn"
+            aria-label="Probar gratis por WhatsApp desde el menú"
           >
             Probar Gratis
           </a>

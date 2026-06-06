@@ -60,6 +60,7 @@ const Home = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="view-course-btn"
+            aria-label="Probar 7 días premium por WhatsApp (banner)"
           >
             Probar ahora
           </a>
@@ -89,6 +90,7 @@ const Home = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="view-course-btn"
+            aria-label="Hablar por WhatsApp desde el hero"
           >
             Hablar por WhatsApp
           </a>

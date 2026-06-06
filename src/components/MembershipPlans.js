@@ -24,6 +24,7 @@ const MembershipPlans = () => {
     href={waLink('planMensual')}
     target="_blank"
     rel="noopener noreferrer"
+    aria-label="Empezar plan mensual por WhatsApp"
   >
     Empezar ahora
   </a>
@@ -44,6 +45,7 @@ const MembershipPlans = () => {
     href={waLink('planTrimestral')}
     target="_blank"
     rel="noopener noreferrer"
+    aria-label="Elegir plan trimestral por WhatsApp"
   >
     Elegir plan
   </a>
@@ -64,6 +66,7 @@ const MembershipPlans = () => {
     href={waLink('planAnual')}
     target="_blank"
     rel="noopener noreferrer"
+    aria-label="Elegir plan anual por WhatsApp"
   >
     Elegir plan
   </a>
