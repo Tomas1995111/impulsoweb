@@ -16,6 +16,7 @@
   
   .footer-logo {
     width: 130px;
+    height: auto;
     margin: 0 auto 15px;
     display: block;
   }
