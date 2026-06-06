@@ -44,22 +44,25 @@ const Footer = () => {
               href="https://www.facebook.com/impulso.merval"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Facebook de Impulso Merval"
             >
-              <i className="fab fa-facebook"></i>
+              <i className="fab fa-facebook" aria-hidden="true"></i>
             </a>
             <a
               href="https://www.instagram.com/impulsomerval"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Instagram de Impulso Merval"
             >
-              <i className="fab fa-instagram"></i>
+              <i className="fab fa-instagram" aria-hidden="true"></i>
             </a>
             <a
               href={waLink('floating')}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="WhatsApp de Impulso Merval"
             >
-              <i className="fab fa-whatsapp"></i>
+              <i className="fab fa-whatsapp" aria-hidden="true"></i>
             </a>
           </div>
 

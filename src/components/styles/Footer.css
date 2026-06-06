@@ -22,7 +22,7 @@
   
   .footer-motto {
     font-style: italic;
-    color: #8f8f8f;
+    color: #a8a8a8;
     margin-bottom: 20px;
   }
   
@@ -81,7 +81,7 @@
   .footer-disclaimer {
     font-size: 0.75rem;
     line-height: 1.5;
-    color: #888;
+    color: #aaa;
     max-width: 720px;
     margin: 0 auto 16px;
     padding-top: 16px;
@@ -91,7 +91,7 @@
   .footer-copy {
     font-weight: 300;
     font-size: 0.85rem;
-    color: #888;
+    color: #aaa;
   }
 .prefooter-banner {
   background-color: #f3f4f6;

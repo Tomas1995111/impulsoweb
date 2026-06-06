@@ -25,45 +25,47 @@ const App = () => {
     <Router> 
       <ScrollToTop />
       <Navbar />
-      
-      <Routes>
-        <Route path="/" element={<Home />} />
 
-        <Route path="/home" element={<Home />} />
+      <main id="main-content" role="main">
+        <Routes>
+          <Route path="/" element={<Home />} />
 
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<Home />} />
 
-        <Route path="/dashboard" element={
-          <ProtectedRoute>
-            <Dashboard />
-          </ProtectedRoute>
-        } />
-        <Route path="/user-profile" element={
-          <ProtectedRoute>
-            <UserProfile />
-          </ProtectedRoute>
-        } />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
 
-        <Route path="/admin-dashboard" element={
-          <AdminProtectedRoute>
-            <AdminDashboard />
-          </AdminProtectedRoute>
-        } />
-        <Route path="/admin-profile" element={
-          <AdminProtectedRoute>
-            <AdminProfile />
-          </AdminProtectedRoute>
-        } />
+          <Route path="/dashboard" element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          } />
+          <Route path="/user-profile" element={
+            <ProtectedRoute>
+              <UserProfile />
+            </ProtectedRoute>
+          } />
 
-        <Route path="/DollarWidget" element={<Navigate to="/cotizacion-dolar" replace />} />
-        <Route path="/cotizacion-dolar" element={<DollarWidget />} />
-        <Route path="/cursos" element={<Courses />} />
-        <Route path="/noticias" element={<News />} />
-        <Route path="/asesores-financieros" element={<FinancialAdvisors />} />
-        <Route path="/MemberShip" element={<Navigate to="/membresia" replace />} />
-        <Route path="/membresia" element={<MemberShip />} />
-      </Routes>
+          <Route path="/admin-dashboard" element={
+            <AdminProtectedRoute>
+              <AdminDashboard />
+            </AdminProtectedRoute>
+          } />
+          <Route path="/admin-profile" element={
+            <AdminProtectedRoute>
+              <AdminProfile />
+            </AdminProtectedRoute>
+          } />
+
+          <Route path="/DollarWidget" element={<Navigate to="/cotizacion-dolar" replace />} />
+          <Route path="/cotizacion-dolar" element={<DollarWidget />} />
+          <Route path="/cursos" element={<Courses />} />
+          <Route path="/noticias" element={<News />} />
+          <Route path="/asesores-financieros" element={<FinancialAdvisors />} />
+          <Route path="/MemberShip" element={<Navigate to="/membresia" replace />} />
+          <Route path="/membresia" element={<MemberShip />} />
+        </Routes>
+      </main>
 
       <ScrollToTopButton />
       <WhatsAppButton />
