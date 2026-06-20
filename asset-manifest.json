@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/static/css/main.9fb10331.css",
-    "main.js": "/static/js/main.39428aba.js",
+    "main.css": "/static/css/main.9f273b35.css",
+    "main.js": "/static/js/main.050fa1de.js",
     "static/js/453.15ca1630.chunk.js": "/static/js/453.15ca1630.chunk.js",
     "static/media/7579564-uhd_4096_2160_25fps.mp4": "/static/media/7579564-uhd_4096_2160_25fps.e3dfe3786c9290e688c1.mp4",
     "static/media/fa-solid-900.ttf": "/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
     "static/media/fa-brands-400.ttf": "/static/media/fa-brands-400.1815e00441357e01619e.ttf",
+    "static/media/Money-Management.jpeg": "/static/media/Money-Management.49d4951e6d692251a012.jpeg",
     "static/media/fa-solid-900.woff2": "/static/media/fa-solid-900.2463b90d9a316e4e5294.woff2",
+    "static/media/Criptomonedas-y-Blockchain.jpeg": "/static/media/Criptomonedas-y-Blockchain.1508c89091655c0fbf5f.jpeg",
     "static/media/fa-brands-400.woff2": "/static/media/fa-brands-400.c210719e60948b211a12.woff2",
+    "static/media/Analisis-tecnico.jpeg": "/static/media/Analisis-tecnico.e670e0b4c6fcd39122f8.jpeg",
     "static/media/LOGOSIMPULSOMERVAL-05.webp": "/static/media/LOGOSIMPULSOMERVAL-05.2c3f573a15301b61e097.webp",
     "static/media/fa-regular-400.ttf": "/static/media/fa-regular-400.914997e1bdfc990d0897.ttf",
     "static/media/LOGOSIMPULSOMERVAL-03.webp": "/static/media/LOGOSIMPULSOMERVAL-03.b83bcdfd7a91e0fd73fa.webp",
-    "static/media/Money-Management.jpeg": "/static/media/Money-Management.1d07786f71d63ef85084.jpeg",
     "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.89999bdf5d835c012025.woff2",
-    "static/media/Analisis-tecnico.jpeg": "/static/media/Analisis-tecnico.cec8e76cdda01e724a6b.jpeg",
     "static/media/screenbannervideo.webp": "/static/media/screenbannervideo.f0f146e4d826cf798381.webp",
-    "static/media/Criptomonedas-y-Blockchain.jpeg": "/static/media/Criptomonedas-y-Blockchain.f60f1e5c533ec933806d.jpeg",
     "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "index.html": "/index.html",
-    "main.9fb10331.css.map": "/static/css/main.9fb10331.css.map",
-    "main.39428aba.js.map": "/static/js/main.39428aba.js.map",
+    "main.9f273b35.css.map": "/static/css/main.9f273b35.css.map",
+    "main.050fa1de.js.map": "/static/js/main.050fa1de.js.map",
     "453.15ca1630.chunk.js.map": "/static/js/453.15ca1630.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9fb10331.css",
-    "static/js/main.39428aba.js"
+    "static/css/main.9f273b35.css",
+    "static/js/main.050fa1de.js"
   ]
 }
