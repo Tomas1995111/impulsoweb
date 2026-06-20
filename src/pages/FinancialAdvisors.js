@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/FinancialAdvisors.css';
-import { FaWhatsapp } from 'react-icons/fa';
+
 import ContactForm from '../components/ContactForm';
 import { waLink } from '../config/cta';
 
@@ -17,7 +17,7 @@ const FinancialAdvisors = () => {
         className="whatsapp-btn"
         aria-label="Abrir chat de WhatsApp para asesoría personalizada"
       >
-        <FaWhatsapp className="whatsapp-icon" aria-hidden="true" />
+        <i className="fab fa-whatsapp whatsapp-icon" aria-hidden="true"></i>
       </a>
       <div className="contact-form-container">
         <ContactForm />

@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { FaChevronUp } from 'react-icons/fa';
 import './styles/ScrollToTopButton.css';
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     const toggleVisibility = () => {
-      setIsVisible(window.pageYOffset > 300);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsVisible(window.pageYOffset > 300);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener('scroll', toggleVisibility);
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
@@ -22,7 +28,7 @@ const ScrollToTopButton = () => {
     <>
       {isVisible && (
         <button className="scroll-to-top" onClick={scrollToTop}>
-          <FaChevronUp />
+          <i className="fas fa-chevron-up"></i>
         </button>
       )}
     </>

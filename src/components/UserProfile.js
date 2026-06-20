@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./styles/UserProfile.css";
-import { FaUser, FaBook } from "react-icons/fa";
+
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 
@@ -102,13 +102,13 @@ const UserProfile = () => {
           className={activeTab === "datos" ? "active" : ""}
           onClick={() => setActiveTab("datos")}
         >
-          <FaUser /> Mis Datos
+          <i className="fas fa-user"></i> Mis Datos
         </button>
         <button
           className={activeTab === "cursos" ? "active" : ""}
           onClick={() => setActiveTab("cursos")}
         >
-          <FaBook /> Mis Cursos
+          <i className="fas fa-book"></i> Mis Cursos
         </button>
       </aside>
 
