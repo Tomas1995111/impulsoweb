@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkimpulso_merval_front=self.webpackChunkimpulso_merval_front||[]).push([[137],{137:(e,r,i)=>{i.r(r),i.d(r,{default:()=>d});i(43);var s=i(579);const d=()=>(0,s.jsxs)("div",{children:[(0,s.jsx)("h1",{children:"Perfil de Administrador"}),(0,s.jsx)("p",{children:"Bienvenido a tu panel de administrador."})]})}}]);
+//# sourceMappingURL=137.fad5de97.chunk.js.map
